@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify — Digital detox for your phone</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B5451B; --dark: #3d2e24; --mid: #9b8a7c; --cream: #faf7f4; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 48px 24px 40px; text-align: center; }
+    .header .emoji { font-size: 64px; display: block; margin-bottom: 16px; }
+    .header h1 { color: #fff; font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+    .header p { color: rgba(255,255,255,0.6); font-size: 17px; max-width: 500px; margin: 0 auto 24px; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 32px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 22px; font-weight: 800; color: var(--dark); margin: 40px 0 14px; letter-spacing: -0.3px; }
+    h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin: 18px 0 6px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
+    li { margin-bottom: 6px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; }
+    .step-body p { margin: 0; font-size: 14px; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .card { background: var(--card); border-radius: 14px; padding: 20px; border: 1px solid #e8e0db; }
+    .card-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+
+    .warn { background: rgba(181,69,27,0.07); border: 1px solid rgba(181,69,27,0.22); border-radius: 12px; padding: 18px; margin-bottom: 14px; }
+    .warn h3 { color: #8B3214; margin: 0 0 6px; }
+    .warn p { color: #8B3214; margin: 0; font-size: 14px; line-height: 1.7; }
+    .good { background: rgba(34,197,94,0.07); border-color: rgba(34,197,94,0.25); }
+    .good h3 { color: #166534; }
+    .good p { color: #166534; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e8e0db; color: var(--mid); vertical-align: top; }
+    td:first-child { color: var(--dark); font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <span class="emoji">🧱</span>
+  <h1>Brickify</h1>
+  <p>Lock your selected apps behind a PIN and second factor — so you actually follow through on your digital detox.</p>
+  <div class="header-links">
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="../index.html">Rain or Shine Apps</a>
+  </div>
+</div>
+
+<div class="container">
+  <a href="../index.html" class="back">← Rain or Shine Apps</a>
+
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Choose a passcode</h3><p>Set a 6-digit PIN you'll remember but won't enter on impulse.</p></div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Set a second factor</h3><p>Parent PIN, authenticator app, or email code. Both factors are required to unbrick — losing one doesn't lock you out forever.</p></div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Save your recovery codes</h3><p>Three one-time backup codes are generated. Write them down. If you ever lose your PIN and second factor, one of these codes will get you back in.</p></div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Select apps to block</h3><p>Pick exactly which apps are disabled when bricked. Everything else stays accessible.</p></div></div>
+    <div class="step"><div class="step-n">5</div><div class="step-body"><h3>Tap BRICK</h3><p>Your chosen apps are blocked at the OS level. To unblock them, you need both your PIN and your second factor.</p></div></div>
+  </div>
+
+  <h2>Features</h2>
+  <div class="cards">
+    <div class="card"><span class="card-icon">🔐</span><h3>Two-factor unbrick</h3><p>PIN plus a second factor. Both required.</p></div>
+    <div class="card"><span class="card-icon">🔑</span><h3>Recovery codes</h3><p>Three one-time backup codes generated at setup.</p></div>
+    <div class="card"><span class="card-icon">🔔</span><h3>New app alerts</h3><p>Email notification when a new app is installed.</p></div>
+    <div class="card"><span class="card-icon">🚨</span><h3>Emergency access</h3><p>Emergency call button always visible on the bricked screen.</p></div>
+  </div>
+
+  <h2>Known limitations &amp; accepted risks</h2>
+  <p>Brickify is designed to make bypassing meaningfully hard — not impossible. Here is an honest account of what is and isn't protected against.</p>
+
+  <h3 style="margin-top:24px;">Android</h3>
+  <div class="warn">
+    <h3>Accepted risks</h3>
+    <p><strong>Safe mode</strong> — Android's safe mode disables third-party services. Blocks will not be enforced while in safe mode.<br/><br/>
+    <strong>ADB over USB</strong> — If USB debugging is enabled, someone with a PC could remove the app or disable services.<br/><br/>
+    <strong>Factory reset</strong> — Removes all restrictions. Android's Factory Reset Protection (FRP) mitigates this. We recommend enabling FRP by adding a Google account and screen lock.<br/><br/>
+    <strong>New apps</strong> — Apps installed after setup are not automatically blocked. You will receive a notification and email when a new app is installed.</p>
+  </div>
+  <div class="warn good">
+    <h3>Hardened against</h3>
+    <p><strong>Uninstalling the app</strong> — Brickify registers as a Device Administrator, graying out the uninstall button.<br/><br/>
+    <strong>Force stopping</strong> — Device Administrator registration also prevents force stop.<br/><br/>
+    <strong>Revoking the Accessibility permission</strong> — A background watchdog runs every 15 minutes. If the service is disabled while bricked, the screen is locked immediately.</p>
+  </div>
+
+  <h3 style="margin-top:24px;">iOS</h3>
+  <div class="warn">
+    <h3>Accepted risks</h3>
+    <p><strong>Parent Apple ID known to child</strong> — Family Controls is tied to the parent's Apple ID. A strong, unique Apple ID password is recommended.<br/><br/>
+    <strong>Restoring from iCloud backup</strong> — Restoring a pre-Brickify backup removes the app. See the uninstall section below for what this means in practice.<br/><br/>
+    <strong>Factory reset</strong> — Removes all restrictions. A Screen Time passcode (set up during Brickify's setup flow) prevents a reset being initiated through Settings.</p>
+  </div>
+  <div class="warn good">
+    <h3>Hardened against</h3>
+    <p><strong>Deleting the app</strong> — The setup guide walks you through enabling a Screen Time passcode with app deletion blocked.</p>
+  </div>
+
+  <h2>What happens if Brickify is deleted?</h2>
+  <table>
+    <thead><tr><th>Platform</th><th>Blocked apps after deletion</th><th>Can the child use blocked apps?</th></tr></thead>
+    <tbody>
+      <tr><td>Android</td><td>Blocks are lifted — the Accessibility Service is gone.</td><td>Yes, if they can uninstall (Device Admin prevents this by default).</td></tr>
+      <tr><td>iOS</td><td>Blocks <strong>remain in place</strong>. iOS enforces Family Controls at the OS level, independently of the app.</td><td>No. Deleting Brickify also removes the ability to unbrick, making it worse for the child. The only escape is a factory reset.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Getting back in</h2>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Use a recovery code</h3><p>Tap "Locked out?" on the bricked screen and enter one of your 3 backup codes.</p></div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Contact support</h3><p>Email <a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a> with your device ID (shown on the recovery screen). We can retrieve a code as a last resort.</p></div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Factory reset</h3><p>Last resort — erases everything on the device.</p></div></div>
+  </div>
+</div>
+
+<div class="footer">
+  © 2026 Rain or Shine Apps &nbsp;·&nbsp;
+  <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+  <a href="support.html">Support &amp; Accessibility</a> &nbsp;·&nbsp;
+  <a href="../index.html">All apps</a>
+</div>
+
+</body>
+</html>
