@@ -6,61 +6,132 @@
   <title>Rain or Shine Apps</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc; color: #1e293b; }
-    .header { background: linear-gradient(135deg, #4f46e5, #7c3aed); padding: 60px 24px; text-align: center; }
-    .header h1 { color: white; font-size: 36px; font-weight: 700; margin-bottom: 8px; }
-    .header p { color: #c7d2fe; font-size: 18px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5e2c8; color: #2d1a0e; }
+
+    .banner { width: 100%; display: block; }
+
     .container { max-width: 700px; margin: 0 auto; padding: 48px 24px; }
     .apps { display: flex; flex-direction: column; gap: 24px; }
-    .app-card { background: white; border-radius: 20px; padding: 28px; border: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 20px; }
-    .app-icon { width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
-    .app-icon.decidr { background: #4f46e5; }
-    .app-icon.creative-juices { background: linear-gradient(135deg, #FF6B35, #9C27B0); }
+
+    .app-card {
+      background: #fffdf9;
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid #e8d5c0;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      flex-shrink: 0;
+      object-fit: cover;
+      background-color: transparent;
+    }
+
     .app-info { flex: 1; }
-    .app-name { font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
-    .app-tagline { font-size: 14px; color: #64748b; margin-bottom: 12px; line-height: 1.5; }
+    .app-name { font-size: 20px; font-weight: 700; color: #2d1a0e; margin-bottom: 4px; }
+    .app-tagline { font-size: 14px; color: #7a5c3e; margin-bottom: 12px; line-height: 1.6; }
     .app-links { display: flex; gap: 12px; flex-wrap: wrap; }
-    .app-links a { font-size: 13px; color: #4f46e5; font-weight: 500; text-decoration: none; }
+    .app-links a { font-size: 13px; font-weight: 500; text-decoration: none; }
     .app-links a:hover { text-decoration: underline; }
-    .app-links a.cj { color: #FF6B35; }
-    .badge { display: inline-block; background: #eff6ff; color: #4f46e5; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 12px; }
-    .badge.cj { background: #fff3ee; color: #FF6B35; }
-    .about { background: white; border-radius: 20px; padding: 28px; border: 1px solid #e2e8f0; margin-top: 24px; }
-    .about h2 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
-    .about p { color: #64748b; line-height: 1.6; font-size: 14px; }
-    .contact { text-align: center; padding: 32px; color: #64748b; font-size: 14px; }
-    .contact a { color: #4f46e5; text-decoration: none; font-weight: 500; }
-    .footer { text-align: center; padding: 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e2e8f0; }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .about {
+      background: #fffdf9;
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid #e8d5c0;
+      margin-top: 24px;
+    }
+    .about h2 { font-size: 18px; font-weight: 600; color: #2d1a0e; margin-bottom: 12px; }
+    .about p { color: #7a5c3e; line-height: 1.6; font-size: 14px; }
+
+    .contact { text-align: center; padding: 32px; color: #7a5c3e; font-size: 14px; }
+    .contact a { color: #a0522d; text-decoration: none; font-weight: 500; }
+    .contact a:hover { text-decoration: underline; }
+
+    .coming-soon-section { margin-top: 48px; }
+    .coming-soon-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .coming-soon-heading h2 { font-size: 13px; font-weight: 700; color: #b0917a; letter-spacing: 0.08em; text-transform: uppercase; }
+    .coming-soon-heading::before,
+    .coming-soon-heading::after { content: ''; flex: 1; height: 1px; background: #e8d5c0; }
+
+    .coming-soon-card {
+      background: #fffdf9;
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px dashed #d4b896;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      opacity: 0.85;
+    }
+    .coming-soon-card .app-icon { filter: saturate(0.7); }
+    .coming-soon-card .app-name { color: #5a3e2b; }
+    .coming-soon-card .app-tagline { color: #9a7c62; }
+
+    .footer { text-align: center; padding: 24px; color: #b0917a; font-size: 13px; border-top: 1px solid #e8d5c0; }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>☀️ Rain or Shine Apps</h1>
-    <p>Simple, thoughtful apps for everyday life</p>
-  </div>
+
+  <img class="banner" src="images/banner.png" alt="Rain or Shine Apps">
 
   <div class="container">
     <div class="apps">
 
       <!-- Decidr -->
       <div class="app-card">
-        <div class="app-icon decidr">⬆️</div>
+        <img class="app-icon" src="images/Decidr%20logo.png" alt="Decidr icon">
         <div class="app-info">
-          <div class="badge">Available on iOS & Android</div>
+          <div class="badge" style="background:#eff6ff; color:#4f46e5;">Available on iOS &amp; Android</div>
           <div class="app-name">Decidr</div>
           <div class="app-tagline">Make better decisions, one factor at a time. Score your options against what matters most, collaborate with others, and get AI-powered insights.</div>
           <div class="app-links">
-            <a href="decidr/index.html">Learn more</a>
-            <a href="decidr/support.html">Support</a>
-            <a href="decidr/privacy.html">Privacy Policy</a>
-            <a href="decidr/terms.html">Terms</a>
+            <a href="decidr/index.html" style="color:#4f46e5;">Learn more</a>
+            <a href="decidr/support.html" style="color:#4f46e5;">Support</a>
+            <a href="decidr/privacy.html" style="color:#4f46e5;">Privacy Policy</a>
+            <a href="decidr/terms.html" style="color:#4f46e5;">Terms</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creative Juices -->
+      <div class="app-card">
+        <img class="app-icon" src="images/creative%20juices%20logo.png" alt="Creative Juices icon">
+        <div class="app-info">
+          <div class="badge" style="background:#fff3ee; color:#FF6B35;">Available on iOS &amp; Android</div>
+          <div class="app-name">Creative Juices</div>
+          <div class="app-tagline">Blend ideas. Get inspired. Make something. Throw words into the blender, hit blend, and get an AI-crafted creative prompt for your next song, artwork, or story.</div>
+          <div class="app-links">
+            <a href="creative-juices/index.html" style="color:#FF6B35;">Learn more</a>
+            <a href="creative-juices/support.html" style="color:#FF6B35;">Support</a>
+            <a href="creative-juices/privacy.html" style="color:#FF6B35;">Privacy Policy</a>
+            <a href="creative-juices/terms.html" style="color:#FF6B35;">Terms</a>
           </div>
         </div>
       </div>
 
       <!-- Brickify -->
       <div class="app-card">
-        <div class="app-icon" style="background: #3d2e24;">🧱</div>
+        <img class="app-icon" src="images/Brickify%20logo.png" alt="Brickify icon">
         <div class="app-info">
           <div class="badge" style="background:#fff3ee; color:#B5451B;">Available on iOS &amp; Android</div>
           <div class="app-name">Brickify</div>
@@ -73,22 +144,30 @@
         </div>
       </div>
 
-      <!-- Creative Juices -->
-      <div class="app-card">
-        <div class="app-icon creative-juices">🍹</div>
+    </div>
+
+    <!-- Coming Soon -->
+    <div class="coming-soon-section">
+      <div class="coming-soon-heading"><h2>Coming Soon</h2></div>
+
+      <div class="coming-soon-card">
+        <img class="app-icon" src="images/Big%20Sister%20Logo.png" alt="Big Sister icon">
         <div class="app-info">
-          <div class="badge cj">Available on iOS & Android</div>
-          <div class="app-name">Creative Juices</div>
-          <div class="app-tagline">Blend ideas. Get inspired. Make something. Throw words into the blender, hit blend, and get an AI-crafted creative prompt for your next song, artwork, or story.</div>
-          <div class="app-links">
-            <a href="creative-juices/index.html" class="cj">Learn more</a>
-            <a href="creative-juices/support.html" class="cj">Support</a>
-            <a href="creative-juices/privacy.html" class="cj">Privacy Policy</a>
-            <a href="creative-juices/terms.html" class="cj">Terms</a>
-          </div>
+          <div class="badge" style="background:#f0fdf4; color:#16a34a;">Coming Soon</div>
+          <div class="app-name">Big Sister</div>
+          <div class="app-tagline">Keep your kids safe online. Big Sister gives parents the tools to monitor, guide, and protect their children's digital world — without the arguments.</div>
         </div>
       </div>
 
+      <!-- Pocket Muney -->
+      <div class="coming-soon-card">
+        <img class="app-icon" src="images/Pocket%20Muney%20Logo.png" alt="Pocket Muney icon">
+        <div class="app-info">
+          <div class="badge" style="background:#f0fdf4; color:#16a34a;">Coming Soon</div>
+          <div class="app-name">Pocket Muney</div>
+          <div class="app-tagline">Teach kids the value of money in a way that actually sticks. Set chores, give rewards, and watch good habits grow — all in one place.</div>
+        </div>
+      </div>
     </div>
 
     <div class="about">
@@ -102,5 +181,6 @@
   </div>
 
   <div class="footer">© 2026 Rain or Shine Apps. All rights reserved.</div>
+
 </body>
 </html>
