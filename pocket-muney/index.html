@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pocket Muney — Chores done. Carrots earned.</title>
+  <meta name="description" content="The simple way to reward your kids for chores. Add as many kids as you like, set your own carrot values, and watch happy families happen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --carrot: #F5821F;
+      --green: #3FBE6B;
+      --cream: #FFF8E7;
+      --dark: #231916;
+      --mid: #8a7a5c;
+      --border: #eee2c4;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Fredoka', -apple-system, sans-serif; }
+    a { color: var(--carrot); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .back-bar { background: var(--cream); border-bottom: 1px solid var(--border); padding: 12px 24px; }
+    .back-bar a { color: var(--mid); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .back-bar a:hover { color: var(--carrot); }
+
+    .header { background: linear-gradient(135deg, #FFE680, #FBC94C); padding: 48px 24px 40px; text-align: center; }
+    .header img { width: 88px; height: 88px; border-radius: 22px; margin-bottom: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+    .header h1 { color: var(--dark); font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -0.5px; }
+    .header p { color: #4a3f1f; max-width: 480px; margin: 12px auto 0; font-size: 16px; }
+
+    .container { max-width: 700px; margin: 0 auto; padding: 40px 24px 24px; }
+
+    .badge { display: inline-block; background: #fff3da; color: var(--carrot); padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 20px; }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 32px; }
+    .feature { background: #ffffff; border-radius: 16px; padding: 20px; border: 1px solid var(--border); }
+    .feature .icon { font-size: 26px; margin-bottom: 8px; display: block; }
+    .feature h2 { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+    .feature p { color: var(--mid); font-size: 13px; line-height: 1.6; }
+    .feature.soon { background: #fff3da; border-style: dashed; }
+
+    .card { background: #ffffff; border-radius: 16px; padding: 24px; margin-bottom: 16px; border: 1px solid var(--border); }
+    .card h2 { font-size: 17px; font-weight: 600; margin-bottom: 12px; color: var(--dark); }
+    .card p { color: var(--mid); margin-bottom: 8px; font-size: 14px; }
+
+    .store-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+    .store-btn { display: inline-flex; align-items: center; gap: 7px; background: #111827; color: #ffffff; text-decoration: none; padding: 9px 16px 9px 12px; border-radius: 10px; line-height: 1.25; }
+    .store-btn:hover { background: #374151; text-decoration: none; }
+    .store-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .store-btn span small { display: block; font-size: 10px; letter-spacing: 0.02em; opacity: 0.8; }
+    .store-btn span strong { display: block; font-size: 14px; font-weight: 700; }
+    .store-btn.web { background: var(--carrot); }
+    .store-btn.web:hover { background: #d96e15; }
+    .store-btn.disabled { background: #d8cdb3; color: #6b5f48; cursor: default; }
+
+    .links { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .footer { text-align: center; padding: 32px; color: #b4a47e; font-size: 13px; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+  <div class="back-bar">
+    <a href="../index.html">← Rain or Shine Apps</a>
+  </div>
+
+  <div class="header">
+    <img src="../images/Pocket%20Muney%20Logo.png" alt="Pocket Muney icon">
+    <h1>Pocket Muney</h1>
+    <p>Chores done. Carrots earned. Happy families. Add as many kids as you like, set your own carrot values, and watch good habits grow.</p>
+  </div>
+
+  <div class="container">
+    <span class="badge">Available on Web</span>
+
+    <div class="features">
+      <div class="feature">
+        <span class="icon">🥕</span>
+        <h2>Earn carrots, not nagging</h2>
+        <p>Set up chores, decide what each one's worth in carrots, and let kids tap to mark a job done. Balances update instantly — no spreadsheets, no sticky notes.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">👧👦</span>
+        <h2>As many kids as you like</h2>
+        <p>Add every child in the family. Switch between them with a tap and track each one's chores and balance separately.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🧹</span>
+        <h2>Your chores, your rules</h2>
+        <p>You decide what counts as a chore and how many carrots it's worth. Assign different chores to different kids, or the same ones to everyone.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🥕</span>
+        <h2>A carrot means whatever you want</h2>
+        <p>10p, 50p, a pound, screen time, a treat — Pocket Muney just keeps score. You decide what a carrot is worth when Pay Day comes around.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">💰</span>
+        <h2>Pay Day, sorted</h2>
+        <p>When it's time to settle up, tap Pay and the balance resets to zero — with a full record saved in Pay History.</p>
+      </div>
+      <div class="feature soon">
+        <span class="icon">⭐</span>
+        <h2>Coming soon: Star Charts</h2>
+        <p>A classic, visual way to track good behaviour and routines — coming in a future update.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Download</h2>
+      <div class="store-buttons">
+        <a href="https://pocket-muney.base44.app" class="store-btn web" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>
+          <span><small>Try it now on</small><strong>Web</strong></span>
+        </a>
+        <span class="store-btn disabled">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span><small>Coming soon on</small><strong>App Store</strong></span>
+        </span>
+        <span class="store-btn disabled">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
+          <span><small>Coming soon on</small><strong>Google Play</strong></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Links</h2>
+      <div class="links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Pocket Muney was built by a parent, for parents, to turn "have you done your chores?" into something kids actually want to do. Developed by Rain or Shine Apps.</p>
+      <p><a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Rain or Shine Apps. All rights reserved.</div>
+</body>
+</html>

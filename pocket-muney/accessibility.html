@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pocket Muney Accessibility</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --carrot: #F5821F; --cream: #FFF8E7; --dark: #231916; --mid: #8a7a5c; --border: #eee2c4; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--cream); color: var(--dark); }
+    h1, h2 { font-family: 'Fredoka', sans-serif; }
+    .header { background: linear-gradient(135deg, #FFE680, #FBC94C); padding: 32px 24px; text-align: center; }
+    .header h1 { color: var(--dark); font-size: 24px; font-weight: 700; }
+    .header p { color: #4a3f1f; margin-top: 4px; }
+    .container { max-width: 600px; margin: 0 auto; padding: 32px 24px; }
+    .card { background: #ffffff; border-radius: 16px; padding: 24px; margin-bottom: 16px; border: 1px solid var(--border); }
+    h2 { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: var(--dark); margin-top: 20px; }
+    h2:first-child { margin-top: 0; }
+    p { color: var(--mid); line-height: 1.6; margin-bottom: 8px; font-size: 14px; }
+    a { color: var(--carrot); text-decoration: none; font-weight: 500; }
+    .back { display: inline-block; margin-bottom: 24px; color: var(--carrot); font-weight: 500; }
+    .footer { text-align: center; padding: 32px; color: #b4a47e; font-size: 13px; }
+    .instruction { background: #fff8ec; border-radius: 8px; padding: 12px; margin-top: 8px; }
+    .instruction strong { color: var(--dark); font-size: 13px; display: block; margin-bottom: 4px; }
+    .instruction span { color: var(--mid); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Accessibility</h1>
+    <p>Pocket Muney by Rain or Shine Apps</p>
+  </div>
+  <div class="container">
+    <a href="index.html" class="back">← Back to Pocket Muney</a>
+
+    <div class="card">
+      <p>Pocket Muney follows your device's accessibility settings automatically — there's nothing to configure in the app itself.</p>
+    </div>
+
+    <div class="card">
+      <h2>🌗 Light &amp; Dark Mode</h2>
+      <p>Pocket Muney follows your device's system appearance setting.</p>
+      <div class="instruction">
+        <strong>iPhone / iPad</strong>
+        <span>Settings → Display &amp; Brightness → Light / Dark</span>
+      </div>
+      <div class="instruction">
+        <strong>Android</strong>
+        <span>Settings → Display → Dark Theme</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🔤 Text Size</h2>
+      <p>The app automatically respects your device's text size settings.</p>
+      <div class="instruction">
+        <strong>iPhone / iPad</strong>
+        <span>Settings → Display &amp; Brightness → Text Size</span>
+      </div>
+      <div class="instruction">
+        <strong>Android</strong>
+        <span>Settings → Display → Font Size</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>👁 Screen Reader</h2>
+      <p>Pocket Muney supports VoiceOver (iOS) and TalkBack (Android). All buttons and chore tiles include descriptive labels — for example, a chore button announces its name, reward amount, and whether it's already been completed today.</p>
+      <div class="instruction">
+        <strong>iPhone / iPad — VoiceOver</strong>
+        <span>Settings → Accessibility → VoiceOver</span>
+      </div>
+      <div class="instruction">
+        <strong>Android — TalkBack</strong>
+        <span>Settings → Accessibility → TalkBack</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>⚡ Reduce Motion</h2>
+      <p>Pocket Muney checks your device's Reduce Motion setting and minimises animations when it's turned on.</p>
+    </div>
+
+    <div class="card">
+      <h2>✉️ Contact Us</h2>
+      <p>If you experience any accessibility issues, please get in touch and we'll do our best to help.</p>
+      <p><a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer">© 2026 Rain or Shine Apps. All rights reserved.</div>
+</body>
+</html>
