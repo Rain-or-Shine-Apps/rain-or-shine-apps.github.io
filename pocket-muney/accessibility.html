@@ -25,6 +25,8 @@
     .instruction { background: #fff8ec; border-radius: 8px; padding: 12px; margin-top: 8px; }
     .instruction strong { color: var(--dark); font-size: 13px; display: block; margin-bottom: 4px; }
     .instruction span { color: var(--mid); font-size: 13px; }
+    .not-supported { background: #f9f9f9; border-radius: 8px; padding: 12px; margin-top: 8px; border: 1px solid var(--border); }
+    .not-supported span { color: #a09080; font-size: 13px; }
   </style>
 </head>
 <body>
@@ -36,38 +38,12 @@
     <a href="index.html" class="back">← Back to Pocket Muney</a>
 
     <div class="card">
-      <p>Pocket Muney follows your device's accessibility settings automatically — there's nothing to configure in the app itself.</p>
+      <p>We want Pocket Muney to work well for everyone. Here is what the current version supports and what we are still working on.</p>
     </div>
 
     <div class="card">
-      <h2>🌗 Light &amp; Dark Mode</h2>
-      <p>Pocket Muney follows your device's system appearance setting.</p>
-      <div class="instruction">
-        <strong>iPhone / iPad</strong>
-        <span>Settings → Display &amp; Brightness → Light / Dark</span>
-      </div>
-      <div class="instruction">
-        <strong>Android</strong>
-        <span>Settings → Display → Dark Theme</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>🔤 Text Size</h2>
-      <p>The app automatically respects your device's text size settings.</p>
-      <div class="instruction">
-        <strong>iPhone / iPad</strong>
-        <span>Settings → Display &amp; Brightness → Text Size</span>
-      </div>
-      <div class="instruction">
-        <strong>Android</strong>
-        <span>Settings → Display → Font Size</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>👁 Screen Reader</h2>
-      <p>Pocket Muney supports VoiceOver (iOS) and TalkBack (Android). All buttons and chore tiles include descriptive labels — for example, a chore button announces its name, reward amount, and whether it's already been completed today.</p>
+      <h2>👁 Screen Reader (VoiceOver &amp; TalkBack)</h2>
+      <p>Key interactive elements in Pocket Muney — including child tabs, chore buttons, the Pay Day button, payout history, and the manual carrot input — have descriptive accessibility labels. A screen reader will announce the chore name, reward value, and whether it has been completed today.</p>
       <div class="instruction">
         <strong>iPhone / iPad — VoiceOver</strong>
         <span>Settings → Accessibility → VoiceOver</span>
@@ -79,8 +55,36 @@
     </div>
 
     <div class="card">
+      <h2>🔤 Text Size</h2>
+      <p>Text in Pocket Muney will grow and shrink with your device's font size setting. At very large sizes some layouts may not adapt perfectly, but all text will remain readable.</p>
+      <div class="instruction">
+        <strong>iPhone / iPad</strong>
+        <span>Settings → Display &amp; Brightness → Text Size</span>
+      </div>
+      <div class="instruction">
+        <strong>Android</strong>
+        <span>Settings → Display → Font Size</span>
+      </div>
+    </div>
+
+    <div class="card">
       <h2>⚡ Reduce Motion</h2>
-      <p>Pocket Muney checks your device's Reduce Motion setting and minimises animations when it's turned on.</p>
+      <p>Pocket Muney checks your device's Reduce Motion setting. When it is turned on, the Pay Day coin animation is skipped.</p>
+      <div class="instruction">
+        <strong>iPhone / iPad</strong>
+        <span>Settings → Accessibility → Motion → Reduce Motion</span>
+      </div>
+      <div class="instruction">
+        <strong>Android</strong>
+        <span>Settings → Accessibility → Remove Animations</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🌗 Light &amp; Dark Mode</h2>
+      <div class="not-supported">
+        <span>Pocket Muney currently uses a fixed colour scheme and does not follow your device's light or dark mode setting. We plan to add dark mode support in a future update.</span>
+      </div>
     </div>
 
     <div class="card">
