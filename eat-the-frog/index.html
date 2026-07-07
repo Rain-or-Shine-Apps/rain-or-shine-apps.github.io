@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eat The Frog — One task. Full focus.</title>
+  <meta name="description" content="Pick one task each morning and eat your frog before anything else gets your attention. Sync from Google Tasks or Microsoft To Do, or just type it in. Coming soon to iOS and Android.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --orange: #e17925;
+      --green: #91DDB5;
+      --dark-green: #3f5739;
+      --cream: #f4faf6;
+      --dark: #1e293b;
+      --mid: #64748b;
+      --border: #d8f0e0;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Fredoka', -apple-system, sans-serif; }
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .back-bar { background: var(--cream); border-bottom: 1px solid var(--border); padding: 12px 24px; }
+    .back-bar a { color: var(--mid); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .back-bar a:hover { color: var(--orange); }
+
+    .header { background: linear-gradient(135deg, #b9ecd0, var(--green)); padding: 48px 24px 40px; text-align: center; }
+    .header-icon { width: 88px; height: 88px; border-radius: 22px; margin-bottom: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+    .header h1 { color: var(--dark-green); font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -0.5px; }
+    .header-tagline { color: var(--dark-green); max-width: 520px; margin: 12px auto 0; font-size: 16px; }
+
+    .container { max-width: 700px; margin: 0 auto; padding: 40px 24px 24px; }
+
+    .badge { display: inline-block; background: #fdece1; color: var(--orange); padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 20px; }
+
+    .intro { background: #ffffff; border-radius: 16px; padding: 24px; margin-bottom: 20px; border: 1px solid var(--border); font-size: 14px; color: var(--mid); line-height: 1.7; }
+    .intro p + p { margin-top: 10px; }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px; }
+    .feature { background: #ffffff; border-radius: 16px; padding: 20px; border: 1px solid var(--border); }
+    .feature .icon { font-size: 26px; margin-bottom: 8px; display: block; }
+    .feature h2 { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+    .feature p { color: var(--mid); font-size: 13px; line-height: 1.6; }
+
+    .card { background: #ffffff; border-radius: 16px; padding: 24px; margin-bottom: 16px; border: 1px solid var(--border); }
+    .card h2 { font-size: 17px; font-weight: 600; margin-bottom: 12px; color: var(--dark); }
+    .card p { color: var(--mid); margin-bottom: 8px; font-size: 14px; }
+
+    .store-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+    .store-btn { display: inline-flex; align-items: center; gap: 7px; background: #111827; color: #ffffff; text-decoration: none; padding: 9px 16px 9px 12px; border-radius: 10px; line-height: 1.25; }
+    .store-btn:hover { background: #374151; text-decoration: none; }
+    .store-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .store-btn span small { display: block; font-size: 10px; letter-spacing: 0.02em; opacity: 0.8; }
+    .store-btn span strong { display: block; font-size: 14px; font-weight: 700; }
+    .store-btn.disabled { background: #b7ccbf; color: #2f3f36; cursor: default; }
+
+    .links { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .footer { text-align: center; padding: 32px; color: #8fae9c; font-size: 13px; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+  <div class="back-bar">
+    <a href="../index.html">← Rain or Shine Apps</a>
+  </div>
+
+  <div class="header">
+    <img class="header-icon" src="../images/Eat%20The%20Frog%20Logo.png" alt="Eat The Frog icon">
+    <h1>Eat The Frog</h1>
+    <p class="header-tagline">One task. Full focus. Pick your hardest, most important task each morning and eat your frog before anything else gets your attention.</p>
+  </div>
+
+  <div class="container">
+    <span class="badge">iOS &amp; Android — Coming Soon</span>
+
+    <div class="intro">
+      <p>Eat The Frog is built on one of the most battle-tested ideas in personal productivity: do your hardest, most important task first, before anything else. The name comes from a line often attributed to Mark Twain — "if it's your job to eat a frog, it's best to do it first thing in the morning" — and was popularised as a productivity method by Brian Tracy in his book Eat That Frog!</p>
+      <p>Each day you set a single frog — one task that represents the most valuable use of your time. Not a list, not a project board. Get a gentle reminder in the morning, and a real deadline in the evening.</p>
+      <p>Already using Google Tasks or Microsoft To Do? Connect either one and pick your frog straight from your real task list — completing it in one place completes it in the other.</p>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <span class="icon">🐸</span>
+        <h2>One frog a day</h2>
+        <p>No lists, no projects — just the single task that matters most, front and centre every morning.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">⏰</span>
+        <h2>Morning reminders</h2>
+        <p>A gentle nudge at your reminder time, with snooze if you need a little longer.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">⏳</span>
+        <h2>A real evening deadline</h2>
+        <p>If your frog isn't eaten by your cutoff time, it's marked missed and your streak resets — no cheating.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">📅</span>
+        <h2>Today's &amp; Tomorrow's Frog</h2>
+        <p>Line up tomorrow's frog whenever you like — it's always there waiting, not just a once-a-day prompt.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🔥</span>
+        <h2>Streaks</h2>
+        <p>Track your longest run of consecutive eaten frogs, and watch the streak grow.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">📋</span>
+        <h2>Achieved &amp; Missed history</h2>
+        <p>A quiet, collapsible record of every frog you've eaten — and the odd one you haven't.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🔄</span>
+        <h2>Google Tasks &amp; Microsoft To Do sync</h2>
+        <p>Pick your frog straight from your existing task list. Complete it in either app and it's marked done in both.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Download</h2>
+      <p>Coming soon to the App Store and Google Play.</p>
+      <div class="store-buttons">
+        <span class="store-btn disabled">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span><small>Coming soon on</small><strong>App Store</strong></span>
+        </span>
+        <span class="store-btn disabled">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
+          <span><small>Coming soon on</small><strong>Google Play</strong></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Links</h2>
+      <div class="links">
+        <a href="support.html">Support</a>
+        <a href="privacy/">Privacy Policy</a>
+        <a href="terms/">Terms &amp; Conditions</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Eat The Frog was built to make one simple productivity trick effortless to actually stick to. Developed by Rain or Shine Apps.</p>
+      <p><a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Rain or Shine Apps. All rights reserved.</div>
+</body>
+</html>
