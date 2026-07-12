@@ -60,7 +60,10 @@
 
   <h3>Stored on our server (Supabase)</h3>
   <ul>
-    <li><strong>Recovery codes (plaintext)</strong> — your 3 backup codes are stored in our Supabase database, associated only with your device ID. This allows support to retrieve a code if you lose all three. Only the app developer can read this data — there is no user-facing account or login.</li>
+    <li><strong>Recovery codes (plaintext)</strong> — your 3 backup codes are stored in our Supabase database, associated only with your device ID. This allows support to retrieve a code if you lose all three.</li>
+    <li><strong>Trial start date</strong> — associated with your device ID, so a reinstall can't reset your free trial.</li>
+    <li><strong>Heartbeat status</strong> — your device ID, platform, brick status, and last-active time, so we can alert your notification email if a bricked device goes silent or has its admin permissions revoked. Includes your notification email and push token if you provided them.</li>
+    <li><strong>Account</strong> — if you choose email as your second factor, Supabase creates a login-style record for that email address so we can verify one-time codes. There is no password and no separate profile beyond this.</li>
   </ul>
   <p>We use <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a> as our database provider. Supabase's privacy policy applies to data held on their infrastructure.</p>
 
@@ -79,7 +82,7 @@
   <p>Brickify is a parental control tool intended to be set up by a parent or guardian. The app does not knowingly collect personal data from children. The only data stored is configuration chosen by the parent during setup.</p>
 
   <h2>Data retention</h2>
-  <p>On-device data is deleted when the app is uninstalled. Server-side recovery codes can be deleted on request — email us your device ID and we will remove the record.</p>
+  <p>On-device data is deleted when the app is uninstalled. You can delete all server-side data (recovery codes, trial record, heartbeat history, and any email account) yourself at any time from Help → "Delete my account &amp; data" inside the app — this requires your passcode and second factor. You can also email us your device ID and we will remove the record manually.</p>
 
   <h2>Your rights</h2>
   <p>Under UK GDPR you have the right to access, correct, or delete the data we hold. Since we hold almost no identifiable data (only a device ID and recovery codes), most requests can be fulfilled by emailing us your device ID.</p>
@@ -94,6 +97,7 @@
 <div class="footer">
   © 2026 Rain or Shine Apps &nbsp;·&nbsp;
   <a href="index.html">Brickify</a> &nbsp;·&nbsp;
+  <a href="terms.html">Terms &amp; Conditions</a> &nbsp;·&nbsp;
   <a href="support.html">Support &amp; Accessibility</a> &nbsp;·&nbsp;
   <a href="../index.html">All apps</a>
 </div>
