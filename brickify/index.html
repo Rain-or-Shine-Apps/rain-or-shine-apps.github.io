@@ -44,6 +44,9 @@
     .good { background: rgba(34,197,94,0.07); border-color: rgba(34,197,94,0.25); }
     .good h3 { color: #166534; }
     .good p { color: #166534; }
+    .amber { background: rgba(245,158,11,0.09); border-color: rgba(245,158,11,0.3); }
+    .amber h3 { color: #92400e; }
+    .amber p { color: #92400e; }
 
     table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
     th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
@@ -88,16 +91,20 @@
     <div class="card"><span class="card-icon">🚨</span><h3>Emergency access</h3><p>Emergency call button always visible on the bricked screen.</p></div>
   </div>
 
-  <h2>Known limitations &amp; accepted risks</h2>
+  <h2 id="risks">Known limitations &amp; accepted risks</h2>
   <p>Brickify is designed to make bypassing meaningfully hard — not impossible. Here is an honest account of what is and isn't protected against.</p>
 
   <h3 style="margin-top:24px;">Android</h3>
   <div class="warn">
     <h3>Accepted risks</h3>
     <p><strong>Safe mode</strong> — Android's safe mode disables third-party services. Blocks will not be enforced while in safe mode. Parent email is warned.<br/><br/>
-    <strong>ADB over USB</strong> — If USB debugging is enabled, someone with a PC could remove the app or disable services.<br/><br/>
-    <strong>Factory reset</strong> — Removes all restrictions. Android's Factory Reset Protection (FRP) mitigates this. We recommend enabling FRP by adding a Google account and screen lock.<br/><br/>
-    <strong>New apps</strong> — Apps installed after setup are not automatically blocked. You will receive a notification and email when a new app is installed.</p>
+    <strong>ADB over USB</strong> — If USB debugging is enabled, someone with a PC could remove the app or disable services.</p>
+  </div>
+  <div class="warn amber">
+    <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
+    <p><strong>Uninstalling the Play Store</strong> — Device Administrator stops Brickify itself being uninstalled, but not other apps like the Play Store. If it goes missing, treat that as a sign to check in — new installs would need to be sideloaded instead of using the Store.<br/><br/>
+    <strong>New apps</strong> — Apps installed after setup are not automatically blocked. You will receive a notification and email when a new app is installed — add it to the block list if needed.<br/><br/>
+    <strong>Factory reset</strong> — Removes all restrictions. Android's Factory Reset Protection (FRP) mitigates this. We recommend enabling FRP by adding a Google account and screen lock.</p>
   </div>
   <div class="warn good">
     <h3>Hardened against</h3>
@@ -109,9 +116,13 @@
   <h3 style="margin-top:24px;">iOS</h3>
   <div class="warn">
     <h3>Accepted risks</h3>
+    <p><strong>Restoring from iCloud backup</strong> — Restoring a pre-Brickify backup removes the app. See the uninstall section below for what this means in practice.</p>
+  </div>
+  <div class="warn amber">
+    <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
     <p><strong>Parent Apple ID known to child</strong> — Family Controls is tied to the parent's Apple ID. A strong, unique Apple ID password is recommended.<br/><br/>
-    <strong>Restoring from iCloud backup</strong> — Restoring a pre-Brickify backup removes the app. See the uninstall section below for what this means in practice.<br/><br/>
-    <strong>Factory reset</strong> — Removes all restrictions. A Screen Time passcode (set up during Brickify's setup flow) prevents a reset being initiated through Settings.</p>
+    <strong>Factory reset</strong> — Removes all restrictions. A Screen Time passcode (set up during Brickify's setup flow) prevents a reset being initiated through Settings.<br/><br/>
+    <strong>New app installs</strong> — iOS doesn't let any app detect newly installed apps. Block the App Store itself in Brickify (selected by default) to stop new installs at the source.</p>
   </div>
   <div class="warn good">
     <h3>Hardened against</h3>
