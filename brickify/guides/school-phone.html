@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify Guide — Set up your 10-year-old's phone for school</title>
+  <meta name="description" content="Block distracting apps automatically during school hours and leave the phone open the rest of the time — a one-time Brickify setup."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #2C3635; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .eyebrow { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .header h1 { color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 10px; font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
+    li { margin-bottom: 6px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; }
+    .step-body code { background: rgba(182,90,61,0.08); color: var(--brick); padding: 1px 6px; border-radius: 5px; font-size: 13px; font-weight: 600; }
+
+    .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 18px; margin: 18px 0; }
+    .highlight p { margin: 0; color: #83412C; font-size: 14px; }
+    .highlight p + p { margin-top: 8px; }
+
+    .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
+    .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Brickify Guide</div>
+  <h1>Set up your 10-year-old's phone for school</h1>
+  <p>One-time setup: apps get blocked automatically during school hours, and the phone is normal the rest of the day. No daily faffing.</p>
+</div>
+
+<div class="container">
+  <a href="index.html" class="back">← All guides</a>
+
+  <p>The goal here isn't "the phone is locked all the time" — it's "the phone behaves itself during school hours, on its own, without you having to remember to do anything." Brickify does this with two profiles: one for normal life, one for school hours, switching between them automatically.</p>
+
+  <h2>Setup</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <h3>Finish first-time setup if you haven't</h3>
+        <p>Choose a PIN, add a second factor (an authenticator app or email code — this is what stops a determined 10-year-old undoing everything alone), and save your recovery codes somewhere safe.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <h3>Leave your first (default) profile alone</h3>
+        <p>Your first profile is automatically the default — it's what's active whenever nothing else is scheduled. For a school phone, keep this one open: don't block anything on it, or only block the obvious no-gos. This is what the phone looks like evenings, weekends, and holidays.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <h3>Go to Setup → Manage profiles → + Create a new profile</h3>
+        <p>Name it something like <code>School Day</code>.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-body">
+        <h3>Choose what "School Day" blocks</h3>
+        <p>Pick the games, social apps, and anything else you don't want open during lessons. On Android, tap the "Play Store" chip too, so nothing new can be installed during the school window either — it's blocked by default when you create a profile. On iPhone, include the App Store in the picker for the same reason.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">5</div>
+      <div class="step-body">
+        <h3>Set the schedule</h3>
+        <p>Leave "Set profile to default" off. Toggle on the school weekdays (Mon–Fri), turn off "All day," and set a start and end time — e.g. <code>08:30</code> to <code>15:30</code>. Save.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">6</div>
+      <div class="step-body">
+        <h3>Brick the phone once</h3>
+        <p>Go to Home and tap <code>BRICK</code> once. This is the only manual step — it arms the schedule. From here on, "School Day" switches in automatically at 08:30 and switches back to normal at 15:30, every weekday, without you touching the phone.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>How this actually works:</strong> Brickify doesn't need a schedule on your "normal" profile — it's just defined as "whatever's active when nothing else is scheduled." Only the School Day profile needs a time window. Outside school hours, Brickify automatically falls back to normal.</p>
+    <p>If you ever unbrick manually — say, an early pickup — that's treated as temporary. Brickify picks the schedule back up on its own at the next real boundary (the next 08:30 or 15:30), not the next time you remember to press the button.</p>
+  </div>
+
+  <h2>Worth doing too</h2>
+  <ul>
+    <li><strong>Screen Time / Device Admin</strong> — in Setup, confirm the Screen Time Guide (iPhone) or Device Admin (Android) card is done. This stops the app itself being deleted to escape the schedule.</li>
+    <li><strong>Parent email</strong> — add yours in Setup so you're notified if a new app gets installed on Android (iOS can't detect this at all, which is exactly why blocking the App Store during school hours matters).</li>
+    <li><strong>Recovery codes</strong> — keep them somewhere you'll actually find again. They're the way back in if you ever forget your PIN and lose your second factor.</li>
+  </ul>
+
+  <div class="next">
+    <a href="weekend-app.html">→ Add a new app and allow it only on weekends</a>
+    <a href="revision-mode.html">→ Set up a revision-friendly phone</a>
+  </div>
+</div>
+
+<div class="footer">
+  © 2026 Rain or Shine Apps &nbsp;·&nbsp;
+  <a href="index.html">All guides</a> &nbsp;·&nbsp;
+  <a href="../index.html">Brickify</a> &nbsp;·&nbsp;
+  <a href="../support.html">Support</a>
+</div>
+
+</body>
+</html>
