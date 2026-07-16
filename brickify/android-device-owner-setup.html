@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify — Android setup guide (Device Owner)</title>
+  <meta name="description" content="Step-by-step guide to setting up Brickify's full Android protection, which requires a one-time factory reset and QR-code provisioning."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #2C3635; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; --red: #b91c1c; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .eyebrow { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .header h1 { color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 10px; font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
+    li { margin-bottom: 6px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; }
+    .step-body code { background: rgba(182,90,61,0.08); color: var(--brick); padding: 1px 6px; border-radius: 5px; font-size: 13px; font-weight: 600; }
+
+    .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 18px; margin: 18px 0; }
+    .highlight p { margin: 0; color: #83412C; font-size: 14px; }
+    .highlight p + p { margin-top: 8px; }
+
+    .warning { background: rgba(239,68,68,0.08); border-left: 3px solid var(--red); border-radius: 0 10px 10px 0; padding: 18px 20px; margin: 24px 0; }
+    .warning h3 { color: var(--red); font-size: 15px; margin: 0 0 6px; }
+    .warning p { color: var(--red); margin: 0; font-size: 14px; }
+    .warning p + p { margin-top: 8px; }
+
+    .qr-placeholder {
+      width: 240px; height: 240px; margin: 16px auto; border: 2px dashed #d8cec3; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;
+      color: var(--mid); font-size: 13px; background: var(--card);
+    }
+
+    .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
+    .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Brickify Guide</div>
+  <h1>Android setup — Device Owner mode</h1>
+  <p>Brickify's real Android protection needs one extra, one-time step: a factory reset and a short guided setup. This page walks through it.</p>
+</div>
+
+<div class="container">
+  <a href="index.html#risks" class="back">← Back to Brickify</a>
+
+  <p>Android's "Device Admin" permission — the quick, no-reset option — can always be switched off by anyone with
+  physical access to the phone, via Settings, with no password needed. That's too easy to defeat for what Brickify
+  is for, so the supported setup goes one step further: Brickify installed as this phone's <strong>Device
+  Owner</strong>, which has no such Settings escape hatch at all. It takes a bit more effort once, in exchange for
+  protection that actually holds.</p>
+
+  <div class="warning">
+    <h3>⚠️ Before you start: is this phone managed by an employer or school?</h3>
+    <p>Device Owner mode and existing organisation management (a "Work profile," or IT department control) are
+    mutually exclusive on Android — this setup will not work on a managed device, and attempting it on a
+    fully-managed corporate phone will fail outright.</p>
+    <p>Check Settings for a "Work profile" section, or ask your IT department. If this phone is managed, use a
+    personal, unmanaged device instead.</p>
+  </div>
+
+  <h2>Setup</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <h3>Confirm you've bought Brickify</h3>
+        <p>If you tapped "Buy Brickify" from inside the app already, you're set — note which Google account you
+        used, you'll need to sign into that same one later. If you haven't bought it yet, open Brickify on the
+        phone first and follow the prompt there before continuing.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <h3>Open this page on a second device</h3>
+        <p>You're about to erase this phone, so you won't have its screen available once the reset starts. Read
+        through to the end here, on your own phone or a laptop, before you begin.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <h3>Factory reset the phone</h3>
+        <p>Settings → System → Reset options → Erase all data (factory reset) — exact wording varies by phone
+        manufacturer. This erases everything currently on it.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-body">
+        <h3>Reveal the QR scanner</h3>
+        <p>On the blank "Welcome" screen that appears after the reset, tap the same spot on the screen
+        <strong>6 times in a row</strong>. A QR code scanner opens.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">5</div>
+      <div class="step-body">
+        <h3>Scan this code</h3>
+        <div class="qr-placeholder">QR code goes here once published</div>
+        <p>The phone needs internet access to download Brickify — connect to Wifi if prompted. It installs and
+        sets itself up as Device Owner automatically, with no further taps needed.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">6</div>
+      <div class="step-body">
+        <h3>Finish setup, then Restore Purchases</h3>
+        <p>Brickify opens on its own once provisioning finishes. Sign into the <strong>same Google account</strong>
+        you used to buy Brickify, then go through setup as normal (PIN, second factor, profiles, schedule). At the
+        final "Ready to take control of your phone?" screen, tap <strong>Restore previous purchase</strong> instead
+        of paying again.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>Why the purchase carries over:</strong> your payment is tied to your Google account through Play
+    Billing, not to the specific copy of the app installed on this exact phone. Restoring finds that same purchase
+    and unlocks Brickify again — no second charge.</p>
+  </div>
+
+  <h2>Troubleshooting</h2>
+  <ul>
+    <li><strong>Restore Purchases doesn't find anything</strong> — double check you're signed into the same Google
+    account used to buy Brickify. Still stuck? Email <a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a>
+    with your device ID (shown in Setup) and we'll sort it out.</li>
+    <li><strong>QR scanner won't open</strong> — you need a genuinely blank, freshly-reset phone; it only appears on
+    the very first "Welcome" screen, before any account is added.</li>
+    <li><strong>Scan succeeds but nothing installs</strong> — the phone needs internet access to download Brickify.
+    Connect to Wifi during the setup wizard if you weren't prompted automatically.</li>
+    <li><strong>Settings shows a "Work profile" and this didn't work</strong> — see the warning above; Device Owner
+    mode can't coexist with organisation-managed device settings.</li>
+  </ul>
+
+  <div class="next">
+    <a href="index.html#risks">→ See what Device Owner mode is and isn't hardened against</a>
+    <a href="support.html">→ Support &amp; contact</a>
+  </div>
+</div>
+
+<div class="footer">
+  © 2026 Rain or Shine Apps &nbsp;·&nbsp;
+  <a href="index.html">Brickify</a> &nbsp;·&nbsp;
+  <a href="support.html">Support</a> &nbsp;·&nbsp;
+  <a href="../index.html">All apps</a>
+</div>
+
+</body>
+</html>
