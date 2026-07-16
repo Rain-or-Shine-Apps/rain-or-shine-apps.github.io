@@ -47,6 +47,9 @@
     .amber { background: rgba(245,158,11,0.09); border-color: rgba(245,158,11,0.3); }
     .amber h3 { color: #92400e; }
     .amber p { color: #92400e; }
+    .red { background: rgba(239,68,68,0.09); border-color: rgba(239,68,68,0.35); }
+    .red h3 { color: #b91c1c; }
+    .red p { color: #b91c1c; }
 
     table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
     th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
@@ -97,6 +100,10 @@
   <p>Brickify is designed to make bypassing meaningfully hard — not impossible. Here is an honest account of what is and isn't protected against.</p>
 
   <h3 style="margin-top:24px;">Android</h3>
+  <div class="warn red">
+    <h3>Red risk <span style="font-weight:400;">(cannot be prevented — only detected)</span></h3>
+    <p><strong>Device Admin can be turned off in Settings</strong> — Android always allows a Device Administrator to be deactivated by anyone with physical access to the phone, via Settings → Security → Device Admin apps. No app, including Brickify, can prevent or block that screen — it's a deliberate Android platform behavior, not a bug we can patch. Once deactivated, Brickify can then be uninstalled like any other app, removing all blocks. We can't stop this, but we do detect it: an email alert fires the moment Device Admin is deactivated, typically landing within about an hour.</p>
+  </div>
   <div class="warn">
     <h3>Accepted risks</h3>
     <p><strong>Safe mode</strong> — Android's safe mode disables third-party services. Blocks will not be enforced while in safe mode. Parent email is warned.<br/><br/>
@@ -104,15 +111,14 @@
   </div>
   <div class="warn amber">
     <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
-    <p><strong>Uninstalling the Play Store</strong> — Device Administrator stops Brickify itself being uninstalled, but not other apps like the Play Store. If it goes missing, treat that as a sign to check in — new installs would need to be sideloaded instead of using the Store.<br/><br/>
+    <p><strong>Uninstalling the Play Store</strong> — Device Administrator adds a barrier against Brickify itself being uninstalled, but not other apps like the Play Store. If it goes missing, treat that as a sign to check in — new installs would need to be sideloaded instead of using the Store.<br/><br/>
     <strong>New apps</strong> — Apps installed after setup are not automatically blocked. You will receive a notification and email when a new app is installed — add it to the block list if needed.<br/><br/>
     <strong>Factory reset</strong> — Removes all restrictions. Android's Factory Reset Protection (FRP) mitigates this. We recommend enabling FRP by adding a Google account and screen lock.<br/><br/>
     <strong>Web browsing isn't filtered</strong> — Brickify blocks the individual apps you choose, not websites or web content. Chrome, Firefox, Edge, and other browsers each need to be blocked separately — one browser left off the list is a way around the rest.</p>
   </div>
   <div class="warn good">
     <h3>Hardened against</h3>
-    <p><strong>Uninstalling the app</strong> — Brickify registers as a Device Administrator, graying out the uninstall button.<br/><br/>
-    <strong>Force stopping</strong> — Device Administrator registration also prevents force stop.<br/><br/>
+    <p><strong>Casual uninstall or force-stop</strong> — Brickify registers as a Device Administrator, adding a real barrier — the uninstall and force-stop buttons are grayed out until Device Admin is deactivated first (see the red risk above for what that step involves).<br/><br/>
     <strong>Revoking the Accessibility permission</strong> — A background watchdog runs every 15 minutes. If the service is disabled while bricked, the screen is locked immediately.</p>
   </div>
 
@@ -137,7 +143,7 @@
   <table>
     <thead><tr><th>Platform</th><th>Blocked apps after deletion</th><th>Can the child use blocked apps?</th></tr></thead>
     <tbody>
-      <tr><td>Android</td><td>Blocks are lifted — the Accessibility Service is gone.</td><td>Yes, if they can uninstall (Device Admin prevents this by default).</td></tr>
+      <tr><td>Android</td><td>Blocks are lifted — the Accessibility Service is gone.</td><td>Yes, if they can uninstall (Device Admin adds a barrier by default, but it can be turned off in Settings — see the red risk above).</td></tr>
       <tr><td>iOS</td><td>Blocks <strong>remain in place</strong>. iOS enforces Family Controls at the OS level, independently of the app.</td><td>No. Deleting Brickify also removes the ability to unbrick, making it worse for the child. The only escape is a factory reset.</td></tr>
     </tbody>
   </table>
