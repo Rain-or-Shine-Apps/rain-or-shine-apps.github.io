@@ -137,7 +137,7 @@
   <table>
     <thead><tr><th>Platform</th><th>Blocked apps after deletion</th><th>Can the child use blocked apps?</th></tr></thead>
     <tbody>
-      <tr><td>Android</td><td>Blocks are lifted — the Accessibility Service is gone.</td><td>Yes, if they can uninstall (Device Admin adds a barrier by default, but it can be turned off in Settings — see the red risk above).</td></tr>
+      <tr><td>Android</td><td>Blocks are lifted — the Accessibility Service is gone.</td><td>No — Device Owner mode has no Settings toggle. Only a factory reset or Brickify's own in-app deactivation can uninstall it.</td></tr>
       <tr><td>iOS</td><td>Blocks <strong>remain in place</strong>. iOS enforces Family Controls at the OS level, independently of the app.</td><td>No. Deleting Brickify also removes the ability to unbrick, making it worse for the child. The only escape is a factory reset.</td></tr>
     </tbody>
   </table>
