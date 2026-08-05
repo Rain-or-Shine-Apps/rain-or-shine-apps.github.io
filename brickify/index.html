@@ -76,70 +76,18 @@
   <a href="../index.html" class="back">← Rain or Shine Apps</a>
 
   <h2>How it works</h2>
-  <div class="steps">
-    <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Choose a passcode</h3><p>Set a 4-digit PIN you'll remember but won't enter on impulse.</p></div></div>
-    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Set a second factor</h3><p>Parent PIN, authenticator app, or email code. Both factors are required to unbrick — losing one doesn't lock you out forever.</p></div></div>
-    <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Save your recovery codes</h3><p>Three one-time backup codes are generated. Write them down. If you ever lose your PIN and second factor, one of these codes will get you back in.</p></div></div>
-    <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Select apps to block</h3><p>Pick exactly which apps are disabled when bricked. Everything else stays accessible.</p></div></div>
-    <div class="step"><div class="step-n">5</div><div class="step-body"><h3>Tap BRICK</h3><p>Your chosen apps are blocked at the OS level. To unblock them, you need both your PIN and your second factor.</p></div></div>
-  </div>
+  <p>Five quick steps, covered in full on the <a href="how-it-works.html">How it works</a> page — plus a one-time device-level setup on each platform (<a href="android-device-owner-setup.html">Android</a> / <a href="ios-device-setup.html">iOS</a>) so it can't just be switched off.</p>
+  <p id="risks">Looking for known limitations &amp; accepted risks? That's moved to its own page: <a href="risks.html">see what Brickify is and isn't hardened against →</a></p>
 
-  <h2>Features</h2>
+  <h2>Benefits</h2>
   <div class="cards">
-    <div class="card"><span class="card-icon">🔐</span><h3>Two-factor unbrick</h3><p>PIN plus a second factor. Both required.</p></div>
-    <div class="card"><span class="card-icon">🔑</span><h3>Recovery codes</h3><p>Three one-time backup codes generated at setup.</p></div>
-    <div class="card"><span class="card-icon">🔔</span><h3>New app alerts</h3><p>Email notification when a new app is installed.</p></div>
-    <div class="card"><span class="card-icon">🚨</span><h3>Emergency access</h3><p>Emergency call button always visible on the bricked screen.</p></div>
+    <div class="card"><span class="card-icon">🧱</span><h3>Grows with your child</h3><p>Starts as a simple calls-and-texts phone at 8, unlocking more as they earn your trust through their teens.</p></div>
+    <div class="card"><span class="card-icon">🌿</span><h3>A real digital detox</h3><p>Not just for kids — use it on yourself for a genuine break from the apps you can't put down.</p></div>
+    <div class="card"><span class="card-icon">🗓️</span><h3>Schedules that run themselves</h3><p>Click into "School," "Bedtime," or any mode automatically, once it's set up.</p></div>
+    <div class="card"><span class="card-icon">💰</span><h3>Cheaper than a brick phone</h3><p>Use the smartphone already gathering dust — no separate device or contract, and it lasts longer.</p></div>
+    <div class="card"><span class="card-icon">🔐</span><h3>Hardened against savvy kids</h3><p>Real OS-level blocking, not just a closed app they can find a way round.</p></div>
+    <div class="card"><span class="card-icon">🔑</span><h3>You hold the keys</h3><p>A parent PIN backed by a second factor — recovery codes mean you're never locked out for good.</p></div>
   </div>
-
-  <h2 id="risks">Known limitations &amp; accepted risks</h2>
-  <p>Brickify is designed to make bypassing meaningfully hard — not impossible. Here is an honest account of what is and isn't protected against.</p>
-
-  <h3 style="margin-top:24px;">Android</h3>
-  <p>Brickify's Android setup requires <a href="android-device-owner-setup.html">Device Owner mode</a> — a one-time factory reset and guided QR setup — rather than the lighter Device Admin permission alone, which can always be switched off via Settings by anyone with physical access, with no password needed. That gap is exactly why the extra setup step exists.</p>
-  <div class="warn">
-    <h3>Accepted risks</h3>
-    <p><strong>Safe mode</strong> — Android's safe mode disables third-party services. Blocks will not be enforced while in safe mode. Parent email is warned.<br/><br/>
-    <strong>ADB over USB</strong> — If USB debugging is enabled, someone with a PC could remove the app or disable services.</p>
-  </div>
-  <div class="warn amber">
-    <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
-    <p><strong>Uninstalling the Play Store</strong> — Device Owner mode adds a barrier against Brickify itself being uninstalled, but not other apps like the Play Store. If it goes missing, treat that as a sign to check in — new installs would need to be sideloaded instead of using the Store.<br/><br/>
-    <strong>New apps</strong> — Apps installed after setup are not automatically blocked. You will receive a notification and email when a new app is installed — add it to the block list if needed.<br/><br/>
-    <strong>Factory reset</strong> — Still removes all restrictions, same as before Device Owner setup — a reset wipes the phone regardless of what's installed on it. Android's Factory Reset Protection (FRP) mitigates this; we recommend enabling FRP by adding a Google account and screen lock.<br/><br/>
-    <strong>Web browsing isn't filtered</strong> — Brickify blocks the individual apps you choose, not websites or web content. Chrome, Firefox, Edge, and other browsers each need to be blocked separately — one browser left off the list is a way around the rest.</p>
-  </div>
-  <div class="warn good">
-    <h3>Hardened against</h3>
-    <p><strong>Uninstalling or force-stopping Brickify</strong> — installed as this phone's Device Owner, which has no Settings toggle at all. The only ways off it are a full factory reset, or Brickify's own in-app deactivation (PIN+second-factor gated, for legitimately retiring the app from a device). See the <a href="android-device-owner-setup.html">setup guide</a> for what Device Owner mode involves.<br/><br/>
-    <strong>Revoking the Accessibility permission</strong> — A background watchdog runs every 15 minutes. If the service is disabled while bricked, the screen is locked immediately.</p>
-  </div>
-
-  <h3 style="margin-top:24px;">iOS</h3>
-  <div class="warn">
-    <h3>Accepted risks</h3>
-    <p><strong>Restoring from iCloud backup</strong> — Restoring a pre-Brickify backup removes the app. See the uninstall section below for what this means in practice.</p>
-  </div>
-  <div class="warn amber">
-    <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
-    <p><strong>Parent Apple ID known to child</strong> — Family Controls is tied to the parent's Apple ID. A strong, unique Apple ID password is recommended.<br/><br/>
-    <strong>Factory reset</strong> — Removes all restrictions. A Screen Time passcode (set up during Brickify's setup flow) prevents a reset being initiated through Settings.<br/><br/>
-    <strong>New app installs</strong> — iOS doesn't let any app detect newly installed apps. Block the App Store itself in Brickify (selected by default) to stop new installs at the source.<br/><br/>
-    <strong>Web browsing isn't filtered</strong> — Brickify blocks the individual apps you choose, not websites or web content. Blocking Safari doesn't block Chrome, Firefox, or any other installed browser — each needs to be blocked separately, and in-app browsers inside other unblocked apps aren't affected at all.</p>
-  </div>
-  <div class="warn good">
-    <h3>Hardened against</h3>
-    <p><strong>Deleting the app</strong> — The setup guide walks you through enabling a Screen Time passcode with app deletion blocked.</p>
-  </div>
-
-  <h2>What happens if Brickify is deleted?</h2>
-  <table>
-    <thead><tr><th>Platform</th><th>Blocked apps after deletion</th><th>Can the child use blocked apps?</th></tr></thead>
-    <tbody>
-      <tr><td>Android</td><td>Blocks are lifted — the Accessibility Service is gone.</td><td>No — Device Owner mode has no Settings toggle. Only a factory reset or Brickify's own in-app deactivation can uninstall it.</td></tr>
-      <tr><td>iOS</td><td>Blocks <strong>remain in place</strong>. iOS enforces Family Controls at the OS level, independently of the app.</td><td>No. Deleting Brickify also removes the ability to unbrick, making it worse for the child. The only escape is a factory reset.</td></tr>
-    </tbody>
-  </table>
 
   <div class="warn" style="margin-top:32px;">
     <h3>Locked out?</h3>

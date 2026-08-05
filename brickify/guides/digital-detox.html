@@ -45,6 +45,12 @@
     .card h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: var(--dark); }
     .card p { font-size: 13px; margin: 0; }
 
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e8e0db; color: var(--mid); vertical-align: top; }
+    td:first-child { color: var(--dark); font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+
     .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
     .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
 
@@ -119,6 +125,16 @@
     <li><strong>Recovery codes</strong> — write them down and store them somewhere your future, tempted self won't think to look, but you'll find in a genuine emergency.</li>
     <li><strong>Be honest about scope</strong> — block what you actually struggle with. A profile that blocks everything tends to get abandoned within a week; one that blocks the two apps that matter tends to stick.</li>
   </ul>
+
+  <h2>Your profile at a glance</h2>
+  <p>Pick one approach — you don't need both.</p>
+  <table>
+    <thead><tr><th>Profile</th><th>Default?</th><th>Blocks</th><th>Schedule</th></tr></thead>
+    <tbody>
+      <tr><td>Default (always blocked)</td><td>Yes</td><td>The 2–3 apps you actually struggle with</td><td>Always active — no schedule needed</td></tr>
+      <tr><td>Overnight (scheduled instead)</td><td>No</td><td>Same apps, on a dedicated second profile</td><td>e.g. 00:00–07:00, every night</td></tr>
+    </tbody>
+  </table>
 
   <div class="next">
     <a href="revision-mode.html">→ Set up a revision-friendly phone</a>

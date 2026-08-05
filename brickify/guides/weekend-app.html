@@ -43,6 +43,12 @@
     .warn { background: rgba(245,158,11,0.09); border: 1px solid rgba(245,158,11,0.3); border-radius: 12px; padding: 16px 18px; margin: 18px 0; }
     .warn p { margin: 0; color: #92400e; font-size: 14px; }
 
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e8e0db; color: var(--mid); vertical-align: top; }
+    td:first-child { color: var(--dark); font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+
     .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
     .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
 
@@ -112,6 +118,15 @@
   <div class="warn">
     <p><strong>On Android, you'll get an email</strong> when a new app is installed, if you've added your address in Setup. iOS can't detect new installs at all — that's exactly why blocking the App Store is worth doing on any profile you want to hold firm.</p>
   </div>
+
+  <h2>Your profiles at a glance</h2>
+  <table>
+    <thead><tr><th>Profile</th><th>Default?</th><th>Blocks</th><th>Schedule</th></tr></thead>
+    <tbody>
+      <tr><td>Your everyday profile</td><td>Yes</td><td>The new app, plus whatever you already had blocked</td><td>Always active — no schedule needed</td></tr>
+      <tr><td>Weekend</td><td>No</td><td>Same as your everyday profile, minus the new app you're freeing up</td><td>Saturday &amp; Sunday, all day</td></tr>
+    </tbody>
+  </table>
 
   <div class="next">
     <a href="school-phone.html">→ Set up your 10-year-old's phone for school</a>

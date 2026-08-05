@@ -40,6 +40,12 @@
     .highlight p { margin: 0; color: #83412C; font-size: 14px; }
     .highlight p + p { margin-top: 8px; }
 
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e8e0db; color: var(--mid); vertical-align: top; }
+    td:first-child { color: var(--dark); font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+
     .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
     .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
 
@@ -79,10 +85,17 @@
     <div class="step">
       <div class="step-n">2</div>
       <div class="step-body">
-        <h3>Leave your first (default) profile alone</h3>
-        <p>Your first profile is automatically the default — it's what's active whenever nothing else is scheduled. For a school phone, keep this one open: don't block anything on it, or only block the obvious no-gos. This is what the phone looks like evenings, weekends, and holidays.</p>
+        <h3>Set up your default profile as the safe baseline</h3>
+        <p>Your first profile is automatically the default — it's what's active whenever nothing else is scheduled, so it's what the phone looks like evenings, weekends, and holidays. For a 10-year-old's first phone, we'd suggest this one isn't wide open either: block the Play Store/App Store (blocked by default when you create a profile), block the high-risk categories below, and only leave in apps you've actually vetted yourself — a few examples: Pokémon GO, ScratchJr, Times Tables Rock Stars. What counts as fine is your call, not a fixed list.</p>
       </div>
     </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>Apps worth blocking on a 10-year-old's default profile:</strong> Discord, WhatsApp (unless it's family-monitored), Snapchat, other social media (TikTok, Instagram, Twitter/X), OnlyFans, Roblox, secure/disappearing picture-sharing apps, encrypted messaging (Telegram, Signal, and similar), web browsers, random/anonymous chat apps (Kik and similar), VPN apps (these can bypass blocking entirely), and any "vault" or app-locker apps (used to hide content from parents). Not an exhaustive list — use your own judgement for your own child.</p>
+  </div>
+
+  <div class="steps">
     <div class="step">
       <div class="step-n">3</div>
       <div class="step-body">
@@ -124,6 +137,15 @@
     <li><strong>Parent email</strong> — add yours in Setup so you're notified if a new app gets installed on Android (iOS can't detect this at all, which is exactly why blocking the App Store during school hours matters).</li>
     <li><strong>Recovery codes</strong> — keep them somewhere you'll actually find again. They're the way back in if you ever forget your PIN and lose your second factor.</li>
   </ul>
+
+  <h2>Your profiles at a glance</h2>
+  <table>
+    <thead><tr><th>Profile</th><th>Default?</th><th>Blocks</th><th>Schedule</th></tr></thead>
+    <tbody>
+      <tr><td>Safe Apps (your first profile)</td><td>Yes</td><td>Play Store/App Store, plus the high-risk categories above — only vetted apps left in</td><td>Always active — no schedule needed</td></tr>
+      <tr><td>School Day</td><td>No</td><td>Everything the default profile blocks, plus games and any other apps not needed for school</td><td>Weekdays, e.g. 08:30–15:30</td></tr>
+    </tbody>
+  </table>
 
   <div class="next">
     <a href="weekend-app.html">→ Add a new app and allow it only on weekends</a>

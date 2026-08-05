@@ -28,6 +28,7 @@
     li { margin-bottom: 6px; }
     .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 20px 0; }
     .highlight p { margin: 0; color: #83412C; font-size: 14px; }
+    .highlight p + p { margin-top: 8px; }
     .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
     .footer a { color: var(--brick); }
   </style>
@@ -47,7 +48,7 @@
 </div>
 
 <div class="container">
-  <a href="index.html" class="back">← Back to Brickify</a>
+  <a href="information.html" class="back">← Back to Information</a>
   <p class="updated">Last updated: May 2026</p>
 
   <div class="highlight">
@@ -93,8 +94,14 @@
   <h2>Children's privacy</h2>
   <p>Brickify is a parental control tool intended to be set up by a parent or guardian. The app does not knowingly collect personal data from children. The only data stored is configuration chosen by the parent during setup.</p>
 
+  <h2>Request account &amp; data deletion</h2>
+  <div class="highlight">
+    <p><strong>In the app:</strong> Setup → "Delete my account &amp; data" — requires your passcode and second factor, and removes all server-side data (recovery codes, trial record, heartbeat history, and any email account) immediately.</p>
+    <p><strong>Without the app installed:</strong> email <a href="mailto:brickify@rainorshineapps.com">brickify@rainorshineapps.com</a> with your device ID (shown on the recovery screen, or in any alert email you've received) and we'll remove your data manually.</p>
+  </div>
+
   <h2>Data retention</h2>
-  <p>On-device data is deleted when the app is uninstalled. You can delete all server-side data (recovery codes, trial record, heartbeat history, and any email account) yourself at any time from Help → "Delete my account &amp; data" inside the app — this requires your passcode and second factor. You can also email us your device ID and we will remove the record manually.</p>
+  <p>On-device data is deleted when the app is uninstalled. Server-side data is only ever deleted via one of the two methods above — we don't automatically expire it while an account is active.</p>
 
   <h2>Your rights</h2>
   <p>Under UK GDPR you have the right to access, correct, or delete the data we hold. Since we hold almost no identifiable data (only a device ID and recovery codes), most requests can be fulfilled by emailing us your device ID.</p>
