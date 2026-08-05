@@ -13,8 +13,15 @@
     a:hover { text-decoration: underline; }
 
     .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
     .header h1 { color: #fff; font-size: 28px; font-weight: 800; }
     .header p { color: rgba(255,255,255,0.55); margin-top: 8px; font-size: 15px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+    .header-links a.active { color: #fff; }
+    .section-label { font-size: 12px; font-weight: 700; color: var(--mid); text-transform: uppercase; letter-spacing: 0.6px; margin: 32px 0 12px; }
+    .section-label:first-child { margin-top: 0; }
 
     .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
     .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
@@ -38,13 +45,37 @@
 <body>
 
 <div class="header">
+  <img src="../images/logo.png" alt="Brickify" class="logo">
   <h1>Brickify Guides</h1>
   <p>Real setups for real situations — each one walks through the exact screens, start to finish.</p>
+  <div class="header-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">Guides</a>
+    <a href="../information.html">Information</a>
+    <a href="../help.html">Help</a>
+  </div>
 </div>
 
 <div class="container">
   <a href="../index.html" class="back">← Back to Brickify</a>
 
+  <div class="section-label">Device setup</div>
+  <div class="guide-grid">
+    <a href="../android-device-owner-setup.html" class="guide-card">
+      <span class="guide-icon">🤖</span>
+      <h2>Android setup — Device Owner mode</h2>
+      <p>The one-time factory reset and QR-code setup that gives Brickify real, un-bypassable protection on Android.</p>
+      <span class="guide-arrow">Read the guide →</span>
+    </a>
+    <a href="../ios-device-setup.html" class="guide-card">
+      <span class="guide-icon">🍎</span>
+      <h2>iOS setup — Family Controls</h2>
+      <p>No factory reset needed — set up Apple's Family Controls and a Screen Time passcode entirely within the app.</p>
+      <span class="guide-arrow">Read the guide →</span>
+    </a>
+  </div>
+
+  <div class="section-label">Suggested profiles</div>
   <div class="guide-grid">
     <a href="school-phone.html" class="guide-card">
       <span class="guide-icon">🎒</span>
@@ -76,8 +107,8 @@
 <div class="footer">
   © 2026 Rain or Shine Apps &nbsp;·&nbsp;
   <a href="../index.html">Brickify</a> &nbsp;·&nbsp;
-  <a href="../compatibility.html">Which phones work?</a> &nbsp;·&nbsp;
-  <a href="../support.html">Support</a> &nbsp;·&nbsp;
+  <a href="../information.html">Information</a> &nbsp;·&nbsp;
+  <a href="../help.html">Help</a> &nbsp;·&nbsp;
   <a href="../../index.html">All apps</a>
 </div>
 

@@ -12,7 +12,7 @@
     a:hover { text-decoration: underline; }
 
     .header { background: var(--dark); padding: 48px 24px 40px; text-align: center; }
-    .header .emoji { font-size: 64px; display: block; margin-bottom: 16px; }
+    .header .logo { width: 84px; height: 84px; display: block; margin: 0 auto 16px; }
     .header h1 { color: #fff; font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
     .header p { color: rgba(255,255,255,0.6); font-size: 17px; max-width: 500px; margin: 0 auto 24px; }
     .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
@@ -61,15 +61,14 @@
 <body>
 
 <div class="header">
-  <span class="logo"src="images/brickify%20logo.png"> </span>
+  <img src="images/logo.png" alt="Brickify" class="logo">
   <h1>Brickify</h1>
   <p>Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — making it a good first phone or digital detox.</p>
   <div class="header-links">
+    <a href="index.html">Home</a>
     <a href="guides/index.html">Guides</a>
-    <a href="compatibility.html">Which phones work?</a>
-    <a href="support.html">Support</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="../index.html">Rain or Shine Apps</a>
+    <a href="information.html">Information</a>
+    <a href="help.html">Help</a>
   </div>
 </div>
 
@@ -142,20 +141,17 @@
     </tbody>
   </table>
 
-  <h2>Getting back in if you are locked out</h2>
-  <div class="steps">
-    <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Use a recovery code</h3><p>Tap "Locked out?" on the bricked screen and enter one of your 3 backup codes.</p></div></div>
-    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Contact support</h3><p>Email <a href="mailto:brickify@rainorshineapps.com">brickify@rainorshineapps.com</a> with your device ID (shown on the recovery screen). We can retrieve a code as a last resort.</p></div></div>
-    <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Factory reset</h3><p>Last resort — erases everything on the device.</p></div></div>
+  <div class="warn" style="margin-top:32px;">
+    <h3>Locked out?</h3>
+    <p>Recovery codes, contacting support, and factory reset as a last resort — see <a href="help.html">Help</a> for the full walkthrough.</p>
   </div>
 </div>
 
 <div class="footer">
   © 2026 Rain or Shine Apps &nbsp;·&nbsp;
-  <a href="compatibility.html">Which phones work?</a> &nbsp;·&nbsp;
-  <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-  <a href="terms.html">Terms &amp; Conditions</a> &nbsp;·&nbsp;
-  <a href="support.html">Support &amp; Accessibility</a> &nbsp;·&nbsp;
+  <a href="guides/index.html">Guides</a> &nbsp;·&nbsp;
+  <a href="information.html">Information</a> &nbsp;·&nbsp;
+  <a href="help.html">Help</a> &nbsp;·&nbsp;
   <a href="../index.html">All apps</a>
 </div>
 

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify — iOS setup guide</title>
+  <meta name="description" content="Step-by-step guide to setting up Brickify's full iOS protection using Apple's Family Controls and a Screen Time passcode."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #2C3635; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; --red: #b91c1c; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header .eyebrow { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .header h1 { color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 10px; font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
+    li { margin-bottom: 6px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; }
+
+    .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 18px; margin: 18px 0; }
+    .highlight p { margin: 0; color: #83412C; font-size: 14px; }
+    .highlight p + p { margin-top: 8px; }
+
+    .warning { background: rgba(239,68,68,0.08); border-left: 3px solid var(--red); border-radius: 0 10px 10px 0; padding: 18px 20px; margin: 24px 0; }
+    .warning h3 { color: var(--red); font-size: 15px; margin: 0 0 6px; }
+    .warning p { color: var(--red); margin: 0; font-size: 14px; }
+
+    .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
+    .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <img src="images/logo.png" alt="Brickify" class="logo">
+  <div class="eyebrow">Brickify Guide</div>
+  <h1>iOS setup</h1>
+  <p>No factory reset needed on iPhone — Brickify's protection comes from Apple's own Family Controls framework, set up entirely within the app.</p>
+  <div class="header-links">
+    <a href="index.html">Home</a>
+    <a href="guides/index.html">Guides</a>
+    <a href="information.html">Information</a>
+    <a href="help.html">Help</a>
+  </div>
+</div>
+
+<div class="container">
+  <a href="guides/index.html" class="back">← Back to Guides</a>
+
+  <h2>Setup</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <h3>Install and buy Brickify</h3>
+        <p>Download Brickify from the App Store on the phone that's about to become your child's. Tap "Buy Brickify" and complete the one-time purchase.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <h3>Go through Brickify's own setup</h3>
+        <p>A 4-digit passcode, a second factor, recovery codes, and your first profile (which apps to block). This is the same setup Android goes through, without any of the device-level steps Android needs first.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <h3>Grant Family Controls permission</h3>
+        <p>Brickify will prompt for this during setup — it's what lets Brickify actually block apps at the system level, independently of the app itself.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-body">
+        <h3>Set a Screen Time passcode</h3>
+        <p>The last onboarding step walks you to Settings → Screen Time. Turn on "Use Screen Time Passcode" (a 4-digit code the child doesn't know — you can reuse the same digits as your Brickify passcode, one PIN to remember instead of two), then enable Content &amp; Privacy Restrictions and set "Deleting Apps" to <strong>Don't Allow</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>Why the Screen Time passcode matters:</strong> without it, a child can delete Brickify from the phone. The app's blocks stay in place either way (iOS enforces Family Controls independently of whether Brickify is still installed) — but you lose the ability to unbrick or run any schedule until it's reinstalled. Blocking app deletion in Screen Time stops that scenario before it starts.</p>
+  </div>
+
+  <div class="warning">
+    <h3>⚠️ The parent's Apple ID matters</h3>
+    <p>Family Controls is tied to whichever Apple ID set it up. If your child knows your Apple ID password, they can remove the restriction directly via Settings → Screen Time on their own, bypassing Brickify entirely. Use a strong, unique password your child doesn't know.</p>
+  </div>
+
+  <h2>What if Brickify gets deleted anyway?</h2>
+  <p>Blocks stay in place — iOS enforces Family Controls restrictions at the OS level, independently of the app. But deleting Brickify also removes your ability to unbrick, which is worse for the child, not better. The only way out at that point is a factory reset.</p>
+
+  <div class="next">
+    <a href="index.html#risks">→ Full details on iOS risks &amp; what's hardened against</a>
+    <a href="help.html">→ Support &amp; accessibility</a>
+  </div>
+</div>
+
+<div class="footer">
+  © 2026 Rain or Shine Apps &nbsp;·&nbsp;
+  <a href="index.html">Brickify</a> &nbsp;·&nbsp;
+  <a href="help.html">Support</a> &nbsp;·&nbsp;
+  <a href="../index.html">All apps</a>
+</div>
+
+</body>
+</html>
