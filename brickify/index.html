@@ -11,16 +11,11 @@
     a { color: var(--brick); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .header { background: var(--dark); padding: 48px 24px 40px; text-align: center; }
-    .header .logo { width: 84px; height: 84px; display: block; margin: 0 auto 16px; }
-    .header h1 { color: #fff; font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
-    .header p { color: rgba(255,255,255,0.6); font-size: 17px; max-width: 500px; margin: 0 auto 24px; }
-    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
-    .header-links a:hover { color: #fff; text-decoration: none; }
+    .top-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 20px; }
+    .top-nav a { color: var(--brick); font-size: 14px; font-weight: 700; }
 
     .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
-    .back { display: inline-block; margin-bottom: 32px; color: var(--mid); font-size: 14px; font-weight: 600; }
+    .back { display: inline-block; margin-bottom: 12px; color: var(--mid); font-size: 14px; font-weight: 600; }
 
     h2 { font-size: 22px; font-weight: 800; color: var(--dark); margin: 40px 0 14px; letter-spacing: -0.3px; }
     h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin: 18px 0 6px; }
@@ -34,9 +29,28 @@
     .step-body h3 { margin: 0 0 4px; }
     .step-body p { margin: 0; font-size: 14px; }
 
+    .tagline { font-size: 17px; color: var(--dark); max-width: 520px; margin: 28px 0 6px; }
+
+    .store-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 8px; }
+    .store-btn {
+      display: flex; align-items: center; gap: 10px; background: var(--dark); color: #fff;
+      border-radius: 12px; padding: 10px 18px; opacity: 0.6; cursor: default; pointer-events: none;
+    }
+    .store-btn:hover { text-decoration: none; }
+    .store-btn .store-icon { font-size: 20px; line-height: 1; }
+    .store-btn .store-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .store-btn .store-text small { font-size: 10px; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.4px; }
+    .store-btn .store-text span { font-size: 14px; font-weight: 700; }
+
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
     .card { background: var(--card); border-radius: 14px; padding: 20px; border: 1px solid #e8e0db; }
     .card-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+    .card.coming-soon { background: transparent; border: 1.5px dashed var(--mid); }
+    .card.coming-soon h3 { display: flex; align-items: center; gap: 8px; }
+    .coming-soon-badge {
+      display: inline-block; background: var(--dark); color: #fff; font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.4px; padding: 3px 8px; border-radius: 999px;
+    }
 
     .warn { background: rgba(182,90,61,0.07); border: 1px solid rgba(182,90,61,0.22); border-radius: 12px; padding: 18px; margin-bottom: 14px; }
     .warn h3 { color: #83412C; margin: 0 0 6px; }
@@ -56,42 +70,81 @@
 
     .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
     .footer a { color: var(--brick); }
+
+    .scroll-banner { position: relative; height: 240px; overflow: hidden; background: #2C3635; }
+    .scroll-track { display: flex; width: max-content; height: 100%; animation: scroll-strip 28s linear infinite; }
+    .scroll-img { height: 100%; width: auto; display: block; }
+    @keyframes scroll-strip {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-track { animation: none; }
+    }
+
+    .brand-square {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 240px; height: 100%;
+      background: var(--dark); z-index: 2;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 16px; text-align: center;
+      box-shadow: 6px 0 28px rgba(0,0,0,0.3);
+    }
+    .brand-square:hover { text-decoration: none; }
+    .brand-square .logo { width: 72px; height: 72px; margin-bottom: 12px; }
+    .brand-square h1 { color: #fff; font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin: 0; }
+
+    @media (max-width: 560px) {
+      .scroll-banner { height: 150px; }
+      .brand-square { width: 150px; padding: 10px; }
+      .brand-square .logo { width: 44px; height: 44px; margin-bottom: 8px; }
+      .brand-square h1 { font-size: 17px; }
+      .top-nav { gap: 6px 14px; }
+      .top-nav a { font-size: 13px; }
+    }
   </style>
 </head>
 <body>
 
-<div class="header">
-  <img src="images/logo.png" alt="Brickify" class="logo">
-  <h1>Brickify</h1>
-  <p>Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — making it a good first phone or digital detox.</p>
-  <div class="header-links">
-    <a href="index.html">Home</a>
-    <a href="guides/index.html">Guides</a>
-    <a href="information.html">Information</a>
-    <a href="help.html">Help</a>
+<div class="scroll-banner">
+  <div class="scroll-track" aria-hidden="true">
+    <img src="images/mode-scroll-strip.png" alt="" class="scroll-img">
+    <img src="images/mode-scroll-strip.png" alt="" class="scroll-img">
   </div>
+  <a href="index.html" class="brand-square">
+    <img src="images/logo.png" alt="Brickify" class="logo">
+    <h1>Brickify</h1>
+  </a>
 </div>
 
 <div class="container">
   <a href="../index.html" class="back">← Rain or Shine Apps</a>
+  <div class="top-nav">
+    <a href="guides/index.html">Guides</a>
+    <a href="information.html">Information</a>
+    <a href="help.html">Help</a>
+  </div>
 
-  <h2>How it works</h2>
-  <p>Five quick steps, covered in full on the <a href="how-it-works.html">How it works</a> page — plus a one-time device-level setup on each platform (<a href="android-device-owner-setup.html">Android</a> / <a href="ios-device-setup.html">iOS</a>) so it can't just be switched off.</p>
-  <p id="risks">Looking for known limitations &amp; accepted risks? That's moved to its own page: <a href="risks.html">see what Brickify is and isn't hardened against →</a></p>
+  <p class="tagline">Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — making it a good first phone or digital detox.</p>
 
-  <h2>Benefits</h2>
-  <div class="cards">
-    <div class="card"><span class="card-icon">🧱</span><h3>Grows with your child</h3><p>Starts as a simple calls-and-texts phone at 8, unlocking more as they earn your trust through their teens.</p></div>
+  <div class="store-buttons">
+    <span class="store-btn">
+      <span class="store-icon"></span>
+      <span class="store-text"><small>Coming soon on the</small><span>App Store</span></span>
+    </span>
+    <span class="store-btn">
+      <span class="store-icon">▶</span>
+      <span class="store-text"><small>Coming soon on</small><span>Google Play</span></span>
+    </span>
+  </div>
+
+  <div class="cards" style="margin-top:28px;">
+    <div class="card"><span class="card-icon">🧱</span><h3>Grows with your child</h3><p>Change what's unlocked any time as they grow up — no need to buy a new device at every stage.</p></div>
     <div class="card"><span class="card-icon">🌿</span><h3>A real digital detox</h3><p>Not just for kids — use it on yourself for a genuine break from the apps you can't put down.</p></div>
     <div class="card"><span class="card-icon">🗓️</span><h3>Schedules that run themselves</h3><p>Click into "School," "Bedtime," or any mode automatically, once it's set up.</p></div>
     <div class="card"><span class="card-icon">💰</span><h3>Cheaper than a brick phone</h3><p>Use the smartphone already gathering dust — no separate device or contract, and it lasts longer.</p></div>
     <div class="card"><span class="card-icon">🔐</span><h3>Hardened against savvy kids</h3><p>Real OS-level blocking, not just a closed app they can find a way round.</p></div>
     <div class="card"><span class="card-icon">🔑</span><h3>You hold the keys</h3><p>A parent PIN backed by a second factor — recovery codes mean you're never locked out for good.</p></div>
-  </div>
-
-  <div class="warn" style="margin-top:32px;">
-    <h3>Locked out?</h3>
-    <p>Recovery codes, contacting support, and factory reset as a last resort — see <a href="help.html">Help</a> for the full walkthrough.</p>
+    <div class="card coming-soon"><span class="card-icon">🏫</span><h3>Brickify for Schools <span class="coming-soon-badge">Coming soon</span></h3><p>Your school administrator can check your phone is compliant before it goes on site.</p></div>
   </div>
 </div>
 
@@ -99,8 +152,7 @@
   © 2026 Rain or Shine Apps &nbsp;·&nbsp;
   <a href="guides/index.html">Guides</a> &nbsp;·&nbsp;
   <a href="information.html">Information</a> &nbsp;·&nbsp;
-  <a href="help.html">Help</a> &nbsp;·&nbsp;
-  <a href="../index.html">All apps</a>
+  <a href="help.html">Help</a>
 </div>
 
 </body>
