@@ -7,7 +7,7 @@
   <meta name="description" content="Step-by-step guide to setting up Brickify's full Android protection, which requires a one-time factory reset and QR-code provisioning."/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --brick: #B65A3D; --dark: #2C3635; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; --red: #b91c1c; }
+    :root { --brick: #B65A3D; --dark: #2C3635; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
     a { color: var(--brick); text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -40,9 +40,9 @@
     .highlight p { margin: 0; color: #83412C; font-size: 14px; }
     .highlight p + p { margin-top: 8px; }
 
-    .warning { background: rgba(239,68,68,0.08); border-left: 3px solid var(--red); border-radius: 0 10px 10px 0; padding: 18px 20px; margin: 24px 0; }
-    .warning h3 { color: var(--red); font-size: 15px; margin: 0 0 6px; }
-    .warning p { color: var(--red); margin: 0; font-size: 14px; }
+    .warning { background: rgba(34,197,94,0.08); border-left: 3px solid #16a34a; border-radius: 0 10px 10px 0; padding: 18px 20px; margin: 24px 0; }
+    .warning h3 { color: #166534; font-size: 15px; margin: 0 0 6px; }
+    .warning p { color: #166534; margin: 0; font-size: 14px; }
     .warning p + p { margin-top: 8px; }
 
     .qr-placeholder {
@@ -69,7 +69,7 @@
   <img src="images/logo.png" alt="Brickify" class="logo">
   <div class="eyebrow">Brickify Guide</div>
   <h1>Android setup — Device Owner mode</h1>
-  <p>Brickify's real Android protection needs one extra, one-time step: a factory reset and a short guided setup. This page walks through it.</p>
+  <p>Brickify on Android is set up as the Device Owner mode in order to work. It is a factory reset and short guided set up. This page walks you through it.</p>
   <div class="header-links">
     <a href="index.html">Home</a>
     <a href="guides/index.html">Guides</a>
@@ -81,16 +81,10 @@
 <div class="container">
   <a href="guides/index.html" class="back">← Back to Guides</a>
 
-  <p>On Android phones Brickify has to be set up as the device owner so that it cannot be uninstalled. Here are the
-  steps to set this up.</p>
-
   <div class="warning">
-    <h3>⚠️ Before you start: is this phone managed by an employer or school?</h3>
-    <p>Device Owner mode and existing organisation management (a "Work profile," or IT department control) are
-    mutually exclusive on Android — this setup will not work on a managed device, and attempting it on a
-    fully-managed corporate phone will fail outright.</p>
-    <p>Check Settings for a "Work profile" section, or ask your IT department. If this phone is managed, use a
-    personal, unmanaged device instead.</p>
+    <h3>👀 Before you start</h3>
+    <p>Device Owner mode cannot work with an existing organisation management profile. If your device has a work
+    profile, use a personal unmanaged device for Brickify instead.</p>
   </div>
 
   <h2>Setup</h2>
@@ -108,8 +102,9 @@
       <div class="step-n">2</div>
       <div class="step-body">
         <h3>Open this page on a second device</h3>
-        <p>You're about to erase this phone, so you won't have its screen available once the reset starts. Read
-        through to the end here, on your own phone or a laptop, before you begin.</p>
+        <p>You're about to erase this phone, so you won't have its screen available once the reset starts. Open
+        this page on a second device so you can follow the instructions. Consider reading through to the end on
+        here now.</p>
       </div>
     </div>
     <div class="step">
@@ -125,7 +120,7 @@
       <div class="step-body">
         <h3>Stop at the "Welcome" screen</h3>
         <p>After the reset finishes, the phone boots to a blank "Welcome" (sometimes "Hello") screen —
-        <strong>don't tap Continue.</strong> Instead, tap the same spot on that screen <strong>6 times in a
+        <strong>don't tap Continue.</strong> Instead tap on the screen at the same spot <strong>6 times in a
         row</strong>. A QR code scanner opens.</p>
       </div>
     </div>
@@ -166,15 +161,15 @@
   <p>Once the device-level steps above are done, Brickify walks you through its own setup — in this order, using
   the same names you'll see on screen:</p>
   <div class="steps">
-    <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Device PIN</h3><p>A lock screen PIN for the phone itself — the one your child will know, to unlock and use the phone day to day. Required; QR setup skips Android's own lock-screen step.</p></div></div>
-    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Install apps</h3><p>The phone's nearly empty after the wipe — install whatever you actually want your child to have from the Play Store before choosing what's allowed or blocked.</p></div></div>
-    <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Google account</h3><p>Add your Google account at the system level — the same one you bought Brickify with, so Restore Purchases can find it. If Android offers to find an account automatically using your SIM, skip that and type the email in manually instead — the auto-suggested account may not be the one you bought Brickify with.</p></div></div>
-    <div class="step"><div class="step-n">4</div><div class="step-body"><h3>PIN</h3><p>Brickify's own passcode — separate from the device PIN above, and this one's for you, not your child.</p></div></div>
-    <div class="step"><div class="step-n">5</div><div class="step-body"><h3>2nd factor</h3><p>Parent PIN, authenticator app, or email code — backs up your passcode so losing one doesn't lock you out for good.</p></div></div>
-    <div class="step"><div class="step-n">6</div><div class="step-body"><h3>Recovery codes</h3><p>Three one-time backup codes. Write them down — they won't be shown again.</p></div></div>
-    <div class="step"><div class="step-n">7</div><div class="step-body"><h3>Profile</h3><p>Name it and choose which apps it blocks.</p></div></div>
-    <div class="step"><div class="step-n">8</div><div class="step-body"><h3>Notify email</h3><p>Where Brickify emails you if something needs attention — the device goes silent, its protection gets removed, or (despite blocking) a new app appears.</p></div></div>
-    <div class="step"><div class="step-n">9</div><div class="step-body"><h3>Permissions</h3><p>Enable the Accessibility Service — this is what actually blocks apps. Device Admin is already active automatically.</p></div></div>
+    <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Device PIN</h3><p>A lock screen PIN for the phone itself — the one your child will know, to unlock and use the phone day to day.</p></div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Install their apps</h3><p>The phone's nearly empty after the wipe — install whatever you actually want your child to have from the Play Store before choosing what's allowed or blocked.</p></div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Add your Google Account</h3><p>Add your Google account at the system level — the same one you bought Brickify with, so Restore Purchases can find it. If Android offers to find an account automatically using your SIM, skip that and type the email in manually instead — the auto-suggested account may not be the one you bought Brickify with.</p></div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Choose your 4 digit passcode and confirm your passcode</h3><p>Brickify's own passcode — separate from the device PIN above, and this one's for you, not your child.</p></div></div>
+    <div class="step"><div class="step-n">5</div><div class="step-body"><h3>Choose your second factor</h3><p>Parent PIN, authenticator app, or email code — a second layer of security needed before unbricking manually or changing your Brickify settings.</p></div></div>
+    <div class="step"><div class="step-n">6</div><div class="step-body"><h3>Save your recovery codes</h3><p>Three one-time backup codes. Write them down — they won't be shown again.</p></div></div>
+    <div class="step"><div class="step-n">7</div><div class="step-body"><h3>Set up your profile</h3><p>Name it and choose which apps it blocks.</p></div></div>
+    <div class="step"><div class="step-n">8</div><div class="step-body"><h3>Parent Alerts</h3><p>Where Brickify emails you if something needs attention — the device goes silent, its protection gets removed, or (despite blocking) a new app appears.</p></div></div>
+    <div class="step"><div class="step-n">9</div><div class="step-body"><h3>Android Permissions</h3><p>Enable the Accessibility Service — this is what actually blocks apps. Device Admin is already active automatically.</p></div></div>
     <div class="step"><div class="step-n">10</div><div class="step-body"><h3>Unlock Brickify</h3><p>Pay, or tap <strong>Restore previous purchase</strong> if you already bought it — open the Play Store app once first if it doesn't find the purchase right away, to let it register the account. Your payment is tied to your Google account through Play Billing, not to the specific copy of the app installed on this exact phone, so restoring finds that same purchase and unlocks Brickify again — no second charge.</p></div></div>
   </div>
 
