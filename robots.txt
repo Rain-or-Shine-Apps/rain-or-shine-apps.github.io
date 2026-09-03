@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /brickify/dismiss-alert.html
+
+Sitemap: https://rainorshineapps.com/sitemap.xml
