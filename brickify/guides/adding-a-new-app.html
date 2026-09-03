@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brickify Guide — Add a new app and allow it only on weekends</title>
-  <meta name="description" content="A new game got installed — block it Monday to Friday and free it up on weekends, without touching anything else."/>
+  <title>Brickify Guide — Adding a new app to your child's phone</title>
+  <meta name="description" content="A new app just got installed — how to unbrick, install it, decide which profiles should block it, and re-brick."/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --brick: #B65A3D; --dark: #2C3635; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
@@ -26,28 +26,20 @@
 
     h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
     p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
-    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
-    li { margin-bottom: 6px; }
 
     .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
     .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
     .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
     .step-body p { margin: 0; font-size: 14px; }
+    .step-body p + p { margin-top: 8px; }
     .step-body code { background: rgba(182,90,61,0.08); color: var(--brick); padding: 1px 6px; border-radius: 5px; font-size: 13px; font-weight: 600; }
 
     .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 18px; margin: 18px 0; }
     .highlight p { margin: 0; color: #83412C; font-size: 14px; }
-    .highlight p + p { margin-top: 8px; }
 
     .warn { background: rgba(245,158,11,0.09); border: 1px solid rgba(245,158,11,0.3); border-radius: 12px; padding: 16px 18px; margin: 18px 0; }
     .warn p { margin: 0; color: #92400e; font-size: 14px; }
-
-    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
-    th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
-    td { padding: 10px 14px; border-bottom: 1px solid #e8e0db; color: var(--mid); vertical-align: top; }
-    td:first-child { color: var(--dark); font-weight: 600; }
-    tr:last-child td { border-bottom: none; }
 
     .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
     .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
@@ -61,8 +53,8 @@
 <div class="header">
   <img src="../images/logo.png" alt="Brickify" class="logo">
   <div class="eyebrow">Brickify Guide</div>
-  <h1>Add a new app and allow it only on weekends</h1>
-  <p>A new game just got installed. Here's how to keep it off during the week and free it up Saturday and Sunday — without changing anything else you've already set up.</p>
+  <h1>Adding a new app to your child's phone</h1>
+  <p>A new app needs installing on a phone that's already set up with Brickify. Here's the full loop — unbrick, install, decide where it's blocked, re-brick.</p>
   <div class="header-links">
     <a href="../index.html">Home</a>
     <a href="index.html">Guides</a>
@@ -74,66 +66,52 @@
 <div class="container">
   <a href="index.html" class="back">← All guides</a>
 
-  <p>This uses the same two-profile idea as a school-hours setup, just inverted: your everyday (default) profile blocks the new app, and a "Weekend" profile — active only Saturday and Sunday — doesn't.</p>
+  <p>This is the general version of the loop — for a specific worked example (block a new app on weekdays, free it up on weekends), see <a href="weekend-app.html">Add a new app and allow it only on weekends</a> once you've finished here.</p>
 
-  <p>Haven't installed the app yet, or want the fuller unbrick → install → re-brick loop first? See <a href="adding-a-new-app.html">Adding a new app to your child's phone</a>.</p>
-
-  <h2>If you've only got one profile so far</h2>
   <div class="steps">
     <div class="step">
       <div class="step-n">1</div>
       <div class="step-body">
-        <h3>Block the new app on your existing profile</h3>
-        <p>Go to Setup → Manage profiles → tap your profile → find the new app under "Apps to block" and turn it on. Save. It's now blocked every day, all the time.</p>
+        <h3>Unbrick the device</h3>
+        <p>Open Brickify and tap <code>Unbrick</code> (or <code>Stop Brickify →</code> if nothing's actively blocking right now), then enter the PIN and second factor if one's set up. This is needed because the App Store or Play Store is commonly one of the apps a profile blocks.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">2</div>
       <div class="step-body">
-        <h3>Create a second profile called <code>Weekend</code></h3>
-        <p>Setup → Manage profiles → + Create a new profile. Pick which apps this one blocks — leave the new app <em>unticked</em> here, since this profile is what "free time" looks like. You can block other things on it too if you want (e.g. still no social media), just not the app you're freeing up.</p>
+        <h3>Install the app</h3>
+        <p>Play Store (Android) or App Store (iOS) — search for it and install as normal.</p>
+        <p><strong>Android:</strong> the app needs to actually be installed before it shows up in Brickify's block-list picker. <strong>iOS:</strong> Family Controls' picker works from Apple's whole catalog rather than what's installed on the phone, so it can technically be pre-blocked before installing — but installing first keeps the steps the same on both platforms.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">3</div>
       <div class="step-body">
-        <h3>Set its schedule</h3>
-        <p>Leave "Set profile to default" off. Toggle on Saturday and Sunday only, turn on "All day." Save.</p>
+        <h3>Decide which profiles should block it</h3>
+        <p>Setup → Profiles. Block lists are set per-profile, not globally — open each profile where you want this app blocked and turn it on there; leave it off in any profile where it should be allowed (e.g. a Weekend profile).</p>
+        <p><strong>Android:</strong> find it in the searchable app list and toggle it on. <strong>iOS:</strong> tap <code>Choose apps to block →</code> (or <code>Change apps to block →</code>) and reselect via Apple's picker, including the new app alongside whatever's already chosen.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">4</div>
       <div class="step-body">
-        <h3>Done</h3>
-        <p>If the phone's already bricked, that's it — Weekend switches in automatically every Saturday morning and switches back to your everyday profile Monday morning. If it isn't bricked yet, tap <code>Start Brickify</code> on Home once to arm it.</p>
+        <h3>Re-brick</h3>
+        <p>Tap <code>Start Brickify</code> on the Home tab if it isn't already running — one tap, no PIN needed.</p>
       </div>
     </div>
   </div>
 
-  <h2>If you already have a scheduled profile (e.g. School Day)</h2>
-  <p>You don't need a third profile. Just add the new app to whichever profile represents "the rest of the time" — your default profile — and leave it off your School Day profile's block list if you're happy for it to be available outside school hours too. If you specifically want it weekends-only rather than "anytime outside school," follow the steps above to add a dedicated Weekend profile alongside School Day — Brickify supports more than one scheduled profile at once.</p>
-
   <div class="highlight">
-    <p><strong>Why this works:</strong> a profile's schedule only decides <em>when</em> it's active — the app list is entirely separate. The new app being blocked or not is purely down to whether it's ticked on the profile that's active at that moment. Nothing else you've configured changes.</p>
+    <p><strong>Remember:</strong> there's no single master block list. A new app has to be added separately to every profile you want it blocked on — a "School Day" profile and a "Weeknight" profile each need their own toggle flipped.</p>
   </div>
 
   <div class="warn">
-    <p><strong>On Android, you'll get an email</strong> when a new app is installed, if you've added your address in Setup. iOS can't detect new installs at all — that's exactly why blocking the App Store is worth doing on any profile you want to hold firm.</p>
+    <p><strong>On Android</strong>, you'll also get a notification and an email (if you've added your address in Setup) whenever a new app is installed — a useful safety net, but it doesn't add the app to any block list for you; step 3 above is still needed. <strong>iOS can't detect new installs at all</strong>, which is exactly why blocking the App Store itself is worth keeping on any profile you want to hold firm.</p>
   </div>
 
-  <h2>Your profiles at a glance</h2>
-  <table>
-    <thead><tr><th>Profile</th><th>Default?</th><th>Blocks</th><th>Schedule</th></tr></thead>
-    <tbody>
-      <tr><td>Your everyday profile</td><td>Yes</td><td>The new app, plus whatever you already had blocked</td><td>Always active — no schedule needed</td></tr>
-      <tr><td>Weekend</td><td>No</td><td>Same as your everyday profile, minus the new app you're freeing up</td><td>Saturday &amp; Sunday, all day</td></tr>
-    </tbody>
-  </table>
-
   <div class="next">
-    <a href="adding-a-new-app.html">→ Adding a new app to your child's phone</a>
+    <a href="weekend-app.html">→ Add a new app and allow it only on weekends</a>
     <a href="school-phone.html">→ Set up your 10-year-old's phone for school</a>
-    <a href="digital-detox.html">→ Set up your own phone for a digital detox</a>
   </div>
 </div>
 
