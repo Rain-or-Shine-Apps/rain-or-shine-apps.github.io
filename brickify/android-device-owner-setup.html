@@ -30,6 +30,12 @@
     .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
     .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
     .header-links a:hover { color: #fff; text-decoration: none; }
+    .lang-switch-wrap { margin-top: 14px; }
+    .lang-switch {
+      background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 8px; padding: 6px 10px; font-size: 13px; font-family: inherit; cursor: pointer;
+    }
+    .lang-switch option { color: #000; }
 
     .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
     .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
@@ -85,6 +91,20 @@
     <a href="guides/index.html">Guides</a>
     <a href="information.html">Information</a>
     <a href="help.html">Help</a>
+  </div>
+  <div class="lang-switch-wrap">
+    <select class="lang-switch" onchange="if (this.value) location.href = this.value;" aria-label="Choose language">
+      <option value="android-device-owner-setup.html" selected>English</option>
+      <option value="android-device-owner-setup-es.html">Español</option>
+      <option value="android-device-owner-setup-fr.html">Français</option>
+      <option value="android-device-owner-setup-de.html">Deutsch</option>
+      <option value="android-device-owner-setup-it.html">Italiano</option>
+      <option value="android-device-owner-setup-pt-BR.html">Português (Brasil)</option>
+      <option value="android-device-owner-setup-pt-PT.html">Português (Portugal)</option>
+      <option value="android-device-owner-setup-zh-Hant.html">繁體中文</option>
+      <option value="android-device-owner-setup-ar.html">العربية</option>
+      <option value="android-device-owner-setup-ja.html">日本語</option>
+    </select>
   </div>
 </div>
 
