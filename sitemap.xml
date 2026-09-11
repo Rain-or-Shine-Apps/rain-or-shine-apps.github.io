@@ -59,6 +59,15 @@
   </url>
 
   <url>
+    <loc>https://rainorshineapps.com/brickify/blog/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rainorshineapps.com/brickify/blog/five-things-in-online-safety.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://rainorshineapps.com/brickify/guides/index.html</loc>
     <priority>0.8</priority>
   </url>
