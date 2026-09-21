@@ -110,7 +110,8 @@
   </div>
   <div class="warn amber">
     <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
-    <p><strong>Parent Apple ID known to child</strong> — Family Controls is tied to the parent's Apple ID. A strong, unique Apple ID password is recommended — if your child knows it, they can remove the restriction directly via Settings → Screen Time, bypassing Brickify entirely.<br/><br/>
+    <p><strong>Child knows your Screen Time passcode, Brickify PIN, or has access to your two-factor codes</strong> — Brickify's device hardening depends on these staying private. Don't share them with your child, or the protections below can be bypassed directly.<br/><br/>
+    <strong>Child disables Brickify's Screen Time access</strong> — Settings → Screen Time → Apps with Screen Time Access can turn off Brickify's permission entirely. This is a low risk in practice since the toggle is buried several menus deep, but it's a known gap in Apple's own API (only partially fixed, opt-in, from iOS 26.4) — no passcode is required to use it. Brickify emails you within the hour if this happens while a block is supposed to be active.<br/><br/>
     <strong>Factory reset</strong> — Removes all restrictions. A Screen Time passcode (set up during Brickify's setup flow) prevents a reset being initiated through Settings.<br/><br/>
     <strong>New app installs</strong> — iOS doesn't let any app detect newly installed apps. Block the App Store itself in Brickify (selected by default) to stop new installs at the source.<br/><br/>
     <strong>Web browsing isn't filtered</strong> — Brickify blocks the individual apps you choose, not websites or web content. Blocking Safari doesn't block Chrome, Firefox, or any other installed browser — each needs to be blocked separately, and in-app browsers inside other unblocked apps aren't affected at all.</p>
