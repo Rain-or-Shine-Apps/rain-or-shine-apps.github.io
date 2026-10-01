@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pocket Muney Terms &amp; Conditions</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root { --carrot: #F5821F; --cream: #FFF8E7; --dark: #231916; --mid: #8a7a5c; --border: #eee2c4; }
@@ -24,8 +22,30 @@
     .date { color: #b4a47e; font-size: 13px; margin-bottom: 20px; }
     .footer { text-align: center; padding: 32px; color: #b4a47e; font-size: 13px; }
   </style>
+  <link rel="icon" href="/images/icons/pocket-muney.webp"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #F5821F; --brand-dark: #c4620f; --brand-tint: #FFF3D6; --bg: #fffdf7; --ink: #4a3f2c; --muted: #7a6c52; --line: #eee2c4; }
+    
+  </style>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
 </head>
 <body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="/images/icons/pocket-muney.webp" alt="" width="38" height="38">Pocket Muney</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="support.html">Support</a>
+      <a href="/index.html">More apps</a>
+    </nav>
+    <a href="index.html#download" class="btn btn-sm">Coming soon</a>
+  </div>
+</header>
   <div class="header">
     <h1>Terms &amp; Conditions</h1>
     <p>Pocket Muney by Rain or Shine Apps</p>
@@ -56,6 +76,28 @@
       <p>Questions? Contact us at <a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a></p>
     </div>
   </div>
-  <div class="footer">© 2026 Rain or Shine Apps. All rights reserved.</div>
+  <footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Pocket Muney</h4>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="/index.html">All our apps</a>
+        <a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a>
+      </div>
+      <div>
+        <h4>Privacy</h4>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+    </div>
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>

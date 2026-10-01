@@ -18,8 +18,30 @@
     .back { display: inline-block; margin-bottom: 24px; color: #4f46e5; font-weight: 500; }
     .footer { text-align: center; padding: 32px; color: #94a3b8; font-size: 13px; }
   </style>
+  <link rel="icon" href="/images/icons/decidr.webp"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #4f46e5; --brand-dark: #3730a3; --brand-tint: #eef0ff; --bg: #ffffff; --ink: #1e1b4b; --muted: #5b6178; --line: #e4e7f2; }
+    
+  </style>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
 </head>
 <body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="/images/icons/decidr.webp" alt="" width="38" height="38">Decidr</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="support.html">Support</a>
+      <a href="/index.html">More apps</a>
+    </nav>
+    <a href="index.html#download" class="btn btn-sm">Get the app</a>
+  </div>
+</header>
   <div class="header">
     <h1>Decidr Support</h1>
     <p>We're here to help</p>
@@ -48,6 +70,27 @@
       <p style="margin-top:8px;"><a href="terms.html">Terms & Conditions</a></p>
     </div>
   </div>
-  <div class="footer">© 2026 Rain or Shine Apps. All rights reserved.</div>
+  <footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Decidr</h4>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="/index.html">All our apps</a>
+        <a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a>
+      </div>
+      <div>
+        <h4>Privacy</h4>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+    </div>
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>
