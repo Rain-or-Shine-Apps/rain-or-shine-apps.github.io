@@ -15,11 +15,11 @@
   <meta property="og:title" content="Rain or Shine Apps"/>
   <meta property="og:description" content="Simple, focused apps from an independent UK developer: Brickify, Creative Juices, Decidr, Street Canvas, and more."/>
   <meta property="og:url" content="https://rainorshineapps.com/"/>
-  <meta property="og:image" content="https://rainorshineapps.com/images/banner.png"/>
+  <meta property="og:image" content="https://rainorshineapps.com/images/social-share.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Rain or Shine Apps"/>
   <meta name="twitter:description" content="Simple, focused apps from an independent UK developer."/>
-  <meta name="twitter:image" content="https://rainorshineapps.com/images/banner.png"/>
+  <meta name="twitter:image" content="https://rainorshineapps.com/images/social-share.jpg"/>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,389 +38,164 @@
     ]
   }
   </script>
+  <link rel="icon" href="images/logo.png"/>
+  <link rel="apple-touch-icon" href="images/logo-512.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #ffffff; color: #1e293b; }
-
-    .hero { position: relative; height: 100vh; height: 100dvh; width: 100%; overflow: hidden; }
-    .banner { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: -50vh auto 0;
-      padding: 48px 24px;
-      background: #ffffff;
-      border-radius: 28px 28px 0 0;
-      box-shadow: 0 -16px 40px rgba(0,0,0,0.05);
-    }
-    .apps { display: flex; flex-direction: column; gap: 24px; }
-
-    .app-card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 28px;
-      border: 1px solid #e2e8f0;
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .app-icon {
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
-      flex-shrink: 0;
-      object-fit: cover;
-      background-color: transparent;
-    }
-
-    .app-info { flex: 1; }
-    .app-name { font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
-    .app-tagline { font-size: 14px; color: #64748b; margin-bottom: 12px; line-height: 1.6; }
-    .app-links { display: flex; gap: 12px; flex-wrap: wrap; }
-    .app-links a { font-size: 13px; font-weight: 500; text-decoration: none; }
-    .app-links a:hover { text-decoration: underline; }
-
-    .badge {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .store-buttons { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
-    .store-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: #111827;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 7px 14px 7px 10px;
-      border-radius: 9px;
-      line-height: 1.25;
-    }
-    .store-btn:hover { background: #374151; text-decoration: none; }
-    .store-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-    .store-btn span small { display: block; font-size: 9px; letter-spacing: 0.02em; opacity: 0.75; }
-    .store-btn span strong { display: block; font-size: 13px; font-weight: 700; }
-
-    .about {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 28px;
-      border: 1px solid #e2e8f0;
-      margin-top: 24px;
-    }
-    .about h2 { font-size: 18px; font-weight: 600; color: #1e293b; margin-bottom: 12px; }
-    .about p { color: #64748b; line-height: 1.6; font-size: 14px; }
-
-    .contact { text-align: center; padding: 32px; color: #64748b; font-size: 14px; }
-    .contact a { color: #4f46e5; text-decoration: none; font-weight: 500; }
-    .contact a:hover { text-decoration: underline; }
-
-    .coming-soon-section { margin-top: 48px; }
-    .coming-soon-heading {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .coming-soon-heading h2 { font-size: 13px; font-weight: 700; color: #94a3b8; letter-spacing: 0.08em; text-transform: uppercase; }
-    .coming-soon-heading::before,
-    .coming-soon-heading::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
-
-    .coming-soon-card {
-      background: #f8fafc;
-      border-radius: 20px;
-      padding: 28px;
-      border: 1px dashed #cbd5e1;
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      opacity: 0.85;
-    }
-    .coming-soon-card .app-icon { filter: saturate(0.7); }
-    .coming-soon-card .app-name { color: #475569; }
-    .coming-soon-card .app-tagline { color: #94a3b8; }
-
-    .footer { text-align: center; padding: 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e2e8f0; }
-
-    .vote-wrap { margin-top: 12px; }
-    .vote-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: none;
-      border: 1px solid #cbd5e1;
-      border-radius: 20px;
-      padding: 5px 12px 5px 8px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #64748b;
-      cursor: pointer;
-      font-family: inherit;
-      transition: border-color 0.15s, color 0.15s, background 0.15s;
-    }
-    .vote-btn:hover:not(.voted):not(:disabled) { border-color: #6366f1; color: #6366f1; background: #f0f1ff; }
-    .vote-btn.voted { border-color: #6366f1; color: #6366f1; background: #eef2ff; cursor: default; }
-    .vote-btn:disabled { opacity: 0.6; cursor: default; }
-    .vote-icon { width: 14px; height: 14px; flex-shrink: 0; }
-    .vote-count { font-size: 12px; font-weight: 700; }
+    :root { --brand: #246DE2; --brand-dark: #1A4FB0; --brand-tint: #f3f6fc; --bg: #ffffff; --ink: #2f2a26; --muted: #6b645e; --line: #ebe6df; }
+    .hub-hero { text-align: center; padding: 32px 0 72px; }
+    .hub-hero .banner { width: 100%; max-width: 900px; margin: 0 auto 8px; }
+    .hub-hero h1 { font-size: clamp(34px, 5vw, 52px); font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 14px; }
+    .hub-hero .lead { font-size: 19px; color: var(--muted); max-width: 32em; margin: 0 auto 28px; }
+    .app-list + .section-title { margin-top: 80px; }
+    .about-card { text-align: center; max-width: 640px; margin: 0 auto; }
+    .about-card p { color: var(--muted); font-size: 18px; margin-bottom: 24px; }
   </style>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
 </head>
-<body>
+<body data-app="site">
 
-  <div class="hero">
-    <img class="banner" src="images/banner.png" alt="Rain or Shine Apps">
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="images/logo.png" alt="" width="38" height="38">Rain or Shine Apps</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="mailto:rain.or.shine.apps@gmail.com">Contact</a>
+    </nav>
+    <a href="#apps" class="btn btn-sm">Our apps</a>
   </div>
+</header>
 
-  <div class="container">
-    <div class="apps">
-
-      <!-- Brickify -->
-      <div class="app-card">
-        <img class="app-icon" src="images/Brickify%20logo.png" alt="Brickify icon">
-        <div class="app-info">
-          <div class="badge" style="background:#fdf0ec; color:#B65A3D;">Available on iOS &amp; Android</div>
-          <div class="app-name">Brickify</div>
-          <div class="app-tagline">Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — a good first phone or a real digital detox.</div>
-          <div class="app-links">
-            <a href="brickify/index.html" style="color:#B65A3D;">Learn more</a>
-            <a href="brickify/support.html" style="color:#B65A3D;">Support</a>
-            <a href="brickify/privacy.html" style="color:#B65A3D;">Privacy Policy</a>
-            <a href="brickify/terms.html" style="color:#B65A3D;">Terms</a>
-          </div>
-          <div class="store-buttons">
-            <a href="https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069" class="store-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span><small>Download on the</small><strong>App Store</strong></span>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify" class="store-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
-              <span><small>Get it on</small><strong>Google Play</strong></span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Creative Juices -->
-      <div class="app-card">
-        <img class="app-icon" src="images/creative%20juices%20logo.png" alt="Creative Juices icon">
-        <div class="app-info">
-          <div class="badge" style="background:#fff3ee; color:#FF6B35;">Available on iOS &amp; Android</div>
-          <div class="app-name">Creative Juices</div>
-          <div class="app-tagline">Blend ideas. Get inspired. Make something. Throw words into the blender, hit blend, and get an AI-crafted creative prompt for your next song, artwork, or story.</div>
-          <div class="app-links">
-            <a href="creative-juices/index.html" style="color:#FF6B35;">Learn more</a>
-            <a href="creative-juices/support.html" style="color:#FF6B35;">Support</a>
-            <a href="creative-juices/privacy.html" style="color:#FF6B35;">Privacy Policy</a>
-            <a href="creative-juices/terms.html" style="color:#FF6B35;">Terms</a>
-          </div>
-          <div class="store-buttons">
-            <a href="https://apps.apple.com/gb/app/creative-juices/id6766537635" class="store-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span><small>Download on the</small><strong>App Store</strong></span>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.rainorshineapps.creativejuices&hl=en-GB" class="store-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
-              <span><small>Get it on</small><strong>Google Play</strong></span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Decidr -->
-      <div class="app-card">
-        <img class="app-icon" src="images/Decidr%20logo.png" alt="Decidr icon">
-        <div class="app-info">
-          <div class="badge" style="background:#eff6ff; color:#4f46e5;">Available on iOS &amp; Android</div>
-          <div class="app-name">Decidr</div>
-          <div class="app-tagline">Make better decisions, one factor at a time. Score your options against what matters most, collaborate with others, and get AI-powered insights.</div>
-          <div class="app-links">
-            <a href="decidr/index.html" style="color:#4f46e5;">Learn more</a>
-            <a href="decidr/support.html" style="color:#4f46e5;">Support</a>
-            <a href="decidr/privacy.html" style="color:#4f46e5;">Privacy Policy</a>
-            <a href="decidr/terms.html" style="color:#4f46e5;">Terms</a>
-          </div>
-          <div class="store-buttons">
-            <a href="https://apps.apple.com/gb/app/decidr-decision-aid/id6764582044" class="store-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span><small>Download on the</small><strong>App Store</strong></span>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.base69b1833772b25861b19afb36.app&hl=en-GB" class="store-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
-              <span><small>Get it on</small><strong>Google Play</strong></span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Eat The Frog -->
-      <div class="app-card">
-        <img class="app-icon" src="images/Eat%20The%20Frog%20Logo.png" alt="Eat The Frog icon">
-        <div class="app-info">
-          <div class="badge" style="background:#fdece1; color:#e17925;">Available on iOS</div>
-          <div class="app-name">Eat The Frog</div>
-          <div class="app-tagline">One task. Full focus. Set your hardest, most important task each morning and eat your frog before anything else gets your attention. Syncs with Google Tasks and Microsoft To Do.</div>
-          <div class="app-links">
-            <a href="eat-the-frog/index.html" style="color:#e17925;">Learn more</a>
-            <a href="eat-the-frog/support.html" style="color:#e17925;">Support</a>
-            <a href="eat-the-frog/privacy/" style="color:#e17925;">Privacy Policy</a>
-            <a href="eat-the-frog/terms/" style="color:#e17925;">Terms</a>
-          </div>
-          <div class="store-buttons">
-            <a href="https://apps.apple.com/us/app/eat-the-frog-daily-focus/id6786476912" class="store-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span><small>Download on the</small><strong>App Store</strong></span>
-            </a>
-            <span class="store-btn" style="background:#9ca3af; cursor:default;">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
-              <span><small>Coming soon on</small><strong>Google Play</strong></span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Street Canvas -->
-      <div class="app-card">
-        <img class="app-icon" src="images/StreetCanvasLogo.png" alt="Street Canvas icon">
-        <div class="app-info">
-          <div class="badge" style="background:#f5f3ff; color:#7c3aed;">Available on iOS &amp; Android</div>
-          <div class="app-name">Street Canvas</div>
-          <div class="app-tagline">Discover street art around the world. Every wall tells a story - go find it. Add art to the map. The underground snapped. Built by artists for artists.</div>
-          <div class="app-links">
-            <a href="https://street-canvas.base44.app/legal" style="color:#7c3aed;" target="_blank" rel="noopener">Privacy Policy</a>
-            <a href="https://street-canvas.base44.app/legal" style="color:#7c3aed;" target="_blank" rel="noopener">Terms</a>
-            <a href="https://street-canvas.base44.app/legal" style="color:#7c3aed;" target="_blank" rel="noopener">Child Safety Standards</a>
-          </div>
-          <div class="store-buttons">
-            <a href="https://apps.apple.com/gb/app/street-canvas/id6773732643" class="store-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span><small>Download on the</small><strong>App Store</strong></span>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.base6a11d5f92443dfb32136446a.app" class="store-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
-              <span><small>Get it on</small><strong>Google Play</strong></span>
-            </a>
-          </div>
-        </div>
-      </div>
-
+<main>
+  <section class="hub-hero">
+    <div class="wrap">
+      <img class="banner" src="images/banner.png" alt="Rain or Shine Apps" width="1584" height="396" fetchpriority="high">
+      <h1>Simple, focused apps.</h1>
+      <p class="lead">We build simple, focused apps that help people think more clearly and live more creatively.</p>
+      <a href="#apps" class="btn">Explore our apps</a>
     </div>
+  </section>
 
-    <!-- Coming Soon -->
-    <div class="coming-soon-section">
-      <div class="coming-soon-heading"><h2>Coming Soon</h2></div>
-
-      <!--Big Sister-->
-      <div class="coming-soon-card" style="margin-bottom:24px;">
-        <img class="app-icon" src="images/Big%20Sister%20Logo.png" alt="Big Sister icon">
-        <div class="app-info">
-          <div class="badge" style="background:#f0fdf4; color:#16a34a;">Coming Soon</div>
-          <div class="app-name">Big Sister</div>
-          <div class="app-tagline">Keep your kids safe online. Big Sister gives parents the tools to monitor, guide, and protect their children's digital world — without the arguments.</div>
-          <div class="vote-wrap" data-app="big-sister">
-            <button class="vote-btn" onclick="castVote('big-sister')">
-              <svg class="vote-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z" clip-rule="evenodd"/></svg>
-              <span class="vote-label">Vote up</span>
-              <span class="vote-count" id="count-big-sister"></span>
-            </button>
+  <section class="section section-tint" id="apps">
+    <div class="wrap" data-location="hub">
+      <h2 class="section-title">Our apps</h2>
+      <p class="section-sub">Made in the UK by a small independent developer.</p>
+      <div class="app-list">
+        <article class="app-row" data-app="brickify" style="--app:#B65A3D; --app-dark:#83412C;">
+          <img class="app-icon" src="images/icons/brickify.webp" alt="" width="96" height="96" loading="lazy">
+          <div>
+            <span class="pill">iOS &amp; Android</span>
+            <h3>Brickify</h3>
+            <p class="app-desc">Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — a good first phone or a real digital detox.</p>
+            <div class="app-actions"><a class="btn btn-sm" href="brickify/index.html">Learn more</a><div class="badges"><a class="badge-link" data-store="ios" href="https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="144" height="48" loading="lazy"></a><a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="162" height="48" loading="lazy"></a></div></div>
+          <nav class="app-links" aria-label="Brickify links"><a href="brickify/support.html">Support</a><a href="brickify/privacy.html">Privacy</a><a href="brickify/terms.html">Terms</a></nav>
           </div>
-        </div>
+        </article>
+        <article class="app-row" data-app="creative-juices" style="--app:#FF6B35; --app-dark:#D9531F;">
+          <img class="app-icon" src="images/icons/creative-juices.webp" alt="" width="96" height="96" loading="lazy">
+          <div>
+            <span class="pill">iOS &amp; Android</span>
+            <h3>Creative Juices</h3>
+            <p class="app-desc">Blend ideas. Get inspired. Make something. Throw words into the blender, hit blend, and get an AI-crafted creative prompt for your next song, artwork, or story.</p>
+            <div class="app-actions"><a class="btn btn-sm" href="creative-juices/index.html">Learn more</a><div class="badges"><a class="badge-link" data-store="ios" href="https://apps.apple.com/gb/app/creative-juices/id6766537635" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="144" height="48" loading="lazy"></a><a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.rainorshineapps.creativejuices&amp;hl=en-GB" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="162" height="48" loading="lazy"></a></div></div>
+          <nav class="app-links" aria-label="Creative Juices links"><a href="creative-juices/support.html">Support</a><a href="creative-juices/privacy.html">Privacy</a><a href="creative-juices/terms.html">Terms</a></nav>
+          </div>
+        </article>
+        <article class="app-row" data-app="decidr" style="--app:#4f46e5; --app-dark:#3730a3;">
+          <img class="app-icon" src="images/icons/decidr.webp" alt="" width="96" height="96" loading="lazy">
+          <div>
+            <span class="pill">iOS &amp; Android</span>
+            <h3>Decidr</h3>
+            <p class="app-desc">Make better decisions, one factor at a time. Score your options against what matters most, collaborate with others, and get AI-powered insights.</p>
+            <div class="app-actions"><a class="btn btn-sm" href="decidr/index.html">Learn more</a><div class="badges"><a class="badge-link" data-store="ios" href="https://apps.apple.com/gb/app/decidr-decision-aid/id6764582044" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="144" height="48" loading="lazy"></a><a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.base69b1833772b25861b19afb36.app&amp;hl=en-GB" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="162" height="48" loading="lazy"></a></div></div>
+          <nav class="app-links" aria-label="Decidr links"><a href="decidr/support.html">Support</a><a href="decidr/privacy.html">Privacy</a><a href="decidr/terms.html">Terms</a></nav>
+          </div>
+        </article>
+        <article class="app-row" data-app="eat-the-frog" style="--app:#e17925; --app-dark:#b45f17;">
+          <img class="app-icon" src="images/icons/eat-the-frog.webp" alt="" width="96" height="96" loading="lazy">
+          <div>
+            <span class="pill">iOS</span>
+            <h3>Eat The Frog</h3>
+            <p class="app-desc">One task. Full focus. Set your hardest, most important task each morning and eat your frog before anything else gets your attention. Syncs with Google Tasks and Microsoft To Do.</p>
+            <div class="app-actions"><a class="btn btn-sm" href="eat-the-frog/index.html">Learn more</a><div class="badges"><a class="badge-link" data-store="ios" href="https://apps.apple.com/us/app/eat-the-frog-daily-focus/id6786476912" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="144" height="48" loading="lazy"></a><span class="store-soon">Google Play — coming soon</span></div></div>
+          <nav class="app-links" aria-label="Eat The Frog links"><a href="eat-the-frog/support.html">Support</a><a href="eat-the-frog/privacy/">Privacy</a><a href="eat-the-frog/terms/">Terms</a></nav>
+          </div>
+        </article>
+        <article class="app-row" data-app="street-canvas" style="--app:#7c3aed; --app-dark:#5b21b6;">
+          <img class="app-icon" src="images/icons/street-canvas.webp" alt="" width="96" height="96" loading="lazy">
+          <div>
+            <span class="pill">iOS &amp; Android</span>
+            <h3>Street Canvas</h3>
+            <p class="app-desc">Discover street art around the world. Every wall tells a story - go find it. Add art to the map. The underground snapped. Built by artists for artists.</p>
+            <div class="app-actions"><div class="badges"><a class="badge-link" data-store="ios" href="https://apps.apple.com/gb/app/street-canvas/id6773732643" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="144" height="48" loading="lazy"></a><a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.base6a11d5f92443dfb32136446a.app" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="162" height="48" loading="lazy"></a></div></div>
+          <nav class="app-links" aria-label="Street Canvas links"><a href="https://street-canvas.base44.app/legal" target="_blank" rel="noopener">Privacy</a><a href="https://street-canvas.base44.app/legal" target="_blank" rel="noopener">Terms</a><a href="https://street-canvas.base44.app/legal" target="_blank" rel="noopener">Child Safety Standards</a></nav>
+          </div>
+        </article>
       </div>
 
-      <!-- Pocket Muney -->
-      <div class="app-card" style="margin-bottom:24px;">
-        <img class="app-icon" src="images/Pocket%20Muney%20Logo.png" alt="Pocket Muney icon">
-        <div class="app-info">
-          <div class="badge" style="background:#fff3da; color:#F5821F;">iOS &amp; Android — Coming Soon</div>
-          <div class="app-name">Pocket Muney</div>
-          <div class="app-tagline">Making chores rewarding! Turn chores into rewards, earn Carrots, celebrate Pay Day, and watch good habits grow.</div>
-          <div class="app-links">
-            <a href="pocket-muney/index.html" style="color:#F5821F;">Learn more</a>
-            <a href="pocket-muney/support.html" style="color:#F5821F;">Support</a>
-            <a href="pocket-muney/privacy.html" style="color:#F5821F;">Privacy Policy</a>
-            <a href="pocket-muney/terms.html" style="color:#F5821F;">Terms</a>
+      <h2 class="section-title">Coming soon</h2>
+      <p class="section-sub">What we're working on next.</p>
+      <div class="app-list">
+        <article class="app-row is-soon" data-app="pocket-muney" style="--app:#F5821F; --app-dark:#c4620f;">
+          <img class="app-icon" src="images/icons/pocket-muney.webp" alt="" width="96" height="96" loading="lazy">
+          <div>
+            <span class="pill">iOS &amp; Android — coming soon</span>
+            <h3>Pocket Muney</h3>
+            <p class="app-desc">Making chores rewarding! Turn chores into rewards, earn Carrots, celebrate Pay Day, and watch good habits grow.</p>
+            <div class="app-actions"><a class="btn btn-sm" href="pocket-muney/index.html">Learn more</a><div class="badges"><span class="store-soon">App Store — coming soon</span><span class="store-soon">Google Play — coming soon</span></div></div>
+          <nav class="app-links" aria-label="Pocket Muney links"><a href="pocket-muney/support.html">Support</a><a href="pocket-muney/privacy.html">Privacy</a><a href="pocket-muney/terms.html">Terms</a></nav>
           </div>
-          <div class="store-buttons">
-            <span class="store-btn" style="background:#9ca3af; cursor:default;">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span><small>Coming soon on</small><strong>App Store</strong></span>
-            </span>
-            <span class="store-btn" style="background:#9ca3af; cursor:default;">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
-              <span><small>Coming soon on</small><strong>Google Play</strong></span>
-            </span>
+        </article>
+        <article class="app-row is-soon" data-app="big-sister" style="--app:#16a34a; --app-dark:#15803d;">
+          <img class="app-icon" src="images/icons/big-sister.webp" alt="" width="96" height="96" loading="lazy">
+          <div>
+            <span class="pill">Coming soon</span>
+            <h3>Big Sister</h3>
+            <p class="app-desc">Keep your kids safe online. Big Sister gives parents the tools to monitor, guide, and protect their children's digital world — without the arguments.</p>
+            <div class="app-actions"></div>
           </div>
-        </div>
+        </article>
       </div>
     </div>
+  </section>
 
-    <div class="about">
-      <h2>About Rain or Shine Apps</h2>
+  <section class="section" id="about">
+    <div class="wrap about-card">
+      <h2 class="section-title">About Rain or Shine Apps</h2>
       <p>We build simple, focused apps that help people think more clearly and live more creatively. Based in the UK, we're a small independent developer passionate about thoughtful software.</p>
+      <a class="btn" href="mailto:rain.or.shine.apps@gmail.com">Get in touch</a>
     </div>
+  </section>
+</main>
 
-    <div class="contact">
-      <p>Questions? Get in touch at <a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a></p>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Apps</h4>
+        <a href="brickify/index.html">Brickify</a>
+        <a href="creative-juices/index.html">Creative Juices</a>
+        <a href="decidr/index.html">Decidr</a>
+        <a href="eat-the-frog/index.html">Eat The Frog</a>
+        <a href="pocket-muney/index.html">Pocket Muney</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a>
+      </div>
+      <div>
+        <h4>Privacy</h4>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
     </div>
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
   </div>
+</footer>
 
-  <div class="footer">© 2026 Rain or Shine Apps. All rights reserved.</div>
-
-  <script>
-    const VOTE_NS = 'rainorshineapps';
-    const VOTE_KEYS = {
-      'big-sister':   'big-sister-v1'
-    };
-
-    async function loadVoteCounts() {
-      for (const [app, key] of Object.entries(VOTE_KEYS)) {
-        const el = document.getElementById('count-' + app);
-        if (!el) continue;
-        try {
-          const r = await fetch('https://api.countapi.xyz/get/' + VOTE_NS + '/' + key);
-          if (!r.ok) continue;
-          const { value } = await r.json();
-          if (value > 0) el.textContent = value;
-        } catch {}
-      }
-    }
-
-    async function castVote(app) {
-      if (localStorage.getItem('voted-' + app)) return;
-      const btn = document.querySelector('[data-app="' + app + '"] .vote-btn');
-      const countEl = document.getElementById('count-' + app);
-      if (btn) btn.disabled = true;
-      try {
-        const r = await fetch('https://api.countapi.xyz/hit/' + VOTE_NS + '/' + VOTE_KEYS[app]);
-        const { value } = await r.json();
-        localStorage.setItem('voted-' + app, '1');
-        if (btn) { btn.classList.add('voted'); btn.querySelector('.vote-label').textContent = 'Voted!'; }
-        if (countEl && value > 0) countEl.textContent = value;
-      } catch {
-        localStorage.setItem('voted-' + app, '1');
-        if (btn) { btn.classList.add('voted'); btn.querySelector('.vote-label').textContent = 'Voted!'; }
-      } finally {
-        if (btn) btn.disabled = false;
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      for (const app of Object.keys(VOTE_KEYS)) {
-        if (localStorage.getItem('voted-' + app)) {
-          const btn = document.querySelector('[data-app="' + app + '"] .vote-btn');
-          if (btn) { btn.classList.add('voted'); btn.querySelector('.vote-label').textContent = 'Voted!'; }
-        }
-      }
-      loadVoteCounts();
-    });
-  </script>
 
 </body>
 </html>

@@ -36,186 +36,137 @@
     }
   }
   </script>
+  <link rel="icon" href="images/logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
-    a { color: var(--brick); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .top-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 20px; }
-    .top-nav a { color: var(--brick); font-size: 14px; font-weight: 700; }
-
-    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
-    .back { display: inline-block; margin-bottom: 12px; color: var(--mid); font-size: 14px; font-weight: 600; }
-
-    h2 { font-size: 22px; font-weight: 800; color: var(--dark); margin: 40px 0 14px; letter-spacing: -0.3px; }
-    h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin: 18px 0 6px; }
-    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
-    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
-    li { margin-bottom: 6px; }
-
-    .steps { display: flex; flex-direction: column; gap: 14px; }
-    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
-    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .step-body h3 { margin: 0 0 4px; }
-    .step-body p { margin: 0; font-size: 14px; }
-
-    .tagline { font-size: 17px; color: var(--dark); max-width: 520px; margin: 6px 0 6px; }
-    .slogan { font-size: 20px; font-weight: 800; color: var(--brick); max-width: 520px; margin: 28px 0 0; letter-spacing: -0.2px; }
-
-    .store-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 8px; }
-    .store-btn {
-      display: flex; align-items: center; gap: 10px; background: var(--dark); color: #fff;
-      border-radius: 12px; padding: 10px 18px; opacity: 0.6; cursor: default; pointer-events: none;
-    }
-    .store-btn:hover { text-decoration: none; }
-    .store-btn .store-icon { font-size: 20px; line-height: 1; }
-    .store-btn .store-text { display: flex; flex-direction: column; line-height: 1.2; }
-    .store-btn .store-text small { font-size: 10px; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.4px; }
-    .store-btn .store-text span { font-size: 14px; font-weight: 700; }
-
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-    .card { background: var(--card); border-radius: 14px; padding: 20px; border: 1px solid #e8e0db; }
-    .card-icon { font-size: 28px; margin-bottom: 10px; display: block; }
-    .card.coming-soon { background: transparent; border: 1.5px dashed var(--mid); }
-    .card.coming-soon h3 { display: flex; align-items: center; gap: 8px; }
-    .coming-soon-badge {
-      display: inline-block; background: var(--dark); color: #fff; font-size: 10px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.4px; padding: 3px 8px; border-radius: 999px;
-    }
-
-    .warn { background: rgba(182,90,61,0.07); border: 1px solid rgba(182,90,61,0.22); border-radius: 12px; padding: 18px; margin-bottom: 14px; }
-    .warn h3 { color: #83412C; margin: 0 0 6px; }
-    .warn p { color: #83412C; margin: 0; font-size: 14px; line-height: 1.7; }
-    .good { background: rgba(34,197,94,0.07); border-color: rgba(34,197,94,0.25); }
-    .good h3 { color: #166534; }
-    .good p { color: #166534; }
-    .amber { background: rgba(245,158,11,0.09); border-color: rgba(245,158,11,0.3); }
-    .amber h3 { color: #92400e; }
-    .amber p { color: #92400e; }
-
-    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
-    th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
-    td { padding: 10px 14px; border-bottom: 1px solid #e8e0db; color: var(--mid); vertical-align: top; }
-    td:first-child { color: var(--dark); font-weight: 600; }
-    tr:last-child td { border-bottom: none; }
-
-    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
-    .footer a { color: var(--brick); }
-
-    .scroll-banner { position: relative; height: 240px; overflow: hidden; background: #83412C; }
-    .scroll-track { display: flex; width: max-content; height: 100%; animation: scroll-strip 28s linear infinite; }
-    .scroll-img { height: 100%; width: auto; display: block; }
-    @keyframes scroll-strip {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .scroll-track { animation: none; }
-    }
-
-    .brand-square {
-      position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 240px; height: 100%;
-      background: var(--dark); z-index: 2;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 16px; text-align: center;
-      box-shadow: 6px 0 28px rgba(0,0,0,0.3);
-    }
-    .brand-square:hover { text-decoration: none; }
-    .brand-square .logo { width: 72px; height: 72px; margin-bottom: 12px; }
-    .brand-square h1 { color: #fff; font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin: 0; }
-
-    @media (max-width: 560px) {
-      .scroll-banner { height: 150px; }
-      .brand-square { width: 150px; padding: 10px; }
-      .brand-square .logo { width: 44px; height: 44px; margin-bottom: 8px; }
-      .brand-square h1 { font-size: 17px; }
-      .top-nav { gap: 6px 14px; }
-      .top-nav a { font-size: 13px; }
-    }
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
   </style>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
 </head>
-<body>
+<body data-app="brickify">
 
-<div class="scroll-banner">
-  <div class="scroll-track" aria-hidden="true">
-    <img src="images/mode-scroll-strip.png" alt="" class="scroll-img">
-    <img src="images/mode-scroll-strip.png" alt="" class="scroll-img">
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="images/logo.png" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="how-it-works.html">How it works</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="help.html">Help</a>
+    </nav>
+    <a href="#download" class="btn btn-sm">Get the app</a>
   </div>
-  <a href="index.html" class="brand-square">
-    <img src="images/logo.png" alt="Brickify" class="logo">
-    <h1>Brickify</h1>
-  </a>
-</div>
+</header>
 
-<div class="container">
-  <a href="../index.html" class="back">← Rain or Shine Apps</a>
-  <div class="top-nav">
-    <a href="guides/index.html">Guides</a>
-    <a href="blog/index.html">Blog</a>
-    <a href="information.html">Information</a>
-    <a href="help.html">Help</a>
-  </div>
-
-  <p class="slogan">Smartphone when you need it&nbsp;.. brick phone when you don't</p>
-  <p class="tagline">Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — making it a good first phone or digital detox.</p>
-
-  <div class="store-buttons">
-    <a href="https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069" class="store-btn" style="opacity:1; cursor:pointer; pointer-events:auto;" target="_blank" rel="noopener">
-      <span class="store-icon"></span>
-      <span class="store-text"><small>Download on the</small><span>App Store</span></span>
-    </a>
-    <a href="https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify" class="store-btn" style="opacity:1; cursor:pointer; pointer-events:auto;" target="_blank" rel="noopener">
-      <span class="store-icon">▶</span>
-      <span class="store-text"><small>Get it on</small><span>Google Play</span></span>
-    </a>
-  </div>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-media">
+        <div class="phone"><img src="images/screen-1.webp" alt="Brickify's Phone Bricked screen: selected apps are disabled until you enter your PIN and second factor" width="600" height="1300" fetchpriority="high"></div>
+      </div>
+      <div class="hero-copy" data-location="hero">
+        <h1>Smartphone when you need it. Brick phone when you don't.</h1>
+        <p class="lead">Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — a good first phone or a real digital detox.</p>
+        <div class="badges">
+          <a class="badge-link" data-store="ios" href="https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="180" height="60"></a>
+          <a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="202" height="60"></a>
+        </div>
+        <p class="badges-note">For iPhone and Android</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Store ratings — uncomment once there are genuine reviews/quotes to show.
-       Do not fill this in with placeholder or fabricated content in the meantime. -->
-  <!--
-  <div class="cards" style="margin-top:20px;">
-    <a href="https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify" class="card" style="display:block; text-align:center;">
-      <span class="card-icon">★</span>
-      <h3>0.0 on Google Play</h3>
-      <p>Based on 0 ratings — see reviews →</p>
-    </a>
-    <a href="https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069" class="card" style="display:block; text-align:center;">
-      <span class="card-icon">★</span>
-      <h3>0.0 on the App Store</h3>
-      <p>Based on 0 ratings — see reviews →</p>
-    </a>
-  </div>
-  <div class="cards" style="margin-top:14px;">
-    <div class="card">
-      <p style="font-style:italic; color:var(--dark);">"Quote from a real review goes here."</p>
-      <p style="margin-top:8px; font-size:13px;">— Reviewer name/initial, Google Play</p>
-    </div>
-    <div class="card">
-      <p style="font-style:italic; color:var(--dark);">"Quote from a real review goes here."</p>
-      <p style="margin-top:8px; font-size:13px;">— Reviewer name/initial, App Store</p>
-    </div>
-  </div>
+       Do not fill this in with placeholder or fabricated content in the meantime.
+       Suggested markup: a .tiles grid of .tile cards inside a .section, e.g.
+       <div class="tile"><h3>★ 0.0 on Google Play</h3><p>Based on 0 ratings — see reviews →</p></div>
+       <div class="tile"><p>"Quote from a real review goes here."</p><p>— Reviewer name/initial, App Store</p></div>
   -->
 
-  <div class="cards" style="margin-top:28px;">
-    <div class="card"><span class="card-icon">🧱</span><h3>Grows with your child</h3><p>Change what's unlocked any time as they grow up — no need to buy a new device at every stage.</p></div>
-    <div class="card"><span class="card-icon">🌿</span><h3>A real digital detox</h3><p>Not just for kids — use it on yourself for a genuine break from the apps you can't put down.</p></div>
-    <div class="card"><span class="card-icon">🗓️</span><h3>Schedules that run themselves</h3><p>Click into "School," "Bedtime," or any mode automatically, once it's set up.</p></div>
-    <div class="card"><span class="card-icon">💰</span><h3>Cheaper than a brick phone</h3><p>Use the smartphone already gathering dust — no separate device or contract, and it lasts longer.</p></div>
-    <div class="card"><span class="card-icon">🔐</span><h3>Hardened against savvy kids</h3><p>Real OS-level blocking, not just a closed app they can find a way round.</p></div>
-    <div class="card"><span class="card-icon">🔑</span><h3>You hold the keys</h3><p>A parent PIN backed by a second factor — recovery codes mean you're never locked out for good.</p></div>
-    <div class="card coming-soon"><span class="card-icon">🏫</span><h3>Brickify for Schools <span class="coming-soon-badge">Coming soon</span></h3><p>Your school administrator can check your phone is compliant before it goes on site.</p></div>
-  </div>
-</div>
+  <section class="section section-tint">
+    <div class="wrap">
+      <h2 class="section-title">One phone. Every stage.</h2>
+      <p class="section-sub">Brickify turns the smartphone you already own into exactly as much phone as you want — no more.</p>
 
-<div class="footer">
-  © 2026 Rain or Shine Apps &nbsp;·&nbsp;
-  <a href="guides/index.html">Guides</a> &nbsp;·&nbsp;
-  <a href="information.html">Information</a> &nbsp;·&nbsp;
-  <a href="help.html">Help</a>
-</div>
+      <div class="feature">
+        <div class="feature-media"><div class="phone"><img src="images/screen-4.webp" alt="Choosing which apps to block" width="600" height="1300" loading="lazy"></div></div>
+        <div><h3>Grows with your child</h3><p>Change what's unlocked any time as they grow up — no need to buy a new device at every stage.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feature-media"><div class="phone"><img src="images/screen-3.webp" alt="Setting schedule days and times" width="600" height="1300" loading="lazy"></div></div>
+        <div><h3>Schedules that run themselves</h3><p>Click into "School," "Bedtime," or any mode automatically, once it's set up.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feature-media"><div class="phone"><img src="images/screen-5.webp" alt="Authenticator second-factor setup" width="600" height="1300" loading="lazy"></div></div>
+        <div><h3>You hold the keys</h3><p>A parent PIN backed by a second factor — recovery codes mean you're never locked out for good.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feature-media"><div class="phone"><img src="images/screen-6.webp" alt="Brickify's welcome screen listing the setup steps" width="600" height="1300" loading="lazy"></div></div>
+        <div><h3>Set up in minutes</h3><p>Eight quick steps, most take seconds. Optional ones can be skipped and finished later.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">Why people choose Brickify</h2>
+      <p class="section-sub">Not just a closed app — real control that sticks.</p>
+      <div class="tiles">
+        <div class="tile"><h3>Hardened against savvy kids</h3><p>Real OS-level blocking, not just a closed app they can find a way round.</p></div>
+        <div class="tile"><h3>A real digital detox</h3><p>Not just for kids — use it on yourself for a genuine break from the apps you can't put down.</p></div>
+        <div class="tile"><h3>Cheaper than a brick phone</h3><p>Use the smartphone already gathering dust — no separate device or contract, and it lasts longer.</p></div>
+        <div class="tile"><span class="tile-tag">Coming soon</span><h3>Brickify for Schools</h3><p>Your school administrator can check your phone is compliant before it goes on site.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="download">
+    <div class="wrap" data-location="download">
+      <h2>Ready to brick it?</h2>
+      <p>Get Brickify on your phone today.</p>
+      <div class="badges">
+        <a class="badge-link" data-store="ios" href="https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="180" height="60" loading="lazy"></a>
+        <a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="202" height="60" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="why-brickify.html">Why Brickify</a>
+        <a href="compatibility.html">Which phones work?</a>
+        <a href="guides/index.html">Guides</a>
+        <a href="blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="help.html">Help</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="information.html">Information</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="../index.html">All our apps</a>
+      </div>
+    </div>
+    <p class="footer-base">© 2026 Rain or Shine Apps</p>
+  </div>
+</footer>
 
 </body>
 </html>
