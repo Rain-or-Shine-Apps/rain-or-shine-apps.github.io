@@ -1,10 +1,14 @@
 /* Rain or Shine Apps — Google Analytics 4 with opt-in consent.
    Nothing is loaded and no cookies are set until the visitor clicks Accept.
-   Set GA_ID to the real Measurement ID (G-XXXXXXXXXX) to switch tracking on. */
+   Each app has its own GA4 property, chosen by <body data-app="...">. Pages whose app has
+   no ID listed here show no banner and send nothing. Loaded with `defer`, so <body> exists. */
 (function () {
-  var GA_ID = 'G-PLACEHOLDER';
+  var GA_IDS = {
+    brickify: 'G-4P3DCEHQSD'
+  };
+  var GA_ID = GA_IDS[document.body && document.body.getAttribute('data-app')] || '';
   var KEY = 'ros-analytics-consent'; // 'granted' | 'denied'
-  var enabled = /^G-[A-Z0-9]{6,}$/.test(GA_ID) && GA_ID !== 'G-PLACEHOLDER';
+  var enabled = /^G-[A-Z0-9]{6,}$/.test(GA_ID);
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -46,7 +50,8 @@
     el.setAttribute('aria-label', 'Cookie preferences');
     el.innerHTML =
       '<p><strong>Can we count your visit?</strong> We’d like to use Google Analytics cookies to see which pages help people most. ' +
-      'This covers this website only — never our apps. You can change your mind any time from “Cookie settings” at the bottom of the page.</p>' +
+      'This covers this website only, not our apps. You can change your mind any time from “Cookie settings” at the bottom of the page. ' +
+      '<a href="/privacy.html">Privacy policy</a></p>' +
       '<div class="consent-actions">' +
       '<button type="button" class="btn btn-ghost btn-sm" data-consent="denied">No thanks</button>' +
       '<button type="button" class="btn btn-sm" data-consent="granted">Accept</button>' +
