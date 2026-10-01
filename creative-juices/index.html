@@ -4,100 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Creative Juices — Blend ideas. Get inspired.</title>
+  <link rel="icon" href="../images/icons/creative-juices.webp"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e2e8f0; }
-
-    .header { background: linear-gradient(135deg, #FF6B35, #9C27B0); padding: 60px 24px; text-align: center; }
-    .header .emoji { font-size: 72px; display: block; margin-bottom: 16px; }
-    .header h1 { color: white; font-size: 36px; font-weight: 800; letter-spacing: -1px; }
-    .header p { color: rgba(255,255,255,0.85); margin-top: 8px; font-size: 18px; }
-
-    .container { max-width: 600px; margin: 0 auto; padding: 40px 24px; }
-
-    .features { display: grid; gap: 16px; margin-bottom: 40px; }
-    .feature { background: #1a1a1a; border-radius: 16px; padding: 24px; border: 1px solid rgba(255,255,255,0.08); }
-    .feature .icon { font-size: 32px; margin-bottom: 12px; display: block; }
-    .feature h2 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-    .feature p { color: rgba(255,255,255,0.5); font-size: 14px; line-height: 1.6; }
-
-    .cta { text-align: center; margin-bottom: 40px; }
-    .cta p { color: rgba(255,255,255,0.4); font-size: 14px; margin-bottom: 20px; }
-    .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .badge { background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 20px; color: rgba(255,255,255,0.6); font-size: 14px; font-weight: 600; text-decoration: none; }
-    .badge:hover { border-color: #FF6B35; color: #FF6B35; }
-
-    .links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; padding: 24px; border-top: 1px solid rgba(255,255,255,0.06); }
-    .links a { color: rgba(255,255,255,0.3); font-size: 13px; text-decoration: none; }
-    .links a:hover { color: #FF6B35; }
-
-    .footer { text-align: center; padding: 24px; color: rgba(255,255,255,0.15); font-size: 13px; }
-    .back-bar { background: #111111; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 12px 24px; }
-    .back-bar a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 14px; font-weight: 500; }
-    .back-bar a:hover { color: #FF6B35; }
-    .store-btn { display: inline-flex; align-items: center; gap: 7px; background: #111827; color: #ffffff; text-decoration: none; padding: 7px 14px 7px 10px; border-radius: 9px; line-height: 1.25; border: 1px solid rgba(255,255,255,0.15); }
-    .store-btn:hover { background: #374151; text-decoration: none; }
-    .store-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-    .store-btn span small { display: block; font-size: 9px; letter-spacing: 0.02em; opacity: 0.75; }
-    .store-btn span strong { display: block; font-size: 13px; font-weight: 700; }
+    :root { --brand: #FF6B35; --brand-dark: #C4501F; --brand-tint: #232327; --bg: #0f0f10; --surface: #18181b; --ink: #f5f5f5; --muted: #a8a8ae; --line: #2a2a2e; }
+    .hero h1 { background: linear-gradient(135deg, #FF6B35, #9C27B0); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .section-title, .tile h3, .brand-link, .footer-cols h4 { color: #ffffff; }
+    .cta-band { background: linear-gradient(135deg, #FF6B35, #9C27B0); }
   </style>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
 </head>
-<body>
-  <div class="back-bar">
-    <a href="../index.html">← Rain or Shine Apps</a>
-  </div>
-  <div class="header">
-    <span class="logo" src="images/creative%20juices%20logo.png" ></span>
-    <h1>Creative Juices</h1>
-    <p>Blend ideas. Get inspired. Make something.</p>
-  </div>
+<body data-app="creative-juices">
 
-  <div class="container">
-    <div class="features">
-      <div class="feature">
-        <span class="icon">🌀</span>
-        <h2>Blend your ideas</h2>
-        <p>Drop up to three words, feelings, or vibes into the blender and hit blend. Or leave it empty and let the AI surprise you completely.</p>
-      </div>
-      <div class="feature">
-        <span class="icon">💥</span>
-        <h2>Get a creative prompt</h2>
-        <p>A bold, AI-crafted prompt splats across your screen — vivid, poetic, and open to interpretation. Ready to spark your next song, artwork, poem, or story.</p>
-      </div>
-      <div class="feature">
-        <span class="icon">🫙</span>
-        <h2>Bottle the good ones</h2>
-        <p>When a prompt hits different, bottle it to your shelf. Share it with friends or come back to it when the blank page is staring you down.</p>
-      </div>
-      <div class="feature">
-        <span class="icon">✨</span>
-        <h2>Go Premium</h2>
-        <p>Remove ads forever and sync your shelf across all your devices with a one-time £4.99 purchase. No subscription. Ever.</p>
-      </div>
-    </div>
-
-    <div class="cta">
-      <p>Available free on iOS and Android</p>
-      <div class="badges">
-        <a href="https://apps.apple.com/gb/app/creative-juices/id6766537635" class="store-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          <span><small>Download on the</small><strong>App Store</strong></span>
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.rainorshineapps.creativejuices&hl=en-GB" class="store-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
-          <span><small>Get it on</small><strong>Google Play</strong></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="links">
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="../images/icons/creative-juices.webp" alt="" width="38" height="38">Creative Juices</a>
+    <nav class="site-nav" aria-label="Main">
       <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms & Conditions</a>
-      <a href="accessibility.html">Accessibility</a>
-    </div>
+      <a href="../index.html">More apps</a>
+    </nav>
+    <a href="#download" class="btn btn-sm">Get the app</a>
   </div>
+</header>
 
-  <div class="footer">© 2026 Rain or Shine Apps. All rights reserved.</div>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-media">
+        <img class="hero-icon" src="../images/icons/creative-juices-512.webp" alt="Creative Juices app icon" width="512" height="512" fetchpriority="high">
+      </div>
+      <div class="hero-copy" data-location="hero">
+        <h1>Blend ideas. Get inspired. Make something.</h1>
+        <p class="lead">Throw words into the blender, hit blend, and get an AI-crafted creative prompt for your next song, artwork, or story.</p>
+        <div class="badges"><a class="badge-link" data-store="ios" href="https://apps.apple.com/gb/app/creative-juices/id6766537635" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="180" height="60"></a><a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.rainorshineapps.creativejuices&amp;hl=en-GB" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="202" height="60"></a></div>
+        <p class="badges-note">Available free on iOS and Android</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">How it works</h2>
+      
+      <div class="tiles">
+        <div class="tile"><span class="tile-icon">🌀</span><h3>Blend your ideas</h3><p>Drop up to three words, feelings, or vibes into the blender and hit blend. Or leave it empty and let the AI surprise you completely.</p></div>
+        <div class="tile"><span class="tile-icon">💥</span><h3>Get a creative prompt</h3><p>A bold, AI-crafted prompt splats across your screen — vivid, poetic, and open to interpretation. Ready to spark your next song, artwork, poem, or story.</p></div>
+        <div class="tile"><span class="tile-icon">🫙</span><h3>Bottle the good ones</h3><p>When a prompt hits different, bottle it to your shelf. Share it with friends or come back to it when the blank page is staring you down.</p></div>
+        <div class="tile"><span class="tile-icon">✨</span><h3>Go Premium</h3><p>Remove ads forever and sync your shelf across all your devices with a one-time £4.99 purchase. No subscription. Ever.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="download">
+    <div class="wrap" data-location="download">
+      <h2>Ready to blend?</h2>
+      <p>Available free on iOS and Android.</p>
+      <div class="badges"><a class="badge-link" data-store="ios" href="https://apps.apple.com/gb/app/creative-juices/id6766537635" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="180" height="60" loading="lazy"></a><a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.rainorshineapps.creativejuices&amp;hl=en-GB" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="202" height="60" loading="lazy"></a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Creative Juices</h4>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="../index.html">All our apps</a>
+        <a href="mailto:rain.or.shine.apps@gmail.com">rain.or.shine.apps@gmail.com</a>
+      </div>
+      <div>
+        <h4>Privacy</h4>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+    </div>
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
 </body>
 </html>
