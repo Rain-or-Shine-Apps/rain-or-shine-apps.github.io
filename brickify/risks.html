@@ -100,7 +100,14 @@
   </div>
 
   <h2 id="android">Android</h2>
-  <p>Brickify's Android setup requires <a href="android-device-owner-setup.html">Device Owner mode</a> — a one-time factory reset and guided QR setup — rather than the lighter Device Admin permission alone, which can always be switched off via Settings by anyone with physical access, with no password needed. That gap is exactly why the extra setup step exists.</p>
+  <p>Brickify on Android can be set up in two ways. Both block apps in exactly the same way. The difference is how hard Brickify is to remove:</p>
+  <ul>
+    <li><a href="#android-max"><strong>Maximum protection</strong></a> — a one-time factory reset and guided QR setup make Brickify this phone's <a href="android-device-owner-setup.html">Device Owner</a>, so it can't be switched off or uninstalled. Recommended for a child's phone.</li>
+    <li><a href="#android-standard"><strong>Standard mode</strong></a> — no factory reset. Quicker to set up, but anyone holding the phone can switch Brickify off in Settings and uninstall it.</li>
+  </ul>
+
+  <h3 id="android-max" style="font-size:20px; margin-top:32px;">Maximum protection (Device Owner)</h3>
+  <p>The lighter Device Admin permission on its own can always be switched off via Settings by anyone with physical access, with no password needed. Device Owner closes that gap, which is why this setup needs the extra step.</p>
   <div class="warn">
     <h3>Accepted risks</h3>
     <p><strong>Safe mode</strong> — Android's safe mode disables third-party services. Blocks will not be enforced while in safe mode. Parent email is warned.<br/><br/>
@@ -118,6 +125,27 @@
     <p><strong>Uninstalling or force-stopping Brickify</strong> — installed as this phone's Device Owner, which has no Settings toggle at all. The only ways off it are a full factory reset, or Brickify's own in-app deactivation (PIN+second-factor gated, for legitimately retiring the app from a device). See the <a href="android-device-owner-setup.html">setup guide</a> for what Device Owner mode involves.<br/><br/>
     <strong>Revoking the Accessibility permission</strong> — A background watchdog runs every 15 minutes. If the service is disabled while bricked, the screen is locked immediately.<br/><br/>
     <strong>Deleting the app</strong> — Not possible without a factory reset or Brickify's own gated deactivation (see above) — there's no "uninstall" to fall back on the way there is on iOS.</p>
+  </div>
+
+  <h3 id="android-standard" style="font-size:20px; margin-top:40px;">Standard mode (no factory reset)</h3>
+  <p>Chosen on Brickify's first screen by tapping <em>Continue without factory reset</em>. Brickify still asks for Device Admin, but without Device Owner, Android lets anyone switch Device Admin off in Settings.</p>
+  <div class="warn">
+    <h3>Accepted risks</h3>
+    <p><strong>Uninstalling Brickify</strong> — Anyone holding the phone can switch off Device Admin in Settings (no password needed) and then uninstall Brickify.<br/><br/>
+    <strong>Switching off the Accessibility Service</strong> — While Device Admin is on, a background watchdog locks the screen within 15 minutes if the service is switched off while apps are being blocked. Once Device Admin has been switched off, nothing stops this.<br/><br/>
+    <strong>Lock screen PIN isn't enforced</strong> — Brickify asks for a screen lock during setup, but only Device Owner can make Android require one.<br/><br/>
+    <strong>Safe mode and ADB over USB</strong> — Same as maximum protection, above.</p>
+  </div>
+  <div class="warn amber">
+    <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
+    <p><strong>Know when it's removed</strong> — Add an alert email during setup. You'll be emailed if Brickify stops checking in or Device Admin is switched off, which is what you'd see if someone removed it.<br/><br/>
+    <strong>New apps and web browsing</strong> — Same as maximum protection, above.<br/><br/>
+    <strong>Moving to maximum protection later</strong> — Needs a factory reset and the <a href="android-device-owner-setup.html">QR setup</a>. There's no way to upgrade in place.</p>
+  </div>
+  <div class="warn good">
+    <h3>Still protected</h3>
+    <p><strong>Blocking and schedules</strong> — Work exactly the same as with maximum protection.<br/><br/>
+    <strong>Stopping Brickify or changing what's blocked</strong> — Still needs your Brickify PIN and second factor inside the app.</p>
   </div>
 
   <h2 id="ios">iOS</h2>
