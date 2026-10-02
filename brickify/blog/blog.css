@@ -40,3 +40,18 @@
 .post-next h4 { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin-bottom: 10px; }
 .post-next a { display: block; font-weight: 800; margin-bottom: 6px; text-decoration: none; }
 .post-next a:hover { text-decoration: underline; }
+
+/* Square or portrait main image: add class="square" to keep it from filling the screen. */
+.post-figure.square img { max-width: 520px; margin: 0 auto; }
+
+/* Side card with a small illustration, e.g. a "critical thinking check" before the download band. */
+.post-aside { display: flex; gap: 22px; align-items: flex-start; margin-top: 40px; background: var(--surface); border: 2px solid var(--line); border-radius: 24px; padding: 24px; }
+.post-aside img { width: 140px; flex-shrink: 0; border-radius: 50%; }
+.post-aside h2 { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .8px; color: var(--brand); margin-bottom: 6px; }
+.post-aside .question { font-size: 19px; font-weight: 900; color: var(--brand-dark); line-height: 1.35; margin-bottom: 10px; }
+.post-aside p { font-size: 16px; line-height: 1.65; margin-bottom: 10px; }
+.post-aside p:last-child { margin-bottom: 0; }
+@media (max-width: 560px) {
+  .post-aside { flex-direction: column; align-items: center; text-align: left; }
+  .post-aside img { width: 120px; }
+}
