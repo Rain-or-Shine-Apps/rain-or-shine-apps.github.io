@@ -4,16 +4,16 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brickify — Digital detox for your phone</title>
-  <meta name="description" content="Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — a good first phone or a real digital detox."/>
+  <meta name="description" content="Turn your old smartphone into a brick phone on your schedule. Profiles switch automatically, with a PIN and second factor to override. £4.99 once."/>
   <link rel="canonical" href="https://rainorshineapps.com/brickify/index.html"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Brickify — Digital detox for your phone"/>
-  <meta property="og:description" content="Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — a good first phone or a real digital detox."/>
+  <meta property="og:description" content="Turn your old smartphone into a brick phone on your schedule. Profiles switch automatically, with a PIN and second factor to override. £4.99 once."/>
   <meta property="og:url" content="https://rainorshineapps.com/brickify/index.html"/>
   <meta property="og:image" content="https://rainorshineapps.com/brickify/images/social-share.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Brickify — Digital detox for your phone"/>
-  <meta name="twitter:description" content="Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor."/>
+  <meta name="twitter:description" content="Turn your old smartphone into a brick phone on your schedule. Profiles switch automatically."/>
   <meta name="twitter:image" content="https://rainorshineapps.com/brickify/images/social-share.png"/>
   <script type="application/ld+json">
   {
@@ -22,7 +22,7 @@
     "name": "Brickify",
     "operatingSystem": "Android, iOS",
     "applicationCategory": "UtilitiesApplication",
-    "description": "Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — a good first phone or a real digital detox.",
+    "description": "Turn your old smartphone into a brick phone on your schedule. Profiles switch automatically, with a PIN and second factor to override. £4.99 once.",
     "url": "https://rainorshineapps.com/brickify/index.html",
     "image": "https://rainorshineapps.com/brickify/images/social-share.png",
     "offers": {
@@ -43,6 +43,68 @@
   <link rel="stylesheet" href="/assets/site.css"/>
   <style>
     :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+
+    /* ---------- Homepage sections ---------- */
+    .feature .feature-h { font-size: clamp(26px, 3.4vw, 36px); font-weight: 900; color: var(--brand-dark); line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.5px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .prose-narrow { max-width: 680px; margin: 20px auto 0; font-size: 18px; color: var(--muted); text-align: center; }
+    .tiles-4 { grid-template-columns: repeat(4, 1fr); max-width: 1000px; }
+    @media (max-width: 900px) { .tiles-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .tiles-4 { grid-template-columns: 1fr; } }
+    .tile-icon svg { width: 28px; height: 28px; }
+
+    /* Comparison table: a normal table on wide screens, one card per row on phones */
+    .compare-wrap { max-width: 900px; margin: 36px auto 0; }
+    .compare { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 20px; overflow: hidden; font-size: 16px; }
+    .compare th, .compare td { padding: 14px 18px; text-align: left; vertical-align: top; border-bottom: 2px solid var(--line); }
+    .compare tr:last-child th, .compare tr:last-child td { border-bottom: 0; }
+    .compare thead th { background: var(--brand-tint); color: var(--brand-dark); font-weight: 900; font-size: 15px; text-transform: uppercase; letter-spacing: .5px; }
+    .compare tbody th { font-weight: 900; color: var(--ink); width: 30%; }
+    .compare td { color: var(--muted); }
+    .compare td.us { color: var(--ink); font-weight: 700; }
+    .compare tr.other-wins th, .compare tr.other-wins td { background: color-mix(in srgb, var(--line) 45%, var(--bg)); color: var(--muted); font-weight: 600; }
+    .compare tr.other-wins th { font-weight: 900; }
+    .compare-note { max-width: 680px; margin: 20px auto 0; font-size: 14px; color: var(--muted); text-align: center; }
+    .compare-link { text-align: center; margin-top: 14px; font-weight: 800; }
+    @media (max-width: 640px) {
+      .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: 100%; }
+      .compare { background: none; border: 0; border-radius: 0; overflow: visible; }
+      .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      .compare tr { background: var(--surface); border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 16px; margin-bottom: 12px; overflow: hidden; }
+      .compare tbody th { width: 100%; background: var(--brand-tint); color: var(--brand-dark); }
+      .compare th, .compare td, .compare tr:last-child th, .compare tr:last-child td { border-bottom: 0; padding: 10px 16px; }
+      .compare td::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .5px; color: var(--brand); }
+      .compare tr.other-wins th { background: color-mix(in srgb, var(--line) 70%, var(--bg)); color: var(--ink); }
+    }
+
+    /* "Set it once" secondary points */
+    .mini-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 900px; margin: 72px auto 0; text-align: center; }
+    .mini-features .phone { width: 150px; margin: 0 auto 18px; border-radius: 26px; padding: 7px; }
+    .mini-features .phone img { border-radius: 20px; }
+    .mini-features h3 { font-size: 20px; font-weight: 900; color: var(--brand); margin-bottom: 6px; }
+    .mini-features p { color: var(--muted); font-size: 16px; }
+    @media (max-width: 760px) { .mini-features { grid-template-columns: 1fr; gap: 44px; } }
+
+    /* Persona cards */
+    .tiles-3 { grid-template-columns: repeat(3, 1fr); max-width: 1000px; }
+    @media (max-width: 900px) { .tiles-3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .tiles-3 { grid-template-columns: 1fr; } }
+    a.tile { display: block; text-decoration: none; transition: border-color .15s, transform .12s; }
+    a.tile:hover { border-color: var(--brand); transform: translateY(-2px); }
+    .tile .tile-more { display: inline-block; margin-top: 10px; font-weight: 800; color: var(--brand); font-size: 14px; }
+    .section-caption { text-align: center; color: var(--muted); font-size: 14px; font-weight: 700; margin-bottom: 36px; }
+
+    /* FAQ accordions */
+    .faq { max-width: 760px; margin: 36px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    .faq details { background: var(--surface); border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 18px; }
+    .faq summary { cursor: pointer; list-style: none; padding: 18px 52px 18px 22px; font-size: 18px; font-weight: 900; color: var(--brand-dark); position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 26px; color: var(--brand); line-height: 1; }
+    .faq details[open] summary::after { content: "\2212"; }
+    .faq summary:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 16px; }
+    .faq .answer { padding: 0 22px 20px; color: var(--muted); font-size: 16px; }
+    .faq .answer p + p { margin-top: 10px; }
+    .faq .answer a { font-weight: 800; }
   </style>
   <script src="/assets/site.js" defer></script>
   <script src="/assets/analytics.js" defer></script>
@@ -70,12 +132,12 @@
       </div>
       <div class="hero-copy" data-location="hero">
         <h1>Smartphone when you need it. Brick phone when you don't.</h1>
-        <p class="lead">Make your old smart phone a brick phone. Lock your selected apps behind a PIN and second factor — a good first phone or a real digital detox.</p>
+        <p class="lead">Schools are phone-free by default. Brickify makes the phone you already own a brick phone on your schedule, and a bit more phone as they grow. £4.99 once.</p>
         <div class="badges">
           <a class="badge-link" data-store="ios" href="https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="180" height="60"></a>
           <a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="202" height="60"></a>
         </div>
-        <p class="badges-note">For iPhone and Android</p>
+        <p class="badges-note">Works on iPhone 8 / X or newer (iOS 16+) and Android 8+ · <a href="compatibility.html">Check your phone</a></p>
       </div>
     </div>
   </section>
@@ -89,25 +151,113 @@
 
   <section class="section section-tint">
     <div class="wrap">
-      <h2 class="section-title">One phone. Every stage.</h2>
-      <p class="section-sub">Brickify turns the smartphone you already own into exactly as much phone as you want — no more.</p>
+      <h2 class="section-title">The school day is covered. The rest is up to us.</h2>
+      <div class="prose-narrow"><p>Since September, schools in England are expected to be mobile phone-free by default, and Ofsted now checks phone policies at every inspection. Most parents welcome it. But school rules stop at the gate. The walk in, the bus home, the evening and bedtime are still ours to sort out, and a lot of families are reaching for a brick phone.</p></div>
+    </div>
+  </section>
 
-      <div class="feature">
-        <div class="feature-media"><div class="phone"><img src="images/screen-4.webp" alt="Choosing which apps to block" width="600" height="1300" loading="lazy"></div></div>
-        <div><h3>Grows with your child</h3><p>Change what's unlocked any time as they grow up — no need to buy a new device at every stage.</p></div>
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">The trouble with a brick phone</h2>
+      <p class="section-sub">A basic phone does calls and texts well, and the battery lasts for days. For some children that's exactly right. For many 11 and 12-year-olds, it means:</p>
+      <div class="tiles tiles-4">
+        <div class="tile"><span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Folded map icon"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span><h3>No maps</h3><p>for the walk or the bus</p></div>
+        <div class="tile"><span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Musical note icon"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span><h3>No music or school apps</h3><p>homework and timetables often live in apps</p></div>
+        <div class="tile"><span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Icon of two phones side by side"><rect x="2" y="5" width="9" height="16" rx="2"/><rect x="13" y="3" width="9" height="16" rx="2"/><path d="M6 18h1M17 16h1"/></svg></span><h3>A second device</h3><p>to buy, charge and lose</p></div>
+        <div class="tile"><span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Calendar icon"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><h3>Outgrown by spring</h3><p>and the smartphone lesson is only postponed</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap">
+      <h2 class="section-title">Brick phone vs Brickify</h2>
+      <div class="compare-wrap">
+        <table class="compare">
+          <thead><tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col">Brick phone</th><th scope="col">Brickify</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">What it costs</th><td data-label="Brick phone">About £10–£15, plus a SIM</td><td class="us" data-label="Brickify">£4.99 once, on a phone you already own, plus a SIM</td></tr>
+            <tr><th scope="row">Calls and texts</th><td data-label="Brick phone">Yes</td><td class="us" data-label="Brickify">Yes</td></tr>
+            <tr><th scope="row">Maps, music, school apps</th><td data-label="Brick phone">No</td><td class="us" data-label="Brickify">Only the ones you allow</td></tr>
+            <tr><th scope="row">A second device to charge and lose</th><td data-label="Brick phone">Yes</td><td class="us" data-label="Brickify">No</td></tr>
+            <tr><th scope="row">Changes with the time of day</th><td data-label="Brick phone">No</td><td class="us" data-label="Brickify">Yes, profiles switch on your schedule</td></tr>
+            <tr><th scope="row">Grows with your child</th><td data-label="Brick phone">No, you replace it</td><td class="us" data-label="Brickify">Yes, open one app at a time as trust grows</td></tr>
+            <tr><th scope="row">Override</th><td data-label="Brick phone">Not needed</td><td class="us" data-label="Brickify">PIN plus a second factor</td></tr>
+            <tr><th scope="row">What it looks like</th><td data-label="Brick phone">An obvious basic phone</td><td class="us" data-label="Brickify">An ordinary phone</td></tr>
+            <tr class="other-wins"><th scope="row">Where the other one wins</th><td data-label="Brick phone">No internet at all, long battery, no spare phone needed</td><td data-label="Brickify">Brickify doesn't filter websites inside an app you've allowed</td></tr>
+          </tbody>
+        </table>
+        <p class="compare-note">By the start of secondary school, most children already have a smartphone: ownership jumps from 56% at age 10 to 83% at age 11 (<a href="https://www.ofcom.org.uk/online-safety/protecting-children/younger-phone-owners-the-rise-of-ai-and-consumption-over-creation-our-latest-look-at-uk-childrens-media-lives" target="_blank" rel="noopener">Ofcom, 2026</a>). So the question isn't whether, but what's switched on, and when.</p>
+        <p class="compare-link"><a href="blog/index.html">Read the full comparison &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
       <div class="feature">
         <div class="feature-media"><div class="phone"><img src="images/screen-3.webp" alt="Setting schedule days and times" width="600" height="1300" loading="lazy"></div></div>
-        <div><h3>Schedules that run themselves</h3><p>Click into "School," "Bedtime," or any mode automatically, once it's set up.</p></div>
+        <div><h2 class="feature-h">Set it once. No 9pm arguments.</h2><p>Build the schedule once, when you're calm: School, Home, Bedtime, Weekend. After that the phone switches itself. There's no card to tap, no setting to re-edit every morning, and no nightly negotiation. Nobody needs willpower at 9pm, not your child and not you. Opening it early takes your PIN and a second factor, so it's a decision, not an impulse.</p></div>
       </div>
-      <div class="feature">
-        <div class="feature-media"><div class="phone"><img src="images/screen-5.webp" alt="Authenticator second-factor setup" width="600" height="1300" loading="lazy"></div></div>
-        <div><h3>You hold the keys</h3><p>A parent PIN backed by a second factor — recovery codes mean you're never locked out for good.</p></div>
+      <div class="mini-features">
+        <div>
+          <div class="phone"><img src="images/screen-4.webp" alt="Choosing which apps are allowed in a profile" width="600" height="1300" loading="lazy"></div>
+          <h3>Grows with your child</h3><p>Open one app at a time as trust grows. No new device at every stage.</p>
+        </div>
+        <div>
+          <div class="phone"><img src="images/screen-5.webp" alt="Authenticator second-factor setup" width="600" height="1300" loading="lazy"></div>
+          <h3>You hold the keys</h3><p>A PIN backed by a second factor. Recovery codes mean you're never locked out for good.</p>
+        </div>
+        <div>
+          <div class="phone"><img src="images/screen-6.webp" alt="Brickify's welcome screen listing the setup steps" width="600" height="1300" loading="lazy"></div>
+          <h3>Set up in minutes</h3><p>A guided setup. Optional steps can be finished later.</p>
+        </div>
       </div>
-      <div class="feature">
-        <div class="feature-media"><div class="phone"><img src="images/screen-6.webp" alt="Brickify's welcome screen listing the setup steps" width="600" height="1300" loading="lazy"></div></div>
-        <div><h3>Set up in minutes</h3><p>Eight quick steps, most take seconds. Optional ones can be skipped and finished later.</p></div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap">
+      <h2 class="section-title">Every family's week is different</h2>
+      <p class="section-caption">Illustrative examples.</p>
+      <div class="tiles tiles-3">
+        <a class="tile" href="blog/index.html"><h3>The sporty kid</h3><p>Match day opens maps, music and texts. Bedtime is calls only.</p><span class="tile-more">Read more &rarr;</span></a>
+        <a class="tile" href="blog/index.html"><h3>The theatre kid</h3><p>Rehearsal opens voice memos and scripts. Show week is calls only.</p><span class="tile-more">Read more &rarr;</span></a>
+        <a class="tile" href="blog/index.html"><h3>The commuter</h3><p>Maps, bus times and music on the journey. Calls and texts at school.</p><span class="tile-more">Read more &rarr;</span></a>
+        <a class="tile" href="blog/index.html"><h3>The martial artist</h3><p>Grading-week evenings: saved practice videos and a timer.</p><span class="tile-more">Read more &rarr;</span></a>
+        <a class="tile" href="blog/index.html"><h3>The boarder</h3><p>Weekday evenings match house rules. Exeat weekends open up.</p><span class="tile-more">Read more &rarr;</span></a>
+        <a class="tile" href="blog/index.html"><h3>The grown-ups</h3><p>Work-hours focus, or a 10pm wind-down. Brickify works on your phone too.</p><span class="tile-more">Read more &rarr;</span></a>
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">The questions parents actually ask</h2>
+      <div class="faq">
+        <details>
+          <summary>Won't they find a way round it?</summary>
+          <div class="answer">
+            <p>A determined child might, and any app that promises otherwise isn't being straight with you. Brickify uses the phone's own system-level controls: Apple's Family Controls on iPhone and Device Owner mode on Android. Setup walks you through closing the side doors, and you get an email if protection is removed. What it can't stop: a factory reset, or websites inside an app you've allowed.</p>
+            <p><a href="risks.html">See our known limitations &rarr;</a></p>
+          </div>
+        </details>
+        <details>
+          <summary>Isn't this just Screen Time with extra steps?</summary>
+          <div class="answer"><p>Not quite. On iPhone, Brickify is built on the same Apple framework as Screen Time, which is why it's hard to get round. What it adds: several profiles that swap themselves through the week, a PIN plus second factor, alerts, a guided setup, and the same app on Android. If one Downtime schedule is enough for your family, Screen Time is free and good.</p></div>
+        </details>
+        <details>
+          <summary>My child will be the only one.</summary>
+          <div class="answer"><p>Probably not. According to Smartphone Free Childhood, more than 200,000 UK children are now in its Parent Pact, covering over half of UK schools. And a Brickified phone doesn't announce itself. It looks like any other phone; fewer apps work at certain times, that's all.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap">
+      <h2 class="section-title">On the same side as the movement</h2>
+      <div class="prose-narrow"><p>Brickify isn't a rival to brick phones or to Smartphone Free Childhood. If you've signed the Pact and can wait until 14, wait. That's a good choice. Brickify is for families who've decided a phone is needed now, and for children who already have a smartphone that needs to be quieter. At 14, it helps too: instead of going from nothing to everything overnight, open one app at a time.</p></div>
     </div>
   </section>
 
@@ -116,9 +266,9 @@
       <h2 class="section-title">Why people choose Brickify</h2>
       <p class="section-sub">Not just a closed app — real control that sticks.</p>
       <div class="tiles">
-        <div class="tile"><h3>Hardened against savvy kids</h3><p>Real OS-level blocking, not just a closed app they can find a way round.</p></div>
+        <div class="tile"><h3>Harder to get round than a closed app</h3><p>Uses the phone's own system-level controls, and tells you if protection is removed.</p></div>
         <div class="tile"><h3>A real digital detox</h3><p>Not just for kids — use it on yourself for a genuine break from the apps you can't put down.</p></div>
-        <div class="tile"><h3>Cheaper than a brick phone</h3><p>Use the smartphone already gathering dust — no separate device or contract, and it lasts longer.</p></div>
+        <div class="tile"><h3>Cheaper than a new phone</h3><p>If you already have a spare smartphone, there's no second device or contract to buy.</p></div>
         <div class="tile"><span class="tile-tag">Coming soon</span><h3>Brickify for Schools</h3><p>Your school administrator can check your phone is compliant before it goes on site.</p></div>
       </div>
     </div>
@@ -127,7 +277,7 @@
   <section class="cta-band" id="download">
     <div class="wrap" data-location="download">
       <h2>Ready to brick it?</h2>
-      <p>Get Brickify on your phone today.</p>
+      <p>£4.99 once. No subscription. The school has 8:30 to 3:30, and Brickify helps with the rest.</p>
       <div class="badges">
         <a class="badge-link" data-store="ios" href="https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="180" height="60" loading="lazy"></a>
         <a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="202" height="60" loading="lazy"></a>
