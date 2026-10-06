@@ -96,3 +96,22 @@
   .slider-dots { gap: 4px; flex-wrap: nowrap; }
   .slider-dots button { width: 27px; height: 27px; font-size: 12px; }
 }
+
+/* List with an icon per item (e.g. readiness signs) */
+.icon-list { list-style: none; padding: 0 !important; counter-reset: sign; }
+.icon-list li { display: flex; gap: 16px; align-items: center; background: var(--surface); border: 2px solid var(--line); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; counter-increment: sign; }
+.icon-list img { width: 64px; height: 64px; flex-shrink: 0; margin: 0 !important; border-radius: 12px; }
+.icon-list li::before { content: counter(sign); font-weight: 900; color: var(--brand); font-size: 20px; min-width: 14px; }
+.icon-list p { margin: 0 !important; }
+
+/* Ranked options (e.g. ladder rungs); add class="is-brickify" to highlight one */
+.rungs { list-style: none; padding: 0 !important; counter-reset: rung; }
+.rungs li { counter-increment: rung; display: flex; gap: 14px; align-items: center; border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 14px; padding: 12px 16px; margin-bottom: 10px; background: var(--surface); }
+.rungs li::before { content: counter(rung); flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; background: var(--brand-tint); color: var(--brand-dark); }
+.rungs li.is-brickify { background: var(--brand); border-color: var(--brand-dark); color: #fff; font-weight: 700; }
+.rungs li.is-brickify::before { background: #fff; }
+@media (max-width: 480px) {
+  .icon-list li { gap: 10px; padding: 10px 12px; }
+  .icon-list img { width: 44px; height: 44px; }
+  .icon-list li::before { font-size: 17px; min-width: 10px; }
+}
