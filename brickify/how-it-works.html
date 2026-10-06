@@ -53,7 +53,39 @@
   <link rel="stylesheet" href="/assets/site.css"/>
   <style>
     :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
-    
+
+    /* ---------- Layer diagram ---------- */
+    .layers-intro { color: var(--muted); font-size: 16px; margin: 0 0 22px; }
+    .section-h { font-size: 24px; font-weight: 900; color: var(--brand-dark); letter-spacing: -0.3px; margin: 0 0 8px; }
+    .section-h.steps-h { margin-top: 48px; margin-bottom: 16px; }
+    .layers { display: flex; flex-direction: column; gap: 10px; }
+    .layer { position: relative; border-radius: 18px; padding: 16px 18px 16px 62px; border: 2px solid var(--line); border-bottom-width: 5px; background: var(--surface); }
+    .layer-n { position: absolute; left: 16px; top: 16px; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; background: var(--brand-tint); color: var(--brand-dark); }
+    .layer h3 { font-size: 17px; font-weight: 900; color: var(--ink); line-height: 1.3; }
+    .layer .layer-sub { font-size: 14px; color: var(--muted); margin-top: 2px; }
+    .layer-split { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    .layer-split > div { border-radius: 12px; padding: 10px 12px; background: var(--bg); border: 1.5px solid var(--line); font-size: 14px; color: var(--muted); }
+    .layer-split strong { display: block; color: var(--ink); font-size: 14px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .chip { display: inline-block; padding: 6px 12px; border-radius: 999px; font-size: 14px; font-weight: 800; background: var(--bg); border: 1.5px solid var(--line); color: var(--ink); }
+    /* Brickify's own layers stand out in brand colour */
+    .layer.is-brickify { background: var(--brand); border-color: var(--brand-dark); color: #fff; }
+    .layer.is-brickify h3 { color: #fff; }
+    .layer.is-brickify .layer-sub { color: rgba(255,255,255,.88); }
+    .layer.is-brickify .layer-n { background: #fff; color: var(--brand-dark); }
+    .layer.is-brickify .chip, .layer.is-brickify .layer-split > div { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.35); color: #fff; }
+    .layer.is-brickify .layer-split strong { color: #fff; }
+    .layer.is-os { background: var(--brand-tint); }
+    .layer.is-os .layer-split > div, .layer.is-os .layer-n { background: var(--surface); }
+    .layers-key { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 13px; font-weight: 800; color: var(--muted); }
+    .layers-key span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-right: 6px; vertical-align: -1px; border: 1.5px solid var(--line); background: var(--surface); }
+    .layers-key .k-brickify::before { background: var(--brand); border-color: var(--brand-dark); }
+    .layers-key .k-os::before { background: var(--brand-tint); }
+    @media (max-width: 520px) {
+      .layer { padding: 14px 14px 14px 54px; }
+      .layer-n { left: 12px; top: 14px; width: 30px; height: 30px; font-size: 14px; }
+      .layer-split { grid-template-columns: 1fr; }
+    }
   </style>
   <script src="/assets/site.js" defer></script>
   <script src="/assets/analytics.js" defer></script>
@@ -76,17 +108,79 @@
 
 <div class="header">
   <h1>How it works</h1>
-  <p>Five steps, the same on both platforms — a couple of extra device-level steps come first on Android.</p>
+  <p>How Brickify is built, and the five steps to set it up on iPhone or Android.</p>
 </div>
 
 <div class="container">
   <a href="information.html" class="back">← Back to Information</a>
 
+  <h2 class="section-h">How Brickify is built</h2>
+  <p class="layers-intro">Brickify sits on top of protection that's already built into your phone, then adds its own. Read from the bottom up.</p>
+
+  <div class="layers" role="list" aria-label="Brickify's layers, from the top layer down to the device">
+    <div class="layer is-brickify" role="listitem">
+      <span class="layer-n" aria-hidden="true">5</span>
+      <h3>Brickify's features</h3>
+      <p class="layer-sub">What you set up and change over time.</p>
+      <div class="chips">
+        <span class="chip">Scheduled profiles</span>
+        <span class="chip">Granular controls that change as they grow up</span>
+        <span class="chip">Parent alerts</span>
+      </div>
+    </div>
+
+    <div class="layer is-brickify" role="listitem">
+      <span class="layer-n" aria-hidden="true">4</span>
+      <h3>Extra hardening</h3>
+      <p class="layer-sub">Brickify makes the extra protection easy to set up, and emails parents about certain risky actions, like a new app being installed or protection being removed.</p>
+      <div class="layer-split">
+        <div><strong>Both platforms</strong>Guided setup and parent alerts</div>
+        <div><strong>Android</strong>Can be set up as Device Owner for maximum protection</div>
+      </div>
+    </div>
+
+    <div class="layer is-os" role="listitem">
+      <span class="layer-n" aria-hidden="true">3</span>
+      <h3>OS protection</h3>
+      <p class="layer-sub">The phone's own system-level controls do the blocking, which is what makes Brickify hard to get round.</p>
+      <div class="layer-split">
+        <div><strong>Android</strong>Android's accessibility service</div>
+        <div><strong>iPhone</strong>Apple's Screen Time framework (Family Controls)</div>
+      </div>
+    </div>
+
+    <div class="layer" role="listitem">
+      <span class="layer-n" aria-hidden="true">2</span>
+      <h3>Connection</h3>
+      <p class="layer-sub">Calls, texts and data come through the SIM and internet as usual. You can brick the internet browser.</p>
+      <div class="chips">
+        <span class="chip">SIM</span>
+        <span class="chip">Internet</span>
+      </div>
+    </div>
+
+    <div class="layer" role="listitem">
+      <span class="layer-n" aria-hidden="true">1</span>
+      <h3>The device</h3>
+      <p class="layer-sub">A phone you already own.</p>
+      <div class="layer-split">
+        <div><strong>Android</strong>Android 8.0 or newer</div>
+        <div><strong>iPhone</strong>iPhone 8 / X or newer (iOS 16+)</div>
+      </div>
+    </div>
+  </div>
+  <div class="layers-key" aria-hidden="true">
+    <span class="k-brickify">Added by Brickify</span>
+    <span class="k-os">Built into your phone's OS</span>
+    <span>Your phone and connection</span>
+  </div>
+
+  <h2 class="section-h steps-h">Setting it up</h2>
   <div class="steps">
     <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Choose a passcode</h3><p>Set a 4-digit PIN you'll remember but won't enter on impulse.</p></div></div>
     <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Set a second factor</h3><p>Parent PIN, authenticator app, or email code. Both factors are required to unbrick — losing one doesn't lock you out forever.</p></div></div>
     <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Save your recovery codes</h3><p>Three one-time backup codes are generated. Write them down. If you ever lose your PIN and second factor, one of these codes will get you back in.</p></div></div>
-    <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Select apps to block</h3><p>Pick exactly which apps are disabled when bricked. Everything else stays accessible.</p></div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Choose which apps to block, and set up the blocking schedules too</h3><p>Pick exactly which apps are disabled when bricked. Everything else stays accessible.</p></div></div>
     <div class="step"><div class="step-n">5</div><div class="step-body"><h3>Tap BRICK</h3><p>Your chosen apps are blocked at the OS level. To unblock them, you need both your PIN and your second factor.</p></div></div>
   </div>
 
