@@ -45,3 +45,10 @@ You can pick the slug yourself to know the URL in advance (e.g. for social posts
 5. Add the URL to `/sitemap.xml` next to the other blog entries.
 6. Check no `{{` is left: `grep -n "{{" blog/<slug>.html`.
 7. Preview locally, then commit and push.
+
+## Optional blocks
+
+- **Critical thinking card:** `.post-aside` (in the template).
+- **Step slider:** for a numbered series of pictures with copy. Add `<script src="slider.js" defer></script>` in the head and copy the `.step-slider` block from `enforce-screen-time.html`. All the slide text stays in the page, so search engines still read it.
+- **Video shapes:** `.frame` (16:9), `.frame portrait` (9:16 phone video), `.frame tall` (3:4).
+- **Useful links list:** `ul.useful-links`.
