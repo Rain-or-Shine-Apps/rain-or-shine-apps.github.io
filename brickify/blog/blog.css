@@ -43,6 +43,7 @@
 
 /* Square or portrait main image: add class="square" to keep it from filling the screen. */
 .post-figure.square img { max-width: 520px; margin: 0 auto; }
+.post-figure.portrait img { max-width: 420px; margin: 0 auto; }
 
 /* Side card with a small illustration, e.g. a "critical thinking check" before the download band. */
 .post-aside { display: flex; gap: 22px; align-items: flex-start; margin-top: 40px; background: var(--surface); border: 2px solid var(--line); border-radius: 24px; padding: 24px; }
