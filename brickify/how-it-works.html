@@ -54,38 +54,56 @@
   <style>
     :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
 
-    /* ---------- Layer diagram ---------- */
-    .layers-intro { color: var(--muted); font-size: 16px; margin: 0 0 22px; }
+    /* ---------- Layer diagram (swipeable, starts at layer 1) ---------- */
     .section-h { font-size: 24px; font-weight: 900; color: var(--brand-dark); letter-spacing: -0.3px; margin: 0 0 8px; }
-    .section-h.steps-h { margin-top: 48px; margin-bottom: 16px; }
-    .layers { display: flex; flex-direction: column; gap: 10px; }
-    .layer { position: relative; border-radius: 18px; padding: 16px 18px 16px 62px; border: 2px solid var(--line); border-bottom-width: 5px; background: var(--surface); }
-    .layer-n { position: absolute; left: 16px; top: 16px; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; background: var(--brand-tint); color: var(--brand-dark); }
-    .layer h3 { font-size: 17px; font-weight: 900; color: var(--ink); line-height: 1.3; }
-    .layer .layer-sub { font-size: 14px; color: var(--muted); margin-top: 2px; }
-    .layer-split { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    .section-h.steps-h { margin-bottom: 16px; }
+    .section-h.layers-h { margin-top: 56px; }
+    .layers-intro { color: var(--muted); font-size: 16px; margin: 0 0 14px; }
+    .layers-key { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 16px; font-size: 13px; font-weight: 800; color: var(--muted); }
+    .layers-key span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-right: 6px; vertical-align: -1px; border: 2px solid var(--line); background: var(--surface); }
+    .layers-key .k-brickify::before { background: var(--brand); border-color: var(--brand-dark); }
+    .layers-key .k-os::before { background: var(--brand-tint); border-color: var(--brand); }
+
+    .layers-track { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 4px 2px 14px; margin: 0 -2px; scrollbar-width: thin; }
+    .layers-track:focus-visible { outline: 3px solid var(--brand); outline-offset: 4px; border-radius: 18px; }
+    @media (prefers-reduced-motion: reduce) { .layers-track { scroll-behavior: auto; } }
+    .layer { flex: 0 0 min(440px, 86%); scroll-snap-align: start; position: relative; border-radius: 20px; padding: 18px 18px 20px; border: 2px solid var(--line); border-bottom-width: 5px; background: var(--surface); display: flex; flex-direction: column; }
+    .layer-top { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .layer-n { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .8px; color: var(--brand); }
+    .layer h3 { font-size: 20px; font-weight: 900; color: var(--ink); line-height: 1.25; }
+    .layer .layer-sub { font-size: 15px; color: var(--muted); margin-top: 6px; }
+    .layer-split { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
     .layer-split > div { border-radius: 12px; padding: 10px 12px; background: var(--bg); border: 1.5px solid var(--line); font-size: 14px; color: var(--muted); }
     .layer-split strong { display: block; color: var(--ink); font-size: 14px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .layer-split .full { grid-column: 1 / -1; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
     .chip { display: inline-block; padding: 6px 12px; border-radius: 999px; font-size: 14px; font-weight: 800; background: var(--bg); border: 1.5px solid var(--line); color: var(--ink); }
-    /* Brickify's own layers stand out in brand colour */
-    .layer.is-brickify { background: var(--brand); border-color: var(--brand-dark); color: #fff; }
-    .layer.is-brickify h3 { color: #fff; }
-    .layer.is-brickify .layer-sub { color: rgba(255,255,255,.88); }
-    .layer.is-brickify .layer-n { background: #fff; color: var(--brand-dark); }
+    .layer-note { margin-top: 12px; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 10px; }
+
+    /* Mini stack: five bars, bottom bar is layer 1, the current layer is highlighted */
+    .mini-stack { display: flex; flex-direction: column-reverse; gap: 3px; width: 44px; flex-shrink: 0; margin-left: auto; }
+    .mini-stack i { display: block; height: 6px; border-radius: 3px; background: var(--line); }
+    .mini-stack i.on { background: var(--brand); }
+
+    /* Brickify's own layers */
+    .layer.is-brickify { background: var(--brand); border-color: var(--brand-dark); }
+    .layer.is-brickify h3, .layer.is-brickify .layer-n { color: #fff; }
+    .layer.is-brickify .layer-sub { color: rgba(255,255,255,.9); }
     .layer.is-brickify .chip, .layer.is-brickify .layer-split > div { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.35); color: #fff; }
     .layer.is-brickify .layer-split strong { color: #fff; }
-    .layer.is-os { background: var(--brand-tint); }
-    .layer.is-os .layer-split > div, .layer.is-os .layer-n { background: var(--surface); }
-    .layers-key { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 13px; font-weight: 800; color: var(--muted); }
-    .layers-key span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-right: 6px; vertical-align: -1px; border: 1.5px solid var(--line); background: var(--surface); }
-    .layers-key .k-brickify::before { background: var(--brand); border-color: var(--brand-dark); }
-    .layers-key .k-os::before { background: var(--brand-tint); }
-    @media (max-width: 520px) {
-      .layer { padding: 14px 14px 14px 54px; }
-      .layer-n { left: 12px; top: 14px; width: 30px; height: 30px; font-size: 14px; }
-      .layer-split { grid-template-columns: 1fr; }
-    }
+    .layer.is-brickify .mini-stack i { background: rgba(255,255,255,.3); }
+    .layer.is-brickify .mini-stack i.on { background: #fff; }
+    /* Built with the phone's OS: cream fill, Brickify brick edges because Brickify sets it up */
+    .layer.is-os { background: var(--brand-tint); border-color: var(--brand); }
+    .layer.is-os .layer-split > div { background: var(--surface); }
+
+    .layers-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 4px; }
+    .layers-nav .count { font-size: 14px; font-weight: 800; color: var(--muted); }
+    .layers-nav .btns { display: flex; gap: 8px; }
+    .layers-nav button { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--line); border-bottom-width: 4px; background: var(--surface); color: var(--brand); font: 900 20px/1 var(--font); cursor: pointer; }
+    .layers-nav button:disabled { opacity: .4; cursor: default; }
+    .layers-nav button:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+    @media (max-width: 520px) { .layer-split { grid-template-columns: 1fr; } }
   </style>
   <script src="/assets/site.js" defer></script>
   <script src="/assets/analytics.js" defer></script>
@@ -108,72 +126,11 @@
 
 <div class="header">
   <h1>How it works</h1>
-  <p>How Brickify is built, and the five steps to set it up on iPhone or Android.</p>
+  <p>The five steps to set Brickify up on iPhone or Android, and how it's built.</p>
 </div>
 
 <div class="container">
   <a href="information.html" class="back">← Back to Information</a>
-
-  <h2 class="section-h">How Brickify is built</h2>
-  <p class="layers-intro">Brickify sits on top of protection that's already built into your phone, then adds its own. Read from the bottom up.</p>
-
-  <div class="layers" role="list" aria-label="Brickify's layers, from the top layer down to the device">
-    <div class="layer is-brickify" role="listitem">
-      <span class="layer-n" aria-hidden="true">5</span>
-      <h3>Brickify's features</h3>
-      <p class="layer-sub">What you set up and change over time.</p>
-      <div class="chips">
-        <span class="chip">Scheduled profiles</span>
-        <span class="chip">Granular controls that change as they grow up</span>
-        <span class="chip">Parent alerts</span>
-      </div>
-    </div>
-
-    <div class="layer is-brickify" role="listitem">
-      <span class="layer-n" aria-hidden="true">4</span>
-      <h3>Extra hardening</h3>
-      <p class="layer-sub">Brickify makes the extra protection easy to set up, and emails parents about certain risky actions, like a new app being installed or protection being removed.</p>
-      <div class="layer-split">
-        <div><strong>Both platforms</strong>Guided setup and parent alerts</div>
-        <div><strong>Android</strong>Can be set up as Device Owner for maximum protection</div>
-      </div>
-    </div>
-
-    <div class="layer is-os" role="listitem">
-      <span class="layer-n" aria-hidden="true">3</span>
-      <h3>OS protection</h3>
-      <p class="layer-sub">The phone's own system-level controls do the blocking, which is what makes Brickify hard to get round.</p>
-      <div class="layer-split">
-        <div><strong>Android</strong>Android's accessibility service</div>
-        <div><strong>iPhone</strong>Apple's Screen Time framework (Family Controls)</div>
-      </div>
-    </div>
-
-    <div class="layer" role="listitem">
-      <span class="layer-n" aria-hidden="true">2</span>
-      <h3>Connection</h3>
-      <p class="layer-sub">Calls, texts and data come through the SIM and internet as usual. You can brick the internet browser.</p>
-      <div class="chips">
-        <span class="chip">SIM</span>
-        <span class="chip">Internet</span>
-      </div>
-    </div>
-
-    <div class="layer" role="listitem">
-      <span class="layer-n" aria-hidden="true">1</span>
-      <h3>The device</h3>
-      <p class="layer-sub">A phone you already own.</p>
-      <div class="layer-split">
-        <div><strong>Android</strong>Android 8.0 or newer</div>
-        <div><strong>iPhone</strong>iPhone 8 / X or newer (iOS 16+)</div>
-      </div>
-    </div>
-  </div>
-  <div class="layers-key" aria-hidden="true">
-    <span class="k-brickify">Added by Brickify</span>
-    <span class="k-os">Built into your phone's OS</span>
-    <span>Your phone and connection</span>
-  </div>
 
   <h2 class="section-h steps-h">Setting it up</h2>
   <div class="steps">
@@ -183,6 +140,104 @@
     <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Choose which apps to block, and set up the blocking schedules too</h3><p>Pick exactly which apps are disabled when bricked. Everything else stays accessible.</p></div></div>
     <div class="step"><div class="step-n">5</div><div class="step-body"><h3>Tap BRICK</h3><p>Your chosen apps are blocked at the OS level. To unblock them, you need both your PIN and your second factor.</p></div></div>
   </div>
+
+  <h2 class="section-h layers-h" id="layers">How Brickify is built</h2>
+  <p class="layers-intro">Five layers, starting with the phone itself. Swipe or use the arrows to go up through them.</p>
+  <div class="layers-key">
+    <span class="k-brickify">Added by Brickify</span>
+    <span class="k-os">Built with your phone's OS</span>
+    <span>Your phone and connection</span>
+  </div>
+
+  <div class="layers-track" id="layers-track" tabindex="0" role="region" aria-label="Brickify's five layers, from the device up">
+    <div class="layer" id="layer-1">
+      <div class="layer-top"><span class="layer-n">Layer 1 of 5</span><span class="mini-stack" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+      <h3>The device</h3>
+      <p class="layer-sub">A phone you already own.</p>
+      <div class="layer-split">
+        <div><strong>Android</strong>Android 8.0 or newer</div>
+        <div><strong>iPhone</strong>iPhone 8 / X or newer (iOS 16+)</div>
+      </div>
+    </div>
+
+    <div class="layer" id="layer-2">
+      <div class="layer-top"><span class="layer-n">Layer 2 of 5</span><span class="mini-stack" aria-hidden="true"><i></i><i class="on"></i><i></i><i></i><i></i></span></div>
+      <h3>Connection</h3>
+      <p class="layer-sub">Calls, texts and data come through the SIM and internet as usual. You can brick the internet browser.</p>
+      <div class="chips">
+        <span class="chip">SIM</span>
+        <span class="chip">Internet</span>
+      </div>
+      <p class="layer-note">You can choose not to use a SIM or eSIM, to have a Wi-Fi only device like a landline.</p>
+    </div>
+
+    <div class="layer is-os" id="layer-3">
+      <div class="layer-top"><span class="layer-n">Layer 3 of 5</span><span class="mini-stack" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i></span></div>
+      <h3>OS protection</h3>
+      <p class="layer-sub">The phone's own system-level controls do the blocking, which is what makes Brickify hard to get round. Brickify makes them simple to set up.</p>
+      <div class="layer-split">
+        <div><strong>Android</strong>Android's accessibility service</div>
+        <div><strong>iPhone</strong>Apple's Screen Time framework (Family Controls)</div>
+        <div class="full"><strong>Both platforms</strong>Alerts for parents if OS-level controls are circumvented</div>
+      </div>
+    </div>
+
+    <div class="layer is-brickify" id="layer-4">
+      <div class="layer-top"><span class="layer-n">Layer 4 of 5</span><span class="mini-stack" aria-hidden="true"><i></i><i></i><i></i><i class="on"></i><i></i></span></div>
+      <h3>Extra hardening</h3>
+      <p class="layer-sub">Brickify makes the extra protection easy to set up, and emails parents about certain risky actions, like a new app being installed or protection being removed.</p>
+      <div class="layer-split">
+        <div><strong>Both platforms</strong>Guided setup and parent alerts</div>
+        <div><strong>Android</strong>Can be set up as Device Owner for maximum protection</div>
+      </div>
+    </div>
+
+    <div class="layer is-brickify" id="layer-5">
+      <div class="layer-top"><span class="layer-n">Layer 5 of 5</span><span class="mini-stack" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="on"></i></span></div>
+      <h3>Brickify's features</h3>
+      <p class="layer-sub">What you set up and change over time.</p>
+      <div class="chips">
+        <span class="chip">Scheduled profiles</span>
+        <span class="chip">Granular controls that change as they grow up</span>
+        <span class="chip">Parent alerts</span>
+      </div>
+    </div>
+  </div>
+  <div class="layers-nav">
+    <span class="count" id="layers-count" aria-live="polite">Layer 1 of 5</span>
+    <div class="btns">
+      <button type="button" id="layers-prev" aria-label="Previous layer" disabled>&larr;</button>
+      <button type="button" id="layers-next" aria-label="Next layer">&rarr;</button>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var track = document.getElementById('layers-track');
+      var cards = track.querySelectorAll('.layer');
+      var prev = document.getElementById('layers-prev'), next = document.getElementById('layers-next');
+      var count = document.getElementById('layers-count');
+      function current() {
+        var left = track.scrollLeft, best = 0;
+        cards.forEach(function (c, i) { if (Math.abs(c.offsetLeft - track.offsetLeft - left) < Math.abs(cards[best].offsetLeft - track.offsetLeft - left)) best = i; });
+        // At the far right the last cards may never reach the start edge
+        if (left + track.clientWidth >= track.scrollWidth - 2) best = cards.length - 1;
+        return best;
+      }
+      function go(i) { track.scrollTo({ left: cards[i].offsetLeft - track.offsetLeft }); }
+      function update() {
+        var i = current();
+        count.textContent = 'Layer ' + (i + 1) + ' of ' + cards.length;
+        prev.disabled = i === 0; next.disabled = i === cards.length - 1;
+      }
+      prev.addEventListener('click', function () { go(Math.max(0, current() - 1)); });
+      next.addEventListener('click', function () { go(Math.min(cards.length - 1, current() + 1)); });
+      track.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
+      track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+      });
+    })();
+  </script>
 
   <div class="next">
     <a href="android-device-owner-setup.html">→ Android's extra device-level setup (Device Owner mode)</a>
