@@ -41,7 +41,7 @@ You can pick the slug yourself to know the URL in advance (e.g. for social posts
 1. Copy `_template.html` to `<slug>.html` and fill every `{{PLACEHOLDER}}` (title appears in several places, including the JSON-LD block).
 2. Save the picture (and any MP4) to `blog/images/`, converted to `.webp` and resized to ~1200px wide.
 3. Remove the unused video option, or the whole video block if there's no video.
-4. Add a `.post-card` to the top of the list in `blog/index.html` (newest first).
+4. Add a `.post-card` to the top of the list in `blog/index.html` (newest first), copying an existing card. Put the post's main picture in `.post-thumb` with `alt=""` (the card title already describes it) and its real `width`/`height`; any shape works, it's shown whole on a coloured panel. The newest card becomes the wide featured one automatically, and card colours cycle pink, teal, brick by position, so nothing else needs changing. No picture? Use `<span class="post-thumb post-thumb-art" aria-hidden="true"><span>…</span></span>` with a short word or number.
 5. Add the URL to `/sitemap.xml` next to the other blog entries.
 6. Check no `{{` is left: `grep -n "{{" blog/<slug>.html`.
 7. Preview locally, then commit and push.

@@ -15,40 +15,6 @@
   <meta name="twitter:title" content="Brickify Blog - Notes on kids, phones, and online safety"/>
   <meta name="twitter:description" content="Commentary and roundups on online safety, screen time, and the policy news that shapes how families use phones."/>
   <meta name="twitter:image" content="https://rainorshineapps.com/brickify/images/social-share.png"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --brick: #B65A3D; --dark: #2C3635; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
-    a { color: var(--brick); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
-    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
-    .header h1 { color: #fff; font-size: 28px; font-weight: 800; }
-    .header p { color: rgba(255,255,255,0.55); margin-top: 8px; font-size: 15px; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
-    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
-    .header-links a:hover { color: #fff; text-decoration: none; }
-    .header-links a.active { color: #fff; }
-
-    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
-    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
-
-    .post-list { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
-    .post-card {
-      background: var(--card); border-radius: 16px; padding: 22px; border: 1px solid #e8e0db;
-      display: block; color: var(--dark);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-    }
-    .post-card:hover { text-decoration: none; border-color: var(--brick); }
-    .post-date { font-size: 12px; font-weight: 700; color: var(--mid); text-transform: uppercase; letter-spacing: 0.6px; }
-    .post-card h2 { font-size: 18px; font-weight: 800; margin: 6px 0 8px; color: var(--dark); }
-    .post-card p { color: var(--mid); font-size: 14px; margin: 0; }
-    .post-arrow { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--brick); }
-
-    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
-    .footer a { color: var(--brick); }
-  </style>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
   <link rel="stylesheet" href="/assets/site.css"/>
+  <link rel="stylesheet" href="blog.css"/>
   <style>
     :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
     
@@ -82,53 +49,74 @@
   </div>
 </header>
 
-<div class="header">
-  <h1>Brickify Blog</h1>
-  <p>Notes on kids, phones, and the online safety news actually worth your time.</p>
-</div>
-
-<div class="container">
-  <a href="../index.html" class="back">&larr; Back to Brickify</a>
-
-  <div class="post-list">
-    <a href="6-signs-ready.html" class="post-card">
-      <span class="post-date">6 October 2026</span>
-      <h2>6 signs your child is ready for their first phone, and what kind</h2>
-      <p>Not 'what age?' but 'what for?' Six readiness signs, and four kinds of first phone.</p>
-      <span class="post-arrow">Read the post &rarr;</span>
-    </a>
-    <a href="willpower-not-strategy.html" class="post-card">
-      <span class="post-date">6 October 2026</span>
-      <h2>Screen Time vs Brickify: Why willpower isn't a strategy</h2>
-      <p>Every phone rule works at 4pm on a Tuesday. It's 11pm on a Saturday, straight after a row, that tests it.</p>
-      <span class="post-arrow">Read the post &rarr;</span>
-    </a>
-    <a href="school-smart-phone-free.html" class="post-card">
-      <span class="post-date">6 October 2026</span>
-      <h2>What actually happens when a school goes smartphone-free</h2>
-      <p>From 1 September, phone-free is the default in every school in England. Here's what that does and doesn't change.</p>
-      <span class="post-arrow">Read the post &rarr;</span>
-    </a>
-    <a href="enforce-screen-time.html" class="post-card">
-      <span class="post-date">2 October 2026</span>
-      <h2>How to actually enforce a screen-time schedule (not just set one)</h2>
-      <p>Setting a schedule takes five minutes. Keeping it takes these seven things.</p>
-      <span class="post-arrow">Read the post &rarr;</span>
-    </a>
-    <a href="old-phone-first-phone.html" class="post-card">
-      <span class="post-date">2 October 2026</span>
-      <h2>The old phone in your drawer is your kid's first phone (you just don't know it yet)</h2>
-      <p>Too good to throw away, too distracting to hand over. How to make your old smart phone a safe first phone.</p>
-      <span class="post-arrow">Read the post &rarr;</span>
-    </a>
-    <a href="five-things-in-online-safety.html" class="post-card">
-      <span class="post-date">11 September 2026</span>
-      <h2>5 things in online safety you shouldn't miss</h2>
-      <p>A round up of the news that's actually moved the needle lately: a UK under-16 social media ban, an $18bn Meta settlement, a school phone-ban movement passing 190,000 signatures, and where Brickify fits into all of it.</p>
-      <span class="post-arrow">Read the post &rarr;</span>
-    </a>
+<section class="blog-hero">
+  <div class="wrap">
+    <a href="../index.html" class="back">&larr; Back to Brickify</a>
+    <h1>Brickify Blog</h1>
+    <p>Notes on kids, phones, and the online safety news actually worth your time.</p>
   </div>
-</div>
+</section>
+
+<main class="blog-home">
+  <div class="wrap">
+    <div class="post-list">
+      <a href="6-signs-ready.html" class="post-card">
+        <span class="post-thumb"><img src="images/6-signs-ready.webp" alt="" width="1200" height="1200"></span>
+        <div class="post-text">
+          <span class="post-date">6 October 2026</span>
+          <h2>6 signs your child is ready for their first phone, and what kind</h2>
+          <p>Not 'what age?' but 'what for?' Six readiness signs, and four kinds of first phone.</p>
+          <span class="post-arrow">Read the post &rarr;</span>
+        </div>
+      </a>
+      <a href="willpower-not-strategy.html" class="post-card">
+        <span class="post-thumb"><img src="images/willpower-not-strategy.webp" alt="" width="1200" height="1200" loading="lazy"></span>
+        <div class="post-text">
+          <span class="post-date">6 October 2026</span>
+          <h2>Screen Time vs Brickify: Why willpower isn't a strategy</h2>
+          <p>Every phone rule works at 4pm on a Tuesday. It's 11pm on a Saturday, straight after a row, that tests it.</p>
+          <span class="post-arrow">Read the post &rarr;</span>
+        </div>
+      </a>
+      <a href="school-smart-phone-free.html" class="post-card">
+        <span class="post-thumb"><img src="images/school-smart-phone-free.webp" alt="" width="1000" height="1415" loading="lazy"></span>
+        <div class="post-text">
+          <span class="post-date">6 October 2026</span>
+          <h2>What actually happens when a school goes smartphone-free</h2>
+          <p>From 1 September, phone-free is the default in every school in England. Here's what that does and doesn't change.</p>
+          <span class="post-arrow">Read the post &rarr;</span>
+        </div>
+      </a>
+      <a href="enforce-screen-time.html" class="post-card">
+        <span class="post-thumb"><img src="images/enforce-screen-time-poster.webp" alt="" width="768" height="1024" loading="lazy"></span>
+        <div class="post-text">
+          <span class="post-date">2 October 2026</span>
+          <h2>How to actually enforce a screen-time schedule (not just set one)</h2>
+          <p>Setting a schedule takes five minutes. Keeping it takes these seven things.</p>
+          <span class="post-arrow">Read the post &rarr;</span>
+        </div>
+      </a>
+      <a href="old-phone-first-phone.html" class="post-card">
+        <span class="post-thumb"><img src="images/old-phone-first-phone.webp" alt="" width="1200" height="1200" loading="lazy"></span>
+        <div class="post-text">
+          <span class="post-date">2 October 2026</span>
+          <h2>The old phone in your drawer is your kid's first phone (you just don't know it yet)</h2>
+          <p>Too good to throw away, too distracting to hand over. How to make your old smart phone a safe first phone.</p>
+          <span class="post-arrow">Read the post &rarr;</span>
+        </div>
+      </a>
+      <a href="five-things-in-online-safety.html" class="post-card">
+        <span class="post-thumb post-thumb-art" aria-hidden="true"><span>5</span></span>
+        <div class="post-text">
+          <span class="post-date">11 September 2026</span>
+          <h2>5 things in online safety you shouldn't miss</h2>
+          <p>A round up of the news that's actually moved the needle lately: a UK under-16 social media ban, an $18bn Meta settlement, a school phone-ban movement passing 190,000 signatures, and where Brickify fits into all of it.</p>
+          <span class="post-arrow">Read the post &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</main>
 
 <footer class="site-footer">
   <div class="wrap">
