@@ -43,135 +43,127 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
   <link rel="stylesheet" href="/assets/site.css"/>
-  <style>
-    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
-
-    /* ---------- Homepage sections ---------- */
-    .feature .feature-h { font-size: clamp(26px, 3.4vw, 36px); font-weight: 900; color: var(--brand-dark); line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.5px; }
-    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-    .prose-narrow { max-width: 680px; margin: 20px auto 0; font-size: 18px; color: var(--muted); text-align: center; }
-    .tiles-4 { grid-template-columns: repeat(4, 1fr); max-width: 1000px; }
-    @media (max-width: 900px) { .tiles-4 { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px) { .tiles-4 { grid-template-columns: 1fr; } }
-    .tile-icon svg { width: 28px; height: 28px; }
-
-    /* Comparison table: a normal table on wide screens, one card per row on phones */
-    .compare-wrap { max-width: 900px; margin: 36px auto 0; }
-    .compare { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 20px; overflow: hidden; font-size: 16px; }
-    .compare th, .compare td { padding: 14px 18px; text-align: left; vertical-align: top; border-bottom: 2px solid var(--line); }
-    .compare tr:last-child th, .compare tr:last-child td { border-bottom: 0; }
-    .compare thead th { background: var(--brand-tint); color: var(--brand-dark); font-weight: 900; font-size: 15px; text-transform: uppercase; letter-spacing: .5px; }
-    .compare tbody th { font-weight: 900; color: var(--ink); width: 30%; }
-    .compare td { color: var(--muted); }
-    .compare td.us { color: var(--ink); font-weight: 700; }
-    .compare tr.other-wins th, .compare tr.other-wins td { background: color-mix(in srgb, var(--line) 45%, var(--bg)); color: var(--muted); font-weight: 600; }
-    .compare tr.other-wins th { font-weight: 900; }
-    .compare-note { max-width: 680px; margin: 20px auto 0; font-size: 14px; color: var(--muted); text-align: center; }
-    .compare-link { text-align: center; margin-top: 14px; font-weight: 800; }
-    @media (max-width: 640px) {
-      .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: 100%; }
-      .compare { background: none; border: 0; border-radius: 0; overflow: visible; }
-      .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-      .compare tr { background: var(--surface); border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 16px; margin-bottom: 12px; overflow: hidden; }
-      .compare tbody th { width: 100%; background: var(--brand-tint); color: var(--brand-dark); }
-      .compare th, .compare td, .compare tr:last-child th, .compare tr:last-child td { border-bottom: 0; padding: 10px 16px; }
-      .compare td::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .5px; color: var(--brand); }
-      .compare tr.other-wins th { background: color-mix(in srgb, var(--line) 70%, var(--bg)); color: var(--ink); }
-    }
-
-    /* "Set it once" secondary points */
-    .mini-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 900px; margin: 72px auto 0; text-align: center; }
-    .mini-features .phone { width: 150px; margin: 0 auto 18px; border-radius: 26px; padding: 7px; }
-    .mini-features .phone img { border-radius: 20px; }
-    .mini-features h3 { font-size: 20px; font-weight: 900; color: var(--brand); margin-bottom: 6px; }
-    .mini-features p { color: var(--muted); font-size: 16px; }
-    @media (max-width: 760px) { .mini-features { grid-template-columns: 1fr; gap: 44px; } }
-
-    /* Persona cards */
-    .tiles-3 { grid-template-columns: repeat(3, 1fr); max-width: 1000px; }
-    @media (max-width: 900px) { .tiles-3 { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px) { .tiles-3 { grid-template-columns: 1fr; } }
-    a.tile { display: block; text-decoration: none; transition: border-color .15s, transform .12s; }
-    a.tile:hover { border-color: var(--brand); transform: translateY(-2px); }
-    .tile .tile-more { display: inline-block; margin-top: 10px; font-weight: 800; color: var(--brand); font-size: 14px; }
-    .section-caption { text-align: center; color: var(--muted); font-size: 14px; font-weight: 700; margin-bottom: 36px; }
-
-    /* FAQ accordions */
-    .faq { max-width: 760px; margin: 36px auto 0; display: flex; flex-direction: column; gap: 12px; }
-    .faq details { background: var(--surface); border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 18px; }
-    .faq summary { cursor: pointer; list-style: none; padding: 18px 52px 18px 22px; font-size: 18px; font-weight: 900; color: var(--brand-dark); position: relative; }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 26px; color: var(--brand); line-height: 1; }
-    .faq details[open] summary::after { content: "\2212"; }
-    .faq summary:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 16px; }
-    .faq .answer { padding: 0 22px 20px; color: var(--muted); font-size: 16px; }
-    .faq .answer p + p { margin-top: 10px; }
-    .faq .answer a { font-weight: 800; }
-  </style>
+  <link rel="stylesheet" href="home.css"/>
   <script src="/assets/site.js" defer></script>
   <script src="/assets/analytics.js" defer></script>
+  <script src="home.js" defer></script>
 </head>
 <body data-app="brickify">
 
 <header class="site-header">
   <div class="wrap">
     <a href="index.html" class="brand-link"><img src="images/logo.png" alt="" width="38" height="38">Brickify</a>
-    <nav class="site-nav" aria-label="Main">
+    <nav class="site-nav" id="site-nav" aria-label="Main">
       <a href="how-it-works.html">How it works</a>
       <a href="guides/index.html">Guides</a>
       <a href="blog/index.html">Blog</a>
       <a href="help.html">Help</a>
     </nav>
-    <a href="#download" class="btn btn-sm">Get the app</a>
+    <a href="#download" class="btn btn-sm nav-cta">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-media">
-        <div class="phone"><img src="images/screen-1.webp" alt="Brickify's Phone Bricked screen: selected apps are disabled until you enter your PIN and second factor" width="600" height="1300" fetchpriority="high"></div>
+  <section class="bk-hero" id="top">
+    <div class="bk-hero-bg" aria-hidden="true"><span class="bk-pink"></span><span class="bk-teal"></span></div>
+    <div class="wrap bk-hero-grid">
+      <h1 class="bk-title"><span class="bk-line bk-line-1">Smartphone<br>when you<br>need it…</span> <span class="bk-line bk-line-2">…brick phone<br>when you don't.</span></h1>
+
+      <div class="bk-stage">
+        <div class="bk-phone" id="bk-phone" role="img" aria-label="A phone switching from smartphone mode to Brickify's Phone Bricked screen">
+          <div class="bk-screen">
+            <div class="bk-home" aria-hidden="true">
+              <div class="bk-status"><span>4:00</span><span>●●● ▮</span></div>
+              <div class="bk-apps"></div>
+              <div class="bk-dock"><i></i><i></i><i></i><i></i></div>
+            </div>
+            <img class="bk-bricked" src="images/screen-1.webp" alt="" width="600" height="1300" fetchpriority="high">
+            <div class="bk-wall" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="bk-chip" id="bk-chip" aria-hidden="true"><b>4:00pm</b> Smartphone</div>
       </div>
-      <div class="hero-copy" data-location="hero">
-        <h1>Smartphone when you need it. Brick phone when you don't.</h1>
-        <p class="lead">Schools are phone-free by default. Brickify turns the phone you already own into a brick phone on your schedule, and you can make it smarter as they grow. £4.99 once.</p>
+
+      <div class="bk-bottom" data-location="hero">
         <div class="badges">
           <a class="badge-link" data-store="ios" href="https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="180" height="60"></a>
           <a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="202" height="60"></a>
         </div>
-        <p class="badges-note">Works on iPhone 8 / X or newer (iOS 16+) and Android 8+ · <a href="compatibility.html">Check your phone</a></p>
+        <button type="button" class="bk-more" id="bk-more" aria-expanded="true" aria-controls="more">
+          More info <span class="bk-chev" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Store ratings — uncomment once there are genuine reviews/quotes to show.
-       Do not fill this in with placeholder or fabricated content in the meantime.
-       Suggested markup: a .tiles grid of .tile cards inside a .section, e.g.
-       <div class="tile"><h3>★ 0.0 on Google Play</h3><p>Based on 0 ratings — see reviews →</p></div>
-       <div class="tile"><p>"Quote from a real review goes here."</p><p>— Reviewer name/initial, App Store</p></div>
-  -->
+  <div id="more" class="bk-more-panel">
+    <section class="band band-cream bk-intro">
+      <div class="wrap">
+        <p class="bk-intro-lead">Schools are phone-free by default. Brickify turns the phone you already own into a brick phone on your schedule, and you can make it smarter as they grow.</p>
+        <div class="bk-facts">
+          <span class="fact fact-brick">£4.99 once</span>
+          <span class="fact fact-teal">You choose the apps</span>
+          <span class="fact fact-pink">No subscription</span>
+          <span class="fact fact-brick">iPhone &amp; Android</span>
+        </div>
+        <p class="badges-note">Works on iPhone 8 / X or newer (iOS 16+) and Android 8+ · <a href="compatibility.html">Check your phone</a></p>
+      </div>
+    </section>
 
-  <section class="section section-tint">
+<section class="section band band-teal">
     <div class="wrap">
       <h2 class="section-title">The school day is covered. The rest is up to us.</h2>
       <div class="prose-narrow"><p>Since September, schools in England are expected to be mobile phone-free by default, and Ofsted now checks phone policies at every inspection. Most parents welcome it. But school rules stop at the gate. The walk in, the bus home, the evening and bedtime are still ours to sort out, and a lot of families are reaching for a brick phone.</p></div>
+      <figure class="bk-wheel"><img src="images/schedule-wheel.webp" alt="A week drawn as a wheel: school days, weekends and bedtimes, flagging the moments rules usually slip, like 11pm and Sunday night" width="900" height="900" loading="lazy"></figure>
     </div>
   </section>
 
-  <section class="section">
+<section class="section band band-pink bk-ladder-sec">
     <div class="wrap">
-      <h2 class="section-title">The trouble with a brick phone</h2>
-      <p class="section-sub">A basic phone does calls and texts well, and the battery lasts for days. For some children that's exactly right. For many 11 and 12-year-olds, it means:</p>
-      <div class="tiles tiles-4">
-        <div class="tile"><span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Folded map icon"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span><h3>No maps</h3><p>for the walk or the bus</p></div>
-        <div class="tile"><span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Musical note icon"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span><h3>No music or school apps</h3><p>homework and timetables often live in apps</p></div>
-        <div class="tile"><span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Icon of two phones side by side"><rect x="2" y="5" width="9" height="16" rx="2"/><rect x="13" y="3" width="9" height="16" rx="2"/><path d="M6 18h1M17 16h1"/></svg></span><h3>A second device</h3><p>to buy, charge and lose</p></div>
-        <div class="tile"><span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Calendar icon"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><h3>Outgrown by spring</h3><p>and the smartphone lesson is only postponed</p></div>
+      <h2 class="section-title">Brickify sits in between a brick phone and a smartphone</h2>
+      <p class="section-sub">Every child climbs the phone ladder at their own pace. Brickify is the step that's been missing.</p>
+
+      <div class="bk-ladder">
+        <svg class="bk-ladder-art" viewBox="0 0 100 368" preserveAspectRatio="none" aria-hidden="true">
+          <g class="rungs">
+            <line x1="44" y1="4"   x2="89" y2="4"/>
+            <line x1="35" y1="70"  x2="80" y2="70"/>
+            <line x1="26" y1="146" x2="71" y2="146"/>
+            <line x1="17" y1="222" x2="62" y2="222"/>
+            <line x1="8"  y1="298" x2="53" y2="298"/>
+          </g>
+          <g class="rails">
+            <line x1="46" y1="-10" x2="1"  y2="372"/>
+            <line x1="91" y1="-10" x2="46" y2="372"/>
+          </g>
+        </svg>
+        <ol class="bk-rungs">
+          <li class="rung" style="--w:74%"><span class="rung-n">4</span><span class="rung-t">Smartphone<small>everything, all the time</small></span>
+            <svg class="rung-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 5h3"/></svg></li>
+          <li class="rung rung-us" style="--w:70%"><span class="rung-n">3</span><span class="rung-t">Brickify<small>smartphone when you need it, brick phone when you don't</small></span>
+            <img class="rung-logo" src="images/logo.png" alt="" width="44" height="44"></li>
+          <li class="rung" style="--w:66%"><span class="rung-n">2</span><span class="rung-t">Brick phone<small>calls and texts only</small></span>
+            <svg class="rung-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><rect x="8.5" y="4.5" width="7" height="5" rx="1"/><path d="M9 13h.01M12 13h.01M15 13h.01M9 16h.01M12 16h.01M15 16h.01M9 19h.01M12 19h.01M15 19h.01"/></svg></li>
+          <li class="rung" style="--w:62%"><span class="rung-n">1</span><span class="rung-t">Watch<small>calls home and location</small></span>
+            <svg class="rung-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M12 9v3l2 1.5M9 6.5 9.5 2h5l.5 4.5M9 17.5l.5 4.5h5l.5-4.5"/></svg></li>
+          <li class="rung rung-wait" style="--w:58%"><span class="rung-t">Wait until they're ready</span></li>
+        </ol>
       </div>
+
+      <h3 class="bk-short-h">Why not stop at a brick phone?</h3>
+      <ul class="bk-mini">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg><b>No maps</b><span>for the walk or the bus</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><b>No music or school apps</b><span>homework lives in apps</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="9" height="16" rx="2"/><rect x="13" y="3" width="9" height="16" rx="2"/></svg><b>A second device</b><span>to buy, charge and lose</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><b>Outgrown by spring</b><span>the smartphone lesson is only postponed</span></li>
+      </ul>
     </div>
   </section>
 
-  <section class="section section-tint">
+<section class="section band band-brick">
     <div class="wrap">
       <h2 class="section-title">Brick phone vs Brickify</h2>
       <div class="compare-wrap">
@@ -183,6 +175,7 @@
             <tr><th scope="row">Maps, music, school apps</th><td data-label="Brick phone">No</td><td class="us" data-label="Brickify">Only the ones you allow</td></tr>
             <tr><th scope="row">A second device to charge and lose</th><td data-label="Brick phone">Yes</td><td class="us" data-label="Brickify">No</td></tr>
             <tr><th scope="row">Changes with the time of day</th><td data-label="Brick phone">No</td><td class="us" data-label="Brickify">Yes, profiles switch on your schedule</td></tr>
+            <tr><th scope="row">Choose which apps</th><td data-label="Brick phone">No apps to choose</td><td class="us" data-label="Brickify">You pick them, profile by profile</td></tr>
             <tr><th scope="row">Grows with your child</th><td data-label="Brick phone">No, you replace it</td><td class="us" data-label="Brickify">Yes, open one app at a time as trust grows</td></tr>
             <tr><th scope="row">Override</th><td data-label="Brick phone">Not needed</td><td class="us" data-label="Brickify">PIN plus a second factor</td></tr>
             <tr><th scope="row">What it looks like</th><td data-label="Brick phone">An obvious basic phone</td><td class="us" data-label="Brickify">An ordinary phone</td></tr>
@@ -195,7 +188,7 @@
     </div>
   </section>
 
-  <section class="section">
+<section class="section band band-pink">
     <div class="wrap">
       <div class="feature">
         <div class="feature-media"><div class="phone"><img src="images/screen-3.webp" alt="Setting schedule days and times" width="600" height="1300" loading="lazy"></div></div>
@@ -204,7 +197,7 @@
       <div class="mini-features">
         <div>
           <div class="phone"><img src="images/screen-4.webp" alt="Choosing which apps are allowed in a profile" width="600" height="1300" loading="lazy"></div>
-          <h3>Grows with your child</h3><p>Open one app at a time as trust grows. No new device at every stage.</p>
+          <h3>You choose the apps</h3><p>Pick exactly which apps each profile allows: maps for the walk home, music for the bus, nothing but calls at bedtime. As trust grows, open one more app at a time. No new device at every stage.</p>
         </div>
         <div>
           <div class="phone"><img src="images/screen-5.webp" alt="Authenticator second-factor setup" width="600" height="1300" loading="lazy"></div>
@@ -218,7 +211,7 @@
     </div>
   </section>
 
-  <section class="section section-tint">
+<section class="section band band-teal">
     <div class="wrap">
       <h2 class="section-title">Every family's week is different</h2>
       <p class="section-sub" style="margin-bottom:8px">Brickify can work around all your family's unique needs.</p>
@@ -234,7 +227,7 @@
     </div>
   </section>
 
-  <section class="section">
+<section class="section band band-brick">
     <div class="wrap">
       <h2 class="section-title">The questions parents actually ask</h2>
       <div class="faq">
@@ -257,14 +250,14 @@
     </div>
   </section>
 
-  <section class="section section-tint">
+<section class="section band band-pink">
     <div class="wrap">
       <h2 class="section-title">On the same side as the movement</h2>
       <div class="prose-narrow"><p>Brickify isn't a rival to brick phones or to Smartphone Free Childhood. If you've signed the Pact and can wait until 14, wait. That's a good choice. Brickify is for families who've decided a phone is needed now, and for children who already have a smartphone that needs to be quieter. At 14, it helps too: instead of going from nothing to everything overnight, open one app at a time.</p></div>
     </div>
   </section>
 
-  <section class="section">
+<section class="section band band-teal">
     <div class="wrap">
       <h2 class="section-title">Why people choose Brickify</h2>
       <p class="section-sub">Not just a closed app — real control that sticks.</p>
@@ -277,7 +270,7 @@
     </div>
   </section>
 
-  <section class="cta-band" id="download">
+<section class="band cta-band" id="download">
     <div class="wrap" data-location="download">
       <h2>Ready to Brickify it?</h2>
       <p>£4.99 once. No subscription. The school has 8:30 to 3:30, and Brickify helps with the rest.</p>
@@ -287,6 +280,7 @@
       </div>
     </div>
   </section>
+  </div>
 </main>
 
 <footer class="site-footer">

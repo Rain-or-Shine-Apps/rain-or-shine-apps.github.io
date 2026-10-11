@@ -17,3 +17,26 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply);
   else apply();
 })();
+
+(function () {
+  // Phone menu: the button toggles the nav it controls; picking a link, Escape or a tap outside closes it.
+  function init() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = toggle && document.getElementById(toggle.getAttribute('aria-controls'));
+    if (!nav) return;
+    function setOpen(open) {
+      toggle.setAttribute('aria-expanded', String(open));
+      nav.classList.toggle('is-open', open);
+    }
+    toggle.addEventListener('click', function () { setOpen(toggle.getAttribute('aria-expanded') !== 'true'); });
+    nav.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) { setOpen(false); toggle.focus(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (nav.classList.contains('is-open') && !nav.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
