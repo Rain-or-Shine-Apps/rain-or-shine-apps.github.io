@@ -1,0 +1,90 @@
+/* Rain or Shine Apps — homepage handwriting: written-on masthead and the scroll-drawn ink line.
+   Nothing here hides content on its own: the hiding rules only apply once home.js has added
+   .is-writing / .has-ink to <html>. */
+
+:root {
+  --ink-gold: #a97a3c;
+  --ink-sun: #c9952e;
+  --ink-rain: #5b7f99;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --ink-gold: #d4a560; --ink-sun: #e8b54a; --ink-rain: #8fb4cf; }
+}
+:root[data-theme="dark"] { --ink-gold: #d4a560; --ink-sun: #e8b54a; --ink-rain: #8fb4cf; }
+
+/* ---------- Type: Instrument Sans for text, Instrument Serif for headings ---------- */
+:root {
+  --font: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+}
+.section-title { font-family: var(--serif); font-weight: 400; letter-spacing: 0; color: var(--ink); }
+.app-row h3 { font-family: var(--serif); font-weight: 400; font-size: 30px; letter-spacing: 0; line-height: 1.15; }
+.pill { font-weight: 600; letter-spacing: .12em; }
+.btn { font-weight: 600; letter-spacing: .08em; }
+.app-links { font-weight: 500; }
+.store-soon { font-weight: 600; }
+.footer-cols h4 { font-weight: 600; letter-spacing: .12em; }
+
+/* ---------- Header: favicon mark + name in capitals, bronze button ---------- */
+.brand-link { gap: 10px; color: var(--ink); font-size: 16px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.brand-link img { width: 36px; height: 36px; border-radius: 0; }
+.site-header .btn { margin-left: auto; }
+@media (max-width: 720px) {
+  .brand-link { gap: 8px; font-size: 13px; letter-spacing: .08em; }
+  .brand-link img { width: 30px; height: 30px; }
+}
+
+/* Every button on the page in bronze, including Learn more inside the app boxes */
+.app-actions .btn { --brand: #96692f; --brand-dark: #6f4d22; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Masthead ---------- */
+.hub-hero .masthead { display: block; width: min(100%, 640px); height: auto; margin: 0 auto; }
+.hub-hero .apps-word {
+  margin: 4px 0 0 .42em; /* left margin balances the trailing letter-spacing */
+  font-size: 14px; font-weight: 800; line-height: 1; letter-spacing: .42em; text-transform: uppercase;
+  color: var(--muted); transition: opacity .6s;
+}
+.hub-hero .tagline { margin: 18px 0 8px; font: italic 400 clamp(26px, 3.6vw, 34px)/1.25 var(--serif); color: var(--ink); transition: opacity .6s; }
+
+.is-writing .hub-hero .masthead:not(.is-ready) { visibility: hidden; }
+.is-writing .hub-hero #finish { opacity: 0; }
+.is-writing .hub-hero .apps-word,
+.is-writing .hub-hero .tagline { opacity: 0; }
+
+/* ---------- Ink line down the app list ---------- */
+.ink-trail { position: relative; z-index: 0; }
+.inkline { display: none; }
+
+.has-ink .ink-trail { max-width: 956px; margin: 0 auto; padding: 0 0 240px 56px; }
+.has-ink #apps { padding-bottom: 40px; }
+.has-ink .inkline {
+  display: block; position: absolute; left: 0; top: 0; z-index: -1;
+  width: 100%; height: 100%; overflow: visible; pointer-events: none;
+}
+.inkline #inkpath { fill: none; stroke: var(--ink-gold); stroke-width: 3.6; stroke-linecap: round; }
+.inkline .node circle { fill: var(--ink-gold); transition: r .3s; }
+.inkline .spark { fill: var(--ink-sun); opacity: 0; transform: scale(.2); transform-origin: 0 0; transition: transform .5s cubic-bezier(.3, 1.7, .5, 1), opacity .3s; }
+.inkline .node.is-on .spark { opacity: 1; transform: none; transition-delay: .12s; }
+.inkline .drop-ink { fill: var(--ink-rain); }
+.inkline .drop-rays { fill: var(--ink-sun); opacity: 0; transform: scale(.3); transform-origin: var(--fx) var(--fy); transition: transform .6s cubic-bezier(.3, 1.6, .5, 1), opacity .35s; }
+.inkline .ending.is-rays-on .drop-rays { opacity: 1; transform: none; }
+
+.has-ink .ink-trail .app-row { transition: opacity .7s ease, transform .7s ease; }
+.ink-trail .app-row.is-pending { opacity: 0; transform: translateY(18px); }
+
+@media (max-width: 600px) {
+  .has-ink .ink-trail { padding-left: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-hero .apps-word, .hub-hero .tagline, .has-ink .ink-trail .app-row { transition: none; }
+}
+
+@media print {
+  .ink-trail .app-row.is-pending { opacity: 1; transform: none; }
+}
