@@ -11,30 +11,6 @@
 @media (max-width: 640px) { .tiles-4 { grid-template-columns: 1fr; } }
 .tile-icon svg { width: 28px; height: 28px; }
 
-/* Comparison table: a normal table on wide screens, one card per row on phones */
-.compare-wrap { max-width: 900px; margin: 36px auto 0; }
-.compare { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 20px; overflow: hidden; font-size: 16px; }
-.compare th, .compare td { padding: 14px 18px; text-align: left; vertical-align: top; border-bottom: 2px solid var(--line); }
-.compare tr:last-child th, .compare tr:last-child td { border-bottom: 0; }
-.compare thead th { background: var(--brand-tint); color: var(--brand-dark); font-weight: 900; font-size: 15px; text-transform: uppercase; letter-spacing: .5px; }
-.compare tbody th { font-weight: 900; color: var(--ink); width: 30%; }
-.compare td { color: var(--muted); }
-.compare td.us { color: var(--ink); font-weight: 700; }
-.compare tr.other-wins th, .compare tr.other-wins td { background: color-mix(in srgb, var(--line) 45%, var(--bg)); color: var(--muted); font-weight: 600; }
-.compare tr.other-wins th { font-weight: 900; }
-.compare-note { max-width: 680px; margin: 20px auto 0; font-size: 14px; color: var(--muted); text-align: center; }
-.compare-link { text-align: center; margin-top: 14px; font-weight: 800; }
-@media (max-width: 640px) {
-  .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: 100%; }
-  .compare { background: none; border: 0; border-radius: 0; overflow: visible; }
-  .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  .compare tr { background: var(--surface); border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 16px; margin-bottom: 12px; overflow: hidden; }
-  .compare tbody th { width: 100%; background: var(--brand-tint); color: var(--brand-dark); }
-  .compare th, .compare td, .compare tr:last-child th, .compare tr:last-child td { border-bottom: 0; padding: 10px 16px; }
-  .compare td::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .5px; color: var(--brand); }
-  .compare tr.other-wins th { background: color-mix(in srgb, var(--line) 70%, var(--bg)); color: var(--ink); }
-}
-
 /* "Set it once" secondary points */
 .mini-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 900px; margin: 72px auto 0; text-align: center; }
 .mini-features .phone { width: 150px; margin: 0 auto 18px; border-radius: 26px; padding: 7px; }
@@ -42,27 +18,6 @@
 .mini-features h3 { font-size: 20px; font-weight: 900; color: var(--brand); margin-bottom: 6px; }
 .mini-features p { color: var(--muted); font-size: 16px; }
 @media (max-width: 760px) { .mini-features { grid-template-columns: 1fr; gap: 44px; } }
-
-/* Persona cards */
-.tiles-3 { grid-template-columns: repeat(3, 1fr); max-width: 1000px; }
-@media (max-width: 900px) { .tiles-3 { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px) { .tiles-3 { grid-template-columns: 1fr; } }
-a.tile { display: block; text-decoration: none; transition: border-color .15s, transform .12s; }
-a.tile:hover { border-color: var(--brand); transform: translateY(-2px); }
-.tile .tile-more { display: inline-block; margin-top: 10px; font-weight: 800; color: var(--brand); font-size: 14px; }
-.section-caption { text-align: center; color: var(--muted); font-size: 14px; font-weight: 700; margin-bottom: 36px; }
-
-/* FAQ accordions */
-.faq { max-width: 760px; margin: 36px auto 0; display: flex; flex-direction: column; gap: 12px; }
-.faq details { background: var(--surface); border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 18px; }
-.faq summary { cursor: pointer; list-style: none; padding: 18px 52px 18px 22px; font-size: 18px; font-weight: 900; color: var(--brand-dark); position: relative; }
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 26px; color: var(--brand); line-height: 1; }
-.faq details[open] summary::after { content: "\2212"; }
-.faq summary:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 16px; }
-.faq .answer { padding: 0 22px 20px; color: var(--muted); font-size: 16px; }
-.faq .answer p + p { margin-top: 10px; }
-.faq .answer a { font-weight: 800; }
 
 /* Brickify homepage: bold diagonals in brick, pink and teal, taken from the app's store artwork.
    Layout: a one-screen hero (headline split across a diagonal, animated phone, store badges, More info),
@@ -76,14 +31,14 @@ a.tile:hover { border-color: var(--brand); transform: translateY(-2px); }
 }
 body{background:var(--brick)}
 
-/* ---------- Header: brick bar, cream type, bright pink button ----------
+/* ---------- Header: brick bar, cream type, teal button ----------
    /assets/site.css gives every Brickify page this bar; it's repeated here so the homepage keeps it
    even when a browser is still holding an older cached site.css. */
 .site-header{background:var(--brick);border-bottom:0;backdrop-filter:none;-webkit-backdrop-filter:none}
 .brand-link{color:var(--cream)}
 .site-nav a{color:color-mix(in srgb,var(--cream) 85%,transparent)}
 .site-nav a:hover{color:#fff}
-.site-header .btn{background:var(--pink-deep);border-bottom-color:#8e2550;color:#fff}
+.site-header .btn{background:var(--teal-deep);border-bottom-color:#11504d;color:#fff}
 .nav-toggle{color:var(--cream);border-color:color-mix(in srgb,var(--cream) 40%,transparent)}
 @media (max-width:720px){
   .site-nav{background:var(--brick);border-top:2px solid color-mix(in srgb,var(--cream) 18%,transparent);border-bottom:0;box-shadow:0 18px 30px -12px rgba(0,0,0,.4)}
@@ -94,7 +49,6 @@ body{background:var(--brick)}
 .bk-hero{position:relative;overflow:hidden;background:var(--brick);color:var(--cream);padding-block:20px 36px}
 .bk-hero-bg span{position:absolute;inset:0}
 .bk-pink{background:var(--pink);clip-path:polygon(68% 0,100% 0,100% 100%,14% 100%)}
-.bk-teal{background:var(--teal);clip-path:polygon(100% 70%,100% 100%,70% 100%)}
 .bk-hero-grid{position:relative;display:grid;grid-template-columns:1fr;gap:6px}
 .bk-line{font-weight:900;letter-spacing:-.02em;line-height:1.02;font-size:clamp(32px,9.2vw,66px);color:var(--cream);text-wrap:balance}
 .bk-line-1{text-shadow:0 2px 0 rgba(0,0,0,.12)}
@@ -129,13 +83,6 @@ body{background:var(--brick)}
 .bk-chip b{font-weight:900;margin-right:4px}
 .bk-chip.is-brick{background:var(--mortar);color:var(--cream)}
 
-.bk-more{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 20px;border-radius:999px;border:2px solid var(--cream);
-  background:transparent;color:var(--cream);font:900 15px/1 var(--font);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
-.bk-more:hover{background:color-mix(in srgb,var(--cream) 14%,transparent)}
-.bk-more:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
-.bk-chev{width:9px;height:9px;border-right:3px solid currentColor;border-bottom:3px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .25s}
-.bk-more[aria-expanded="true"] .bk-chev{transform:translateY(2px) rotate(-135deg)}
-
 @media (min-width:900px){
   .bk-hero{padding-block:48px 64px}
   .bk-pink{clip-path:polygon(58% 0,100% 0,100% 100%,30% 100%)}
@@ -150,11 +97,10 @@ body{background:var(--brick)}
 }
 
 /* ---------- Colour bands with slanted edges ---------- */
-.bk-more-panel{position:relative}
+.bk-bands{position:relative}
 .band{position:relative;padding-block:calc(76px + var(--cut)) 76px;margin-top:calc(-1 * var(--cut));
   clip-path:polygon(0 var(--cut),100% 0,100% 100%,0 100%);color:var(--cream)}
 .band:nth-child(even){clip-path:polygon(0 0,100% var(--cut),100% 100%,0 100%)}
-.band:first-child{margin-top:0;clip-path:none;padding-top:56px}
 .band-brick{background:var(--brick)}
 .band-teal{background:var(--teal-deep)}
 .band-pink{background:var(--pink-deep)}
@@ -162,35 +108,10 @@ body{background:var(--brick)}
 
 .band .section-title,.band .feature-h,.band h2{color:var(--cream)}
 .band-cream .section-title{color:var(--brick)}
-.band .section-sub,.band .prose,.band .prose-narrow,.band .section-caption,.band .compare-note{color:color-mix(in srgb,var(--cream) 92%,transparent)}
+.band .section-sub,.band .prose,.band .prose-narrow,.band .section-caption{color:color-mix(in srgb,var(--cream) 92%,transparent)}
 .band .feature p,.band .mini-features p{color:color-mix(in srgb,var(--cream) 90%,transparent)}
 .band .mini-features h3{color:var(--cream)}
 .band a{color:var(--cream);text-decoration-thickness:2px;text-underline-offset:3px}
-.band .compare-link a{color:var(--cream)}
-
-/* cards sit on the bands as cream panels */
-.band .tile,.band .faq details,.band .compare{background:var(--cream-2);border-color:transparent;border-bottom:5px solid rgba(0,0,0,.2)}
-.band .tile h3{color:var(--brick)}
-.band .tile p{color:var(--muted)}
-.band .tile .tile-more,.band .faq .answer a,.band .compare a{color:var(--pink-deep)}
-.band .tile-icon{background:var(--brand-tint)}
-.band-pink .tile-icon{background:#D7F0EE}
-.band .faq summary{color:var(--brick)}
-.band .faq summary::after{color:var(--pink-deep)}
-.band .compare td.us{color:var(--ink)}
-.band .compare thead th{background:var(--teal-deep);color:var(--cream)}
-.band .compare td::before{color:var(--pink-deep)}
-@media (max-width:640px){ .band .compare{background:none;border:0} .band .compare tr{background:var(--cream-2);border-color:transparent;border-bottom:5px solid rgba(0,0,0,.2)} .band .compare tbody th{background:var(--teal-deep);color:var(--cream)} }
-
-/* intro facts */
-.bk-intro{text-align:center}
-.bk-intro-lead{max-width:34em;margin:0 auto 22px;font-size:clamp(18px,2.2vw,21px);font-weight:700;color:var(--ink)}
-.bk-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.fact{padding:9px 16px;border-radius:999px;font-weight:900;font-size:15px;color:#fff;transform:rotate(-2deg)}
-.fact:nth-child(2){transform:rotate(1.5deg)}
-.fact-brick{background:var(--brick-2)} .fact-teal{background:var(--teal-deep)} .fact-pink{background:var(--pink-deep)}
-.band-cream .badges-note{text-align:center;margin-top:18px;color:var(--muted)}
-.band-cream a{color:var(--pink-deep)}
 
 /* schedule wheel */
 .bk-wheel{max-width:520px;margin:40px auto 0;border-radius:28px;overflow:hidden;box-shadow:0 26px 50px -24px rgba(0,0,0,.55);transform:rotate(-1.5deg)}
@@ -206,17 +127,15 @@ body{background:var(--brick)}
 .site-footer a,.site-footer button{color:color-mix(in srgb,var(--cream) 80%,transparent)}
 .site-footer .footer-base{color:color-mix(in srgb,var(--cream) 65%,transparent)}
 
-@media (prefers-reduced-motion:reduce){ .bk-chev,.bk-home,.bk-bricked{transition:none} }
+@media (prefers-reduced-motion:reduce){ .bk-home,.bk-bricked{transition:none} }
 
-/* ---------- Hero colours swapped: pink (smartphone) on top, brick (brick phone) below ---------- */
-.bk-hero{background:var(--pink)}
+/* ---------- Hero colours: teal (smartphone) on top, brick (brick phone) below ---------- */
+.bk-hero{background:var(--teal-deep)}
 .bk-pink{background:var(--brick);clip-path:polygon(0 66%,100% 44%,100% 100%,0 100%)}
-.bk-teal{background:var(--teal);clip-path:polygon(74% 0,100% 0,100% 30%)}
-.bk-line-1{text-shadow:0 2px 14px rgba(120,20,60,.35)}
+.bk-line-1{text-shadow:0 2px 14px rgba(8,48,46,.35)}
 .bk-line-2{text-shadow:0 2px 0 rgba(0,0,0,.15)}
 @media (min-width:900px){
   .bk-pink{clip-path:polygon(0 56%,100% 34%,100% 100%,0 100%)}
-  .bk-teal{clip-path:polygon(84% 0,100% 0,100% 34%)}
 }
 
 /* ---------- The phone ladder ---------- */
@@ -257,15 +176,6 @@ body{background:var(--brick)}
   .rung:nth-child(4){width:75%} .rung:nth-child(5){width:73%}
 }
 
-/* compact drawbacks */
-.bk-short-h{text-align:center;margin:56px 0 18px;font-size:22px;font-weight:900;color:var(--cream)}
-.bk-mini{list-style:none;margin:0 auto;padding:0;max-width:760px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.bk-mini li{background:var(--cream-2);border-radius:16px;padding:14px 12px;border-bottom:4px solid rgba(0,0,0,.18);display:grid;gap:2px;justify-items:center;text-align:center}
-.bk-mini svg{width:26px;height:26px;fill:none;stroke:var(--pink-deep);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:4px}
-.bk-mini b{font-weight:900;font-size:15px;line-height:1.15;color:var(--brick)}
-.bk-mini span{font-size:13px;line-height:1.3;color:var(--muted)}
-@media (max-width:640px){ .bk-mini{grid-template-columns:repeat(2,1fr)} }
-
 /* ---------- Diagonal now falls left-to-right: more brick on the left, "brick phone" line sits beside the phone ---------- */
 .bk-pink{clip-path:polygon(0 38%,100% 60%,100% 100%,0 100%)}
 .bk-hero-grid{grid-template-columns:minmax(0,1fr) auto;column-gap:10px}
@@ -285,7 +195,7 @@ body{background:var(--brick)}
   .bk-chip{margin-left:40%;justify-self:auto}
 }
 
-/* ---------- One <h1>, two halves at the same size: "Smartphone…" sits on pink, "…brick phone" on brick.
+/* ---------- One <h1>, two halves at the same size: "Smartphone…" sits on teal, "…brick phone" on brick.
    home.js moves the diagonal so it always runs between the two halves. ---------- */
 .bk-title{display:contents}
 .bk-line{display:block}
@@ -294,3 +204,48 @@ body{background:var(--brick)}
   .bk-line-1,.bk-line-2{font-size:clamp(48px,5.6vw,76px)}
   .bk-line-2{margin-top:clamp(64px,7vw,110px)}
 }
+
+/* ---------- Benefit callouts: pink bricks that land on the phone with the wall ---------- */
+.bk-phone{position:relative}
+.bk-tags{position:absolute;inset:0;list-style:none;margin:0;padding:0;pointer-events:none}
+.bk-tag{position:absolute;padding:7px 11px;border-radius:4px;color:#fff;white-space:nowrap;
+  font:900 12px/1 var(--font);text-transform:uppercase;letter-spacing:.04em;
+  background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(0,0,0,.08)),var(--pink);
+  box-shadow:inset 0 -3px 0 rgba(0,0,0,.22),0 8px 16px -8px rgba(0,0,0,.55)}
+.bk-tag:nth-child(1){top:20%;left:-12%;rotate:-4deg}
+.bk-tag:nth-child(2){top:44%;right:-8%;rotate:3deg;background-color:var(--pink-deep)}
+.bk-tag:nth-child(3){top:68%;left:-8%;rotate:-2deg}
+@media (min-width:900px){ .bk-tag{font-size:15px;padding:9px 14px} .bk-tag:nth-child(2){right:-14%} }
+
+/* links that send detail off to other pages, and the small print under the closing badges */
+.bk-link{text-align:center;margin-top:36px;font-weight:800;font-size:17px}
+.cta-note{margin-top:18px;font-size:14px;opacity:.9}
+
+/* ---------- Stepped edges: every diagonal is a staircase instead of a straight line.
+   Each band is cut to a stepped top and painted brick; its own colour (--band) sits in ::before, cut to the
+   same steps but one riser (--bw) in, so a brick border runs along every edge.
+   home.js steps the hero split the same way. ---------- */
+:root{--cut:clamp(54px,9vw,120px);--bw:calc(var(--cut) / 2)}
+.band{padding-block:calc(56px + var(--cut) + var(--bw)) calc(48px + var(--cut))}  /* the next band's steps overlap this much of the bottom */
+.band,.band.cta-band{background:var(--brick);clip-path:polygon(0 var(--cut),33.33% var(--cut),33.33% calc(var(--cut) * 0.5),66.67% calc(var(--cut) * 0.5),66.67% 0,100% 0,100% 100%,0 100%)}
+.band:nth-child(even){clip-path:polygon(0 0,33.33% 0,33.33% calc(var(--cut) * 0.5),66.67% calc(var(--cut) * 0.5),66.67% var(--cut),100% var(--cut),100% 100%,0 100%)}
+.band::before{content:"";position:absolute;inset:0;background:var(--band,var(--brick));clip-path:polygon(0 calc(var(--cut) + var(--bw)),calc(33.33% + var(--bw)) calc(var(--cut) + var(--bw)),calc(33.33% + var(--bw)) calc(var(--cut) * 0.5 + var(--bw)),calc(66.67% + var(--bw)) calc(var(--cut) * 0.5 + var(--bw)),calc(66.67% + var(--bw)) var(--bw),100% var(--bw),100% 100%,0 100%)}
+.band:nth-child(even)::before{clip-path:polygon(0 var(--bw),calc(33.33% - var(--bw)) var(--bw),calc(33.33% - var(--bw)) calc(var(--cut) * 0.5 + var(--bw)),calc(66.67% - var(--bw)) calc(var(--cut) * 0.5 + var(--bw)),calc(66.67% - var(--bw)) calc(var(--cut) + var(--bw)),100% calc(var(--cut) + var(--bw)),100% 100%,0 100%)}
+.band>.wrap{position:relative}
+.band-teal{--band:var(--teal-deep)}
+.band-pink{--band:var(--pink-deep)}
+.band-brick{--band:var(--brick)}
+
+/* hero: room for the first band's steps under the store badges */
+.bk-hero{padding-bottom:calc(var(--cut) + 20px)}
+@media (min-width:641px){
+  :root{--bw:calc(var(--cut) / 3)}
+  .band,.band.cta-band{clip-path:polygon(0 var(--cut),25% var(--cut),25% calc(var(--cut) * 0.67),50% calc(var(--cut) * 0.67),50% calc(var(--cut) * 0.33),75% calc(var(--cut) * 0.33),75% 0,100% 0,100% 100%,0 100%)}
+  .band:nth-child(even){clip-path:polygon(0 0,25% 0,25% calc(var(--cut) * 0.33),50% calc(var(--cut) * 0.33),50% calc(var(--cut) * 0.67),75% calc(var(--cut) * 0.67),75% var(--cut),100% var(--cut),100% 100%,0 100%)}
+  .band::before{clip-path:polygon(0 calc(var(--cut) + var(--bw)),calc(25% + var(--bw)) calc(var(--cut) + var(--bw)),calc(25% + var(--bw)) calc(var(--cut) * 0.67 + var(--bw)),calc(50% + var(--bw)) calc(var(--cut) * 0.67 + var(--bw)),calc(50% + var(--bw)) calc(var(--cut) * 0.33 + var(--bw)),calc(75% + var(--bw)) calc(var(--cut) * 0.33 + var(--bw)),calc(75% + var(--bw)) var(--bw),100% var(--bw),100% 100%,0 100%)}
+  .band:nth-child(even)::before{clip-path:polygon(0 var(--bw),calc(25% - var(--bw)) var(--bw),calc(25% - var(--bw)) calc(var(--cut) * 0.33 + var(--bw)),calc(50% - var(--bw)) calc(var(--cut) * 0.33 + var(--bw)),calc(50% - var(--bw)) calc(var(--cut) * 0.67 + var(--bw)),calc(75% - var(--bw)) calc(var(--cut) * 0.67 + var(--bw)),calc(75% - var(--bw)) calc(var(--cut) + var(--bw)),100% calc(var(--cut) + var(--bw)),100% 100%,0 100%)}
+}
+@media (min-width:900px){
+  .bk-hero{padding-bottom:calc(var(--cut) + 36px)}
+}
+
