@@ -261,3 +261,23 @@
   .post-card:first-child .post-text, .post-card:nth-child(even):last-child .post-text { padding: 20px 22px 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .post-card { transition: none; } .post-card:hover { transform: none; } }
+
+/* Comparison table in a post (brick phone vs Brickify). Stacks into cards on phones. */
+.post-compare { width: 100%; margin: 8px 0 0; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 2px solid var(--line); border-radius: 18px; background: var(--bk-cream-2); font-size: 15px; }
+.post-compare th, .post-compare td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.post-compare tr:last-child th, .post-compare tr:last-child td { border-bottom: 0; }
+.post-compare thead th { background: var(--bk-brick); color: #fff; font-size: 13px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; }
+.post-compare tbody th { width: 30%; color: var(--bk-brick); font-weight: 800; }
+.post-compare td { color: var(--muted); }
+.post-compare td.us { color: var(--ink); font-weight: 700; }
+.post-compare tr.other-wins th, .post-compare tr.other-wins td { background: var(--bk-teal-tint); }
+.post-body .table-note { margin-top: 12px; color: var(--muted); font-size: 15px; }
+@media (max-width: 600px) {
+  .post-compare, .post-compare tbody, .post-compare tr, .post-compare th, .post-compare td { display: block; width: 100%; }
+  .post-compare { border: 0; background: none; overflow: visible; }
+  .post-compare thead { display: none; }
+  .post-compare tr { margin-bottom: 12px; overflow: hidden; border: 2px solid var(--line); border-radius: 16px; background: var(--bk-cream-2); }
+  .post-compare tbody th { width: 100%; background: var(--bk-cream); }
+  .post-compare td { border-bottom: 1px solid var(--line); }
+  .post-compare td::before { content: attr(data-label) ": "; color: var(--bk-brick); font-weight: 800; }
+}
