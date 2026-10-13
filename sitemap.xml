@@ -75,6 +75,10 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rainorshineapps.com/brickify/blog/inside-brickify.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://rainorshineapps.com/brickify/blog/why-i-built.html</loc>
     <priority>0.5</priority>
   </url>
