@@ -1,0 +1,18 @@
+{
+  "publish": "2026-12-15",
+  "file": "12-steps-day-3-sort-the-sim.html",
+  "sitemap": "https://rainorshineapps.com/brickify/blog/12-steps-day-3-sort-the-sim.html",
+  "card": null,
+  "replace": [
+    {
+      "file": "brickify/blog/12-steps-day-2-wipe-it-first.html",
+      "find": "<span class=\"series-soon\">Next: Step 3, Sort the SIM. Opens 15 December 2026.</span>",
+      "with": "<a href=\"12-steps-day-3-sort-the-sim.html\" class=\"series-next\">Next: Step 3, Sort the SIM &rarr;</a>"
+    },
+    {
+      "file": "brickify/blog/12-steps-first-phone.html",
+      "find": "<li class=\"soon\" data-slug=\"12-steps-day-3-sort-the-sim\"><span class=\"series-n\">3</span><span><strong>Sort the SIM</strong><small>Opens 15 Dec &middot; about 10 mins</small></span></li>",
+      "with": "<li data-slug=\"12-steps-day-3-sort-the-sim\"><span class=\"series-n\">3</span><span><a href=\"12-steps-day-3-sort-the-sim.html\">Sort the SIM</a><small>15 Dec &middot; about 10 mins</small></span></li>"
+    }
+  ]
+}

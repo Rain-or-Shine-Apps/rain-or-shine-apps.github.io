@@ -54,3 +54,15 @@ You can pick the slug yourself to know the URL in advance (e.g. for social posts
 - **Step slider:** for a numbered series of pictures with copy. Add `<script src="slider.js" defer></script>` in the head and copy the `.step-slider` block from `enforce-screen-time.html`. All the slide text stays in the page, so search engines still read it.
 - **Video shapes:** `.frame` (16:9), `.frame portrait` (9:16 phone video), `.frame tall` (3:4).
 - **Useful links list:** `ul.useful-links`.
+
+## Scheduling a post
+
+Give a `Date` in the future and Claude puts the post in `blog/_scheduled/` instead of `blog/`. The `_` keeps it unpublished until the day.
+
+Each scheduled post is two files:
+- `_scheduled/<YYYY-MM-DD>-<slug>.html`, the finished post
+- `_scheduled/<YYYY-MM-DD>-<slug>.json`, which holds `publish` (the date), `file` (`<slug>.html`), `sitemap` (the URL), `card` (the `.post-card` HTML for `blog/index.html`, or `null` for no card) and `replace` (optional `{file, find, with}` swaps in posts that are already live, e.g. turning a "Next: opens tomorrow" line into a link)
+
+The GitHub Action `.github/workflows/publish-scheduled.yml` runs at 07:00 UTC every day (7am UK in winter, 8am in summer). It moves anything due into `blog/`, adds the card and sitemap entry, applies the swaps, then commits and pushes. To publish early or re-run a missed day: GitHub → Actions → "Publish scheduled blog posts" → Run workflow. To test locally with a fake date: `node .github/scripts/publish-scheduled.mjs --today 2026-12-13` (then `git checkout .` to undo).
+
+Images go straight into `blog/images/`. They're unlinked until the post goes live.

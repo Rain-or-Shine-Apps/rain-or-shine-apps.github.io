@@ -1,0 +1,18 @@
+{
+  "publish": "2026-12-21",
+  "file": "12-steps-day-9-set-the-schedule.html",
+  "sitemap": "https://rainorshineapps.com/brickify/blog/12-steps-day-9-set-the-schedule.html",
+  "card": null,
+  "replace": [
+    {
+      "file": "brickify/blog/12-steps-day-8-build-profiles.html",
+      "find": "<span class=\"series-soon\">Next: Step 9, Set the schedule. Opens 21 December 2026.</span>",
+      "with": "<a href=\"12-steps-day-9-set-the-schedule.html\" class=\"series-next\">Next: Step 9, Set the schedule &rarr;</a>"
+    },
+    {
+      "file": "brickify/blog/12-steps-first-phone.html",
+      "find": "<li class=\"soon\" data-slug=\"12-steps-day-9-set-the-schedule\"><span class=\"series-n\">9</span><span><strong>Set the schedule</strong><small>Opens 21 Dec &middot; about 10 mins</small></span></li>",
+      "with": "<li data-slug=\"12-steps-day-9-set-the-schedule\"><span class=\"series-n\">9</span><span><a href=\"12-steps-day-9-set-the-schedule.html\">Set the schedule</a><small>21 Dec &middot; about 10 mins</small></span></li>"
+    }
+  ]
+}

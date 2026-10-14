@@ -1,0 +1,18 @@
+{
+  "publish": "2026-12-16",
+  "file": "12-steps-day-4-whose-account.html",
+  "sitemap": "https://rainorshineapps.com/brickify/blog/12-steps-day-4-whose-account.html",
+  "card": null,
+  "replace": [
+    {
+      "file": "brickify/blog/12-steps-day-3-sort-the-sim.html",
+      "find": "<span class=\"series-soon\">Next: Step 4, Decide whose account it is. Opens 16 December 2026.</span>",
+      "with": "<a href=\"12-steps-day-4-whose-account.html\" class=\"series-next\">Next: Step 4, Decide whose account it is &rarr;</a>"
+    },
+    {
+      "file": "brickify/blog/12-steps-first-phone.html",
+      "find": "<li class=\"soon\" data-slug=\"12-steps-day-4-whose-account\"><span class=\"series-n\">4</span><span><strong>Decide whose account it is</strong><small>Opens 16 Dec &middot; about 10 mins</small></span></li>",
+      "with": "<li data-slug=\"12-steps-day-4-whose-account\"><span class=\"series-n\">4</span><span><a href=\"12-steps-day-4-whose-account.html\">Decide whose account it is</a><small>16 Dec &middot; about 10 mins</small></span></li>"
+    }
+  ]
+}

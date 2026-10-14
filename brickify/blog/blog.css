@@ -281,3 +281,16 @@
   .post-compare td { border-bottom: 1px solid var(--line); }
   .post-compare td::before { content: attr(data-label) ": "; color: var(--bk-brick); font-weight: 800; }
 }
+
+/* Series: "The 12 days steps of Christmas" */
+.eyebrow del, .post-hero h1 del, .post-card h2 del { color: inherit; opacity: .6; text-decoration-thickness: .12em; text-decoration-color: var(--brand); }
+.series-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 32px; padding: 16px 20px; background: var(--surface); border: 2px solid var(--line); border-radius: 18px; font-weight: 800; }
+.series-nav a { color: var(--brand-dark); }
+.series-soon { color: var(--muted); }
+.series-all { margin-left: auto; }
+.series-list { list-style: none; padding: 0; margin: 20px 0; display: grid; gap: 10px; }
+.post-body .series-list li { display: flex; align-items: center; gap: 14px; margin: 0; padding: 12px 16px; background: var(--surface); border: 2px solid var(--line); border-radius: 16px; font-weight: 800; }
+.series-list .series-n { flex: 0 0 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 900; }
+.series-list small { display: block; color: var(--muted); font-size: 14px; font-weight: 700; }
+.series-list li.soon { color: var(--muted); }
+.series-list li.soon .series-n { background: var(--line); color: var(--muted); }

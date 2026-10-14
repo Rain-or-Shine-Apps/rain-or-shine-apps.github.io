@@ -1,0 +1,18 @@
+{
+  "publish": "2026-12-19",
+  "file": "12-steps-day-7-two-keys-and-a-spare.html",
+  "sitemap": "https://rainorshineapps.com/brickify/blog/12-steps-day-7-two-keys-and-a-spare.html",
+  "card": null,
+  "replace": [
+    {
+      "file": "brickify/blog/12-steps-day-6-choose-your-pin.html",
+      "find": "<span class=\"series-soon\">Next: Step 7, Two keys, plus a spare. Opens 19 December 2026.</span>",
+      "with": "<a href=\"12-steps-day-7-two-keys-and-a-spare.html\" class=\"series-next\">Next: Step 7, Two keys, plus a spare &rarr;</a>"
+    },
+    {
+      "file": "brickify/blog/12-steps-first-phone.html",
+      "find": "<li class=\"soon\" data-slug=\"12-steps-day-7-two-keys-and-a-spare\"><span class=\"series-n\">7</span><span><strong>Two keys, plus a spare</strong><small>Opens 19 Dec &middot; about 5 mins</small></span></li>",
+      "with": "<li data-slug=\"12-steps-day-7-two-keys-and-a-spare\"><span class=\"series-n\">7</span><span><a href=\"12-steps-day-7-two-keys-and-a-spare.html\">Two keys, plus a spare</a><small>19 Dec &middot; about 5 mins</small></span></li>"
+    }
+  ]
+}

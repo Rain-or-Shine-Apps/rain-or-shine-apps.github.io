@@ -1,0 +1,18 @@
+{
+  "publish": "2026-12-20",
+  "file": "12-steps-day-8-build-profiles.html",
+  "sitemap": "https://rainorshineapps.com/brickify/blog/12-steps-day-8-build-profiles.html",
+  "card": null,
+  "replace": [
+    {
+      "file": "brickify/blog/12-steps-day-7-two-keys-and-a-spare.html",
+      "find": "<span class=\"series-soon\">Next: Step 8, Build three profiles. Opens 20 December 2026.</span>",
+      "with": "<a href=\"12-steps-day-8-build-profiles.html\" class=\"series-next\">Next: Step 8, Build three profiles &rarr;</a>"
+    },
+    {
+      "file": "brickify/blog/12-steps-first-phone.html",
+      "find": "<li class=\"soon\" data-slug=\"12-steps-day-8-build-profiles\"><span class=\"series-n\">8</span><span><strong>Build three profiles</strong><small>Opens 20 Dec &middot; about 10 mins</small></span></li>",
+      "with": "<li data-slug=\"12-steps-day-8-build-profiles\"><span class=\"series-n\">8</span><span><a href=\"12-steps-day-8-build-profiles.html\">Build three profiles</a><small>20 Dec &middot; about 10 mins</small></span></li>"
+    }
+  ]
+}
