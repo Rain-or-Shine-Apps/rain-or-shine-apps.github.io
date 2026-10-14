@@ -37,15 +37,16 @@ let failed = false;
 for (const p of due) {
   const src = path.join(SCHED, `${p.publish}-${p.file}`);
   const dest = path.join(BLOG, p.file);
-  if (!fs.existsSync(src)) { console.error(`MISSING ${src}`); failed = true; continue; }
-  fs.renameSync(src, dest);
+  // A crashed earlier run may already have moved the post; carry on with the rest.
+  if (fs.existsSync(src)) fs.renameSync(src, dest);
+  else if (!fs.existsSync(dest)) { console.error(`MISSING ${src}`); failed = true; continue; }
 
   if (p.card) {
     const index = path.join(BLOG, 'index.html');
     const marker = '<div class="post-list">\n';
     const html = read(index);
     if (!html.includes(marker)) throw new Error('post-list not found in blog/index.html');
-    write(index, html.replace(marker, marker + p.card));
+    if (!html.includes(`href="${p.file}" class="post-card"`)) write(index, html.replace(marker, marker + p.card));
   }
 
   if (p.sitemap) {
