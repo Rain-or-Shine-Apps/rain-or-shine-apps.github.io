@@ -249,3 +249,159 @@ body{background:var(--brick)}
   .bk-hero{padding-bottom:calc(var(--cut) + 36px)}
 }
 
+
+/* ---------- Ladder close-up ---------- */
+/* the-phone-ladder.html: the home-page ladder, with the Brickify rung opened out into five sub-steps */
+.lc-page .bk-bands>.band:first-child{margin-top:0}
+.lc-page .bk-ladder-sec{padding-top:calc(40px + var(--cut))}
+.lc-page h1.section-title{font-size:clamp(32px,5vw,52px)}
+.lc-blowout{display:grid;margin-top:8px}
+.lc-blowout .bk-ladder{margin-top:28px;width:100%}
+.lc-panel{position:relative;margin-top:56px}
+.lc-panel::before{content:"";position:absolute;left:50%;top:-46px;width:8px;height:34px;margin-left:-4px;border-radius:4px;background:var(--brick);box-shadow:0 4px 0 rgba(0,0,0,.18)}
+.lc-panel h2{font-size:clamp(24px,3vw,32px);font-weight:900;letter-spacing:-.02em;line-height:1.15}
+.lc-lead{margin:8px 0 22px;font-size:17px;color:color-mix(in srgb,var(--cream) 92%,transparent)}
+.lc-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.lc-step{--c:var(--brick);display:grid;grid-template-columns:auto minmax(0,1fr);background:var(--cream-2);color:var(--ink);
+  border:3px solid var(--mortar);border-radius:16px;overflow:hidden;box-shadow:0 6px 0 rgba(0,0,0,.14)}
+.lc-step:nth-child(2){--c:var(--brick-2)}
+.lc-step:nth-child(3){--c:var(--brick-hi)}
+.lc-step:nth-child(4){--c:var(--pink)}
+.lc-step:nth-child(5){--c:var(--teal)}
+.lc-num{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:78px;padding:12px 6px;background:var(--c);color:#fff;border-right:3px solid var(--mortar)}
+.lc-num b{font-size:26px;font-weight:900;line-height:1;letter-spacing:-.02em;text-shadow:0 2px 0 rgba(0,0,0,.15)}
+.lc-icon{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lc-body{padding:12px 16px 14px}
+.lc-body h3{font-size:19px;font-weight:900;line-height:1.2;color:var(--ink);text-transform:uppercase;letter-spacing:.02em}
+.lc-body p{margin-top:4px;font-size:15px;line-height:1.45;color:var(--muted)}
+.lc-body p b{color:var(--ink);font-weight:800}
+.band .lc-chip{display:inline-block;margin-top:10px;padding:5px 11px;border:2px solid var(--line);border-radius:999px;background:var(--cream);
+  color:var(--brick);font-size:13px;font-weight:800;line-height:1.3;text-decoration:none}
+.band .lc-chip:hover{border-color:var(--brick-2)}
+@media (min-width:900px){
+  .lc-page .bk-ladder-sec>.wrap{max-width:1200px}
+  .lc-blowout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:80px;align-items:start}
+  .lc-blowout .bk-ladder{margin-top:120px}
+  .lc-panel{margin-top:0}
+  /* brick bracket: a tick out from rung 3 to a tall bar down the panel's left edge */
+  .lc-panel::before{left:-46px;top:0;bottom:0;width:24px;height:auto;margin:0;border:8px solid var(--brick);border-right:0;border-radius:14px 0 0 14px;background:none}
+  .lc-panel::after{content:"";position:absolute;left:-78px;top:224px;width:40px;height:8px;border-radius:4px;background:var(--brick);box-shadow:0 4px 0 rgba(0,0,0,.18)}
+  /* the five sub-steps climb up and to the right: 3.1 at the bottom left, 3.5 at the top right */
+  .lc-steps{flex-direction:column-reverse}
+  .lc-step{width:82%}
+  .lc-step:nth-child(2){margin-left:4.5%}
+  .lc-step:nth-child(3){margin-left:9%}
+  .lc-step:nth-child(4){margin-left:13.5%}
+  .lc-step:nth-child(5){margin-left:18%}
+}
+@media (max-width:560px){
+  .lc-num{width:62px}
+  .lc-num b{font-size:21px}
+  .lc-icon{width:24px;height:24px}
+  .lc-body{padding:10px 12px 12px}
+  .lc-body h3{font-size:16px}
+}
+
+/* "How families actually use it": a cream band with a pure-CSS day strip */
+.band-cream{--band:var(--cream)}
+.band-cream h2,.band-cream .section-title{color:var(--brick)}
+.band-cream p{color:var(--ink)}
+.band.band-cream a{color:var(--brick)}
+.lc-prose{max-width:720px;margin:0 auto;font-size:18px}
+.lc-prose p+p{margin-top:14px}
+.lc-prose h2{font-size:clamp(24px,3vw,32px);font-weight:900;letter-spacing:-.02em;margin:56px 0 12px}
+.band-cream .wrap>.lc-prose:first-child h2{margin-top:0}
+.lc-day{max-width:820px;margin:32px auto 40px}
+.lc-bar{display:flex;height:76px;border:3px solid var(--mortar);border-radius:16px;overflow:hidden;box-shadow:0 6px 0 rgba(0,0,0,.14)}
+.lc-seg{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 6px;color:#fff;text-align:center;line-height:1.15;min-width:0}
+.lc-seg+.lc-seg{border-left:3px solid var(--mortar)}
+.lc-seg b{font-size:17px;font-weight:900;text-transform:uppercase;letter-spacing:.02em}
+.lc-seg small{font-size:13px;font-weight:700;opacity:.9}
+.lc-seg-brick{background:var(--brick)}
+.lc-seg-friends{background:var(--brick-hi)}
+.lc-times{position:relative;height:24px;margin-top:10px;font-size:14px;font-weight:800;color:var(--mortar)}
+.lc-times span{position:absolute;top:0;transform:translateX(-50%)}
+.lc-times span:first-child{transform:none}
+.lc-times span:last-child{transform:translateX(-100%)}
+.lc-default{margin-top:12px;text-align:center;font-size:15px}
+.lc-default b{display:inline-block;padding:1px 9px;border-radius:999px;background:var(--cream-2);border:2px solid var(--line)}
+@media (max-width:560px){
+  .lc-bar{height:68px}
+  .lc-seg{padding:0 2px}
+  .lc-seg b{font-size:12px;letter-spacing:0}
+  .lc-seg small{font-size:11px}
+  .lc-times{font-size:12px}
+}
+
+/* closing band: two link buttons */
+.lc-next{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:8px}
+.band .lc-next .btn{background:var(--cream);color:var(--brick);border-bottom-color:#cdb99b;text-transform:none;letter-spacing:0;font-size:16px;min-height:52px;text-decoration:none;text-align:center}
+
+/* image slots: placeholders until the real artwork is supplied */
+.img-slot{display:flex;align-items:center;justify-content:center;min-height:170px;margin:32px auto 0;max-width:720px;padding:20px;
+  border:3px dashed color-mix(in srgb,var(--mortar) 40%,transparent);border-radius:18px;background:color-mix(in srgb,var(--cream-2) 70%,transparent);
+  color:var(--muted);font-size:14px;font-weight:700;text-align:center;line-height:1.45}
+.img-slot span::before{content:"Image to come: ";color:var(--brick);font-weight:900}
+
+/* ---------- What Brickify does, and doesn't do ---------- */
+.wbd{background:var(--cream);color:var(--ink);padding-bottom:72px}
+.wbd a{color:var(--brick)}
+.wbd-hero{padding:56px 0 8px;text-align:center}
+.wbd-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;letter-spacing:-.02em;line-height:1.1;color:var(--brick);max-width:780px;margin:0 auto}
+.wbd-hero p{max-width:680px;margin:16px auto 0;font-size:18px}
+.wbd-cols{display:grid;gap:36px;margin-top:44px}
+.wbd-cols h2,.wbd-alt h2{font-size:clamp(24px,3vw,30px);font-weight:900;letter-spacing:-.02em;line-height:1.2;color:var(--brick)}
+.wbd-tiles{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:12px}
+.wbd-tile{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:16px 18px;border-radius:16px;border:2px solid var(--line);background:var(--cream-2);box-shadow:0 4px 0 rgba(0,0,0,.08)}
+.wbd-tile p{font-size:16px;line-height:1.5}
+.wbd-tile b{font-weight:900}
+.wbd-tile .see{display:inline-block;margin-top:6px;font-size:14px;font-weight:800}
+.wbd-mark{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%}
+.wbd-mark svg{width:18px;height:18px;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.wbd-does .wbd-tile{border-color:var(--teal);background:#E4F5F3}
+.wbd-does .wbd-mark{background:var(--teal)}
+.wbd-does .wbd-mark svg{stroke:#fff}
+.wbd-doesnt .wbd-mark{border:3px solid var(--brick-2);background:var(--cream-2)}
+.wbd-doesnt .wbd-mark svg{stroke:var(--brick-2);width:14px;height:14px}
+.wbd-note{margin-top:28px;padding:18px 20px;border-radius:16px;background:var(--cream-2);border:2px dashed var(--brick-2);font-size:16px}
+.wbd-note b{color:var(--brick)}
+@media (min-width:820px){ .wbd-cols{grid-template-columns:1fr 1fr} }
+
+/* the four alternatives sections */
+.wbd-alt{--c:var(--brick);margin-top:48px;padding:26px 24px 28px;border-radius:20px;background:var(--cream-2);border:2px solid var(--line);border-top:12px solid var(--c);scroll-margin-top:90px;box-shadow:0 6px 0 rgba(0,0,0,.08)}
+.wbd-alt-pink{--c:var(--pink)}
+.wbd-alt-teal{--c:var(--teal)}
+.wbd-alt-brick{--c:var(--brick-2)}
+.wbd-alt-mortar{--c:var(--mortar)}
+.wbd-alt-head{display:flex;align-items:center;gap:14px}
+.wbd-alt-icon{flex:none;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;background:var(--c)}
+.wbd-alt-icon svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wbd-lead{margin-top:12px;font-size:18px;font-weight:700}
+.wbd-alt>p{margin-top:12px;font-size:16px}
+.wbd-table{width:100%;margin-top:18px;border-collapse:separate;border-spacing:0;border:2px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;font-size:15px}
+.wbd-table th,.wbd-table td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.wbd-table tr:last-child th,.wbd-table tr:last-child td{border-bottom:0}
+.wbd-table thead th{background:var(--c);color:#fff;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.wbd-table tbody th{width:27%;color:var(--ink);font-weight:800}
+.wbd-table td{color:var(--muted)}
+.wbd-table td.cost{width:16%}
+.wbd-table td.on{width:16%}
+@media (max-width:640px){
+  .wbd-alt{padding:22px 16px 24px}
+  .wbd-table,.wbd-table tbody,.wbd-table tr,.wbd-table th,.wbd-table td{display:block;width:100%}
+  .wbd-table td.cost,.wbd-table td.on{width:100%}
+  .wbd-table{border:0;background:none;overflow:visible}
+  .wbd-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .wbd-table tr{margin-bottom:12px;border:2px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+  .wbd-table tbody th{width:100%;background:var(--cream);border-bottom:2px solid var(--line)}
+  .wbd-table td{padding:8px 14px}
+  .wbd-table td::before{content:attr(data-label);display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--brick-2)}
+}
+.wbd-view{margin-top:20px;padding:16px 20px;border-left:8px solid var(--brick-2);border-radius:0 14px 14px 0;background:var(--cream);font-size:16px}
+.wbd-view h3{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:var(--brick-2);margin-bottom:6px}
+.wbd-good{margin-top:16px;font-size:16px}
+.wbd-help{margin-top:48px;padding:22px 24px;border-radius:20px;background:var(--mortar);color:var(--cream)}
+.wbd-help h2{font-size:20px;font-weight:900;color:var(--cream)}
+.wbd-help ul{margin:10px 0 0;padding-left:20px}
+.wbd-help li{margin-top:6px;font-size:16px}
+.wbd .wbd-help a{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:3px}
