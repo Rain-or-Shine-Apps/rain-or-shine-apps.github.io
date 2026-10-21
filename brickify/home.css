@@ -349,6 +349,7 @@ body{background:var(--brick)}
 .wbd-hero{padding:56px 0 8px;text-align:center}
 .wbd-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;letter-spacing:-.02em;line-height:1.1;color:var(--brick);max-width:780px;margin:0 auto}
 .wbd-hero p{max-width:680px;margin:16px auto 0;font-size:18px}
+.wbd-hero-img{display:block;width:100%;max-width:720px;height:auto;margin:32px auto 0;border-radius:18px}
 .wbd-cols{display:grid;gap:36px;margin-top:44px}
 .wbd-cols h2,.wbd-alt h2{font-size:clamp(24px,3vw,30px);font-weight:900;letter-spacing:-.02em;line-height:1.2;color:var(--brick)}
 .wbd-tiles{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:12px}
