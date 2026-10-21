@@ -49,7 +49,7 @@
     el.setAttribute('role', 'dialog');
     el.setAttribute('aria-label', 'Cookie preferences');
     el.innerHTML =
-      '<p><strong>Can we count your visit?</strong> We’d like to use Google Analytics cookies to see which pages help people most. ' +
+      '<p><strong>Can we use Google Analytics?</strong> We’d like to use Google Analytics cookies to see which pages help people most. ' +
       'This covers this website only, not our apps. You can change your mind any time from “Cookie settings” at the bottom of the page. ' +
       '<a href="/privacy.html">Privacy policy</a></p>' +
       '<div class="consent-actions">' +
