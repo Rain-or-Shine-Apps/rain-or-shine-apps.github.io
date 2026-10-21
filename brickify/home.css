@@ -416,7 +416,9 @@ body{background:var(--brick)}
 .bk-founder img{width:72px;height:72px;flex:none;border-radius:50%;object-fit:cover;object-position:50% 25%;border:3px solid var(--mortar)}
 .bk-founder b{display:block;font-size:16px;line-height:1.4}
 .bk-founder small{display:block;margin-top:6px;font-size:14px;font-weight:800;color:var(--brick-2)}
-.bk-privacy{max-width:680px;margin:36px auto 0;padding:14px 18px;border-radius:16px;background:var(--cream-2);color:var(--ink);font-size:16px;text-align:center}
+.bk-privacy{max-width:680px;margin:36px auto 0;padding:16px 20px;border-radius:18px;background:var(--cream-2);color:var(--ink);font-size:16px;text-align:center;border:3px solid var(--mortar);box-shadow:0 5px 0 rgba(0,0,0,.15)}
+.bk-privacy p{color:var(--ink);margin:0}
+.bk-privacy .bk-compare{margin-top:10px;padding-top:10px;border-top:2px dashed color-mix(in srgb,var(--ink) 25%,transparent)}
 .bk-privacy a{font-weight:800;white-space:nowrap}
 .cta-band .cta-price{font-size:19px;font-weight:900}
 .cta-band .cta-price{margin-bottom:6px}
@@ -428,4 +430,5 @@ body{background:var(--brick)}
 .bk-walk{max-width:760px;margin:36px auto 0}
 .bk-walk img{display:block;width:100%;height:auto;border-radius:22px;box-shadow:0 26px 50px -24px rgba(0,0,0,.55)}
 .bk-wheel.bk-week{max-width:560px}
-.bk-ladder + .bk-scope,.bk-scope{margin:28px auto 0}
+.bk-scope{margin:24px auto 0}
+.bk-nowrap{white-space:nowrap}
