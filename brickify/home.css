@@ -278,6 +278,7 @@ body{background:var(--brick)}
 .band .lc-chip{display:inline-block;margin-top:10px;padding:5px 11px;border:2px solid var(--line);border-radius:999px;background:var(--cream);
   color:var(--brick);font-size:13px;font-weight:800;line-height:1.3;text-decoration:none}
 .band .lc-chip:hover{border-color:var(--brick-2)}
+.band .lc-lead + .lc-chip{margin:-12px 0 24px}
 @media (min-width:900px){
   .lc-page .bk-ladder-sec>.wrap{max-width:1200px}
   .lc-blowout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:80px;align-items:start}
