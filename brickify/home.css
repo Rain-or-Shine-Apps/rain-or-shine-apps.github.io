@@ -407,3 +407,18 @@ body{background:var(--brick)}
 .wbd-help ul{margin:10px 0 0;padding-left:20px}
 .wbd-help li{margin-top:6px;font-size:16px}
 .wbd .wbd-help a{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+
+/* Audit fixes: hero eyebrow, scope line, founder card, privacy line, price details */
+.bk-eyebrow{display:block;margin-bottom:12px;font-size:clamp(16px,2.2vw,21px);font-weight:800;letter-spacing:0;line-height:1.3;text-shadow:none;color:var(--cream)}
+.bk-scope{margin-top:10px;font-size:16px}
+.bk-link-sub{text-align:center;margin-top:8px;font-size:15px;font-weight:700}
+.bk-founder{display:flex;gap:16px;align-items:center;max-width:620px;margin:32px auto 0;padding:14px 18px;border-radius:18px;background:var(--cream-2);color:var(--ink);text-decoration:none;border:3px solid var(--mortar);box-shadow:0 5px 0 rgba(0,0,0,.15)}
+.bk-founder img{width:72px;height:72px;flex:none;border-radius:50%;object-fit:cover;object-position:50% 25%;border:3px solid var(--mortar)}
+.bk-founder b{display:block;font-size:16px;line-height:1.4}
+.bk-founder small{display:block;margin-top:6px;font-size:14px;font-weight:800;color:var(--brick-2)}
+.bk-privacy{max-width:680px;margin:36px auto 0;padding:14px 18px;border-radius:16px;background:var(--cream-2);color:var(--ink);font-size:16px;text-align:center}
+.bk-privacy a{font-weight:800;white-space:nowrap}
+.cta-band .cta-price{font-size:19px;font-weight:900}
+.cta-band .cta-unlock,.cta-band .cta-anchor{max-width:620px;margin:8px auto 0;font-size:16px}
+.band .bk-founder,.band .bk-founder b,.band .bk-privacy{color:var(--ink)}
+.band .bk-founder small,.band .bk-privacy a{color:var(--brick-2)}

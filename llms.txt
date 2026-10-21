@@ -1,0 +1,33 @@
+# Rain or Shine Apps
+
+> Rain or Shine Apps is a small independent app developer based in the UK. Our main product is Brickify, an app for iPhone and Android that turns a smartphone into a brick phone on a schedule you set.
+
+## Brickify
+
+Brickify is for parents setting up a child's first phone, families with a smartphone-free school policy, and adults who want a digital detox on their own phone. You build profiles (for example Brick: calls and texts only; Brick plus: maps, music and bus times; Friends: one messaging app at set times) and a weekly schedule. The phone switches between profiles by itself. Opening a more open profile early needs a PIN plus a second factor, with recovery codes.
+
+- Price: free to download and set up; a one-time in-app purchase of $4.99 / £4.99 switches blocking on for good. No subscription. One purchase covers every phone that uses the same App Store or Google Play account.
+- Platforms: iPhone 8 / X or newer (iOS 16+), Android 8+.
+- Brickify is not a monitoring app. It doesn't read messages, browsing history or location.
+- It works on a phone you already own, including an old phone in a drawer, so no second device is needed.
+
+## Key pages
+
+- [Brickify home](https://rainorshineapps.com/brickify/index.html): what it is, the phone ladder, and download links
+- [How it works](https://rainorshineapps.com/brickify/how-it-works.html)
+- [What Brickify does, and doesn't](https://rainorshineapps.com/brickify/what-brickify-does.html)
+- [The phone ladder, close up](https://rainorshineapps.com/brickify/the-phone-ladder.html): example profiles from Brick to Nearly there
+- [Brick phone vs Brickify](https://rainorshineapps.com/brickify/brick-phone-vs-brickify.html)
+- [Why Brickify, versus Screen Time or Family Link](https://rainorshineapps.com/brickify/why-brickify.html)
+- [FAQ](https://rainorshineapps.com/brickify/faq.html)
+- [Which phones work?](https://rainorshineapps.com/brickify/compatibility.html)
+- [Known limitations and mitigations](https://rainorshineapps.com/brickify/risks.html)
+- [Guides and example family weeks](https://rainorshineapps.com/brickify/guides/index.html)
+- [Blog](https://rainorshineapps.com/brickify/blog/index.html)
+- [Why I built Brickify](https://rainorshineapps.com/brickify/blog/why-i-built.html): the founder's story
+
+## Optional
+
+- [Brickify privacy policy](https://rainorshineapps.com/brickify/privacy.html)
+- [Website privacy policy](https://rainorshineapps.com/privacy.html)
+- [All our apps](https://rainorshineapps.com/index.html)
