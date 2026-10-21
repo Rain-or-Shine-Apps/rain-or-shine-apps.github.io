@@ -419,7 +419,10 @@ body{background:var(--brick)}
 .bk-privacy{max-width:680px;margin:36px auto 0;padding:14px 18px;border-radius:16px;background:var(--cream-2);color:var(--ink);font-size:16px;text-align:center}
 .bk-privacy a{font-weight:800;white-space:nowrap}
 .cta-band .cta-price{font-size:19px;font-weight:900}
-.cta-band .cta-unlock,.cta-band .cta-anchor{max-width:620px;margin:8px auto 0;font-size:16px}
+.cta-band .cta-price{margin-bottom:6px}
+.cta-band .cta-anchor{max-width:620px;margin:0 auto 4px;font-size:17px}
+.cta-band .cta-small{max-width:560px;margin:22px auto 0}
+.cta-band .cta-small .cta-note{margin:0 0 8px;font-size:13.5px;line-height:1.5}
 .band .bk-founder,.band .bk-founder b,.band .bk-privacy{color:var(--ink)}
 .band .bk-founder small,.band .bk-privacy a{color:var(--brick-2)}
 .bk-walk{max-width:760px;margin:36px auto 0}
