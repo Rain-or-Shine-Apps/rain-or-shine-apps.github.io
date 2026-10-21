@@ -422,3 +422,5 @@ body{background:var(--brick)}
 .cta-band .cta-unlock,.cta-band .cta-anchor{max-width:620px;margin:8px auto 0;font-size:16px}
 .band .bk-founder,.band .bk-founder b,.band .bk-privacy{color:var(--ink)}
 .band .bk-founder small,.band .bk-privacy a{color:var(--brick-2)}
+.bk-walk{max-width:760px;margin:36px auto 0}
+.bk-walk img{display:block;width:100%;height:auto;border-radius:22px;box-shadow:0 26px 50px -24px rgba(0,0,0,.55)}

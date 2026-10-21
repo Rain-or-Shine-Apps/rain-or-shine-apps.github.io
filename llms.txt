@@ -26,7 +26,7 @@ Brickify is for parents setting up a child's first phone, families with a smartp
 - [Known limitations and mitigations](https://rainorshineapps.com/brickify/risks.html)
 - [Guides and example family weeks](https://rainorshineapps.com/brickify/guides/index.html)
 - [Blog](https://rainorshineapps.com/brickify/blog/index.html)
-- [Why I built Brickify](https://rainorshineapps.com/brickify/blog/why-i-built.html): the founder's story
+- [Why I built Brickify](https://rainorshineapps.com/brickify/blog/why-i-built.html): the founder's story (Anne Mundy)
 
 ## Optional
 
