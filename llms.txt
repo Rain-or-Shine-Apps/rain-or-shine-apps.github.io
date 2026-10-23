@@ -13,23 +13,23 @@ Brickify is for parents setting up a child's first phone, families with a smartp
 
 ## Key pages
 
-- [Brickify home](https://rainorshineapps.com/brickify/index.html): what it is, the phone ladder, and download links
-- [How it works](https://rainorshineapps.com/brickify/how-it-works.html)
-- [What Brickify does, and doesn't](https://rainorshineapps.com/brickify/what-brickify-does.html)
-- [The phone ladder, close up](https://rainorshineapps.com/brickify/the-phone-ladder.html): example profiles from Brick to Nearly there
-- [Brick phone vs Brickify](https://rainorshineapps.com/brickify/brick-phone-vs-brickify.html)
-- [Screenable vs Brickify](https://rainorshineapps.com/brickify/screenable-vs-brickify.html)
-- [Canopy vs Brickify](https://rainorshineapps.com/brickify/canopy-vs-brickify.html)
-- [Why Brickify, versus Screen Time or Family Link](https://rainorshineapps.com/brickify/why-brickify.html)
-- [FAQ](https://rainorshineapps.com/brickify/faq.html)
-- [Which phones work?](https://rainorshineapps.com/brickify/compatibility.html)
-- [Known limitations and mitigations](https://rainorshineapps.com/brickify/risks.html)
-- [Guides and example family weeks](https://rainorshineapps.com/brickify/guides/index.html)
-- [Blog](https://rainorshineapps.com/brickify/blog/index.html)
-- [Why I built Brickify](https://rainorshineapps.com/brickify/blog/why-i-built.html): the founder's story (Anne Mundy)
+- [Brickify home](https://brickifymysmartph.one/): what it is, the phone ladder, and download links
+- [How it works](https://brickifymysmartph.one/how-it-works.html)
+- [What Brickify does, and doesn't](https://brickifymysmartph.one/what-brickify-does.html)
+- [The phone ladder, close up](https://brickifymysmartph.one/the-phone-ladder.html): example profiles from Brick to Nearly there
+- [Brick phone vs Brickify](https://brickifymysmartph.one/brick-phone-vs-brickify.html)
+- [Screenable vs Brickify](https://brickifymysmartph.one/screenable-vs-brickify.html)
+- [Canopy vs Brickify](https://brickifymysmartph.one/canopy-vs-brickify.html)
+- [Why Brickify, versus Screen Time or Family Link](https://brickifymysmartph.one/why-brickify.html)
+- [FAQ](https://brickifymysmartph.one/faq.html)
+- [Which phones work?](https://brickifymysmartph.one/compatibility.html)
+- [Known limitations and mitigations](https://brickifymysmartph.one/risks.html)
+- [Guides and example family weeks](https://brickifymysmartph.one/guides/index.html)
+- [Blog](https://brickifymysmartph.one/blog/index.html)
+- [Why I built Brickify](https://brickifymysmartph.one/blog/why-i-built.html): the founder's story (Anne Mundy)
 
 ## Optional
 
-- [Brickify privacy policy](https://rainorshineapps.com/brickify/privacy.html)
+- [Brickify privacy policy](https://brickifymysmartph.one/privacy.html)
 - [Website privacy policy](https://rainorshineapps.com/privacy.html)
 - [All our apps](https://rainorshineapps.com/index.html)
